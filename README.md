@@ -178,6 +178,18 @@
             transform: translateY(-2px);
         }
 
+        .btn-whatsapp {
+            background: #25D366;
+            color: #ffffff;
+            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
         /* ==========================================================================
        2. HEADER & NAVIGATION
        ========================================================================== */
@@ -833,6 +845,7 @@
             align-items: center;
             justify-content: center;
             font-size: 1.2rem;
+            flex-shrink: 0;
         }
 
         .contact-form {
@@ -912,7 +925,37 @@
             transform: translateY(-2px);
         }
 
-        /* Modal Component */
+        /* ==========================================================================
+       9. FLOATING WHATSAPP BUTTON
+       ========================================================================== */
+        .whatsapp-btn {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+            z-index: 3000;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            background: #128C7E;
+            color: white;
+        }
+
+        /* ==========================================================================
+       10. MODAL
+       ========================================================================== */
         .modal {
             display: none;
             position: fixed;
@@ -978,7 +1021,9 @@
             color: var(--secondary);
         }
 
-        /* Responsive Queries */
+        /* ==========================================================================
+       11. RESPONSIVE QUERIES
+       ========================================================================== */
         @media (max-width: 992px) {
 
             #hero,
@@ -1028,13 +1073,21 @@
             section {
                 padding: 60px 6%;
             }
+
+            .whatsapp-btn {
+                right: 16px;
+                bottom: 16px;
+                width: 52px;
+                height: 52px;
+                font-size: 26px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
+    <!-- ===== NAVBAR ===== -->
     <header>
         <a href="#" class="logo">
             <i class="fa-solid fa-drafting-compass"></i> ABDUR RAFAY<span>.DESIGNS</span>
@@ -1054,7 +1107,8 @@
     </header>
 
     <main>
-        <!-- HERO SECTION -->
+
+        <!-- ===== HERO SECTION ===== -->
         <section id="hero">
             <div class="hero-left">
                 <div class="hero-greeting">Hi, I am Abdur Rafay Yousuf</div>
@@ -1085,16 +1139,21 @@
                 <div class="hero-btns">
                     <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-layer-group"></i> Explore CAD
                         Portfolio</a>
-                    <a href="Abdur_Rafay_Resume.pdf" target="_blank" class="btn btn-secondary"><i
+                    <a href="assets/documents/Abdur_Rafay_Resume.pdf" target="_blank" class="btn btn-secondary"><i
                             class="fa-solid fa-file-pdf"></i> Download Resume</a>
+                    <a href="https://api.whatsapp.com/send/?phone=%2B923708516762&text&type=phone_number&app_absent=0"
+                        target="_blank" class="btn btn-whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i> Contact on WhatsApp
+                    </a>
                 </div>
             </div>
 
-            <!-- PROFESSIONAL PROFILE PHOTO CARD -->
+            <!-- Professional Profile Photo -->
             <div class="hero-image-wrapper">
                 <div class="profile-card">
                     <div class="profile-img-container">
-                        <img src="profile.jpg" alt="Abdur Rafay Yousuf - Mechanical Engineer">
+                        <img src="assets/images/profile.jpg" alt="Abdur Rafay Yousuf Mechanical CAD Engineer"
+                            loading="lazy">
                     </div>
                     <div class="profile-info">
                         <h3>Abdur Rafay Yousuf</h3>
@@ -1107,7 +1166,7 @@
             </div>
         </section>
 
-        <!-- SKILLS SECTION WITH ICONS -->
+        <!-- ===== SKILLS ===== -->
         <section id="skills">
             <div class="section-header">
                 <div class="section-tag"><i class="fa-solid fa-gears"></i> Technical Stack</div>
@@ -1179,7 +1238,7 @@
             </div>
         </section>
 
-        <!-- WORK EXPERIENCE TIMELINE -->
+        <!-- ===== EXPERIENCE ===== -->
         <section id="experience">
             <div class="section-header">
                 <div class="section-tag"><i class="fa-solid fa-briefcase"></i> Track Record</div>
@@ -1258,7 +1317,7 @@
             </div>
         </section>
 
-        <!-- FEATURED CAD PROJECTS -->
+        <!-- ===== PROJECTS ===== -->
         <section id="projects">
             <div class="section-header">
                 <div class="section-tag"><i class="fa-solid fa-folder-open"></i> Portfolio</div>
@@ -1278,8 +1337,7 @@
                 <!-- Project 1 -->
                 <div class="project-card card" data-category="mobility">
                     <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80"
-                            alt="Stair-Lifting Assistive Mechanism">
+                        <img src="assets/images/project1.jpg" alt="Stair-lifting wheelchair CAD design" loading="lazy">
                     </div>
                     <div class="project-content">
                         <div class="project-tags">
@@ -1299,8 +1357,7 @@
                 <!-- Project 2 -->
                 <div class="project-card card" data-category="thermal">
                     <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=600&q=80"
-                            alt="Sand Battery Thermal Vessel">
+                        <img src="assets/images/project2.jpg" alt="Sand battery thermal storage CAD" loading="lazy">
                     </div>
                     <div class="project-content">
                         <div class="project-tags">
@@ -1320,8 +1377,7 @@
                 <!-- Project 3 -->
                 <div class="project-card card" data-category="gears">
                     <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=600&q=80"
-                            alt="Involute Inspection Arbor">
+                        <img src="assets/images/project3.jpg" alt="Involute gear hobbing arbor CAD" loading="lazy">
                     </div>
                     <div class="project-content">
                         <div class="project-tags">
@@ -1339,14 +1395,13 @@
                 </div>
             </div>
 
-            <!-- MANUFACTURING DRAWINGS GALLERY -->
+            <!-- Manufacturing Drawings Gallery -->
             <div style="margin-top: 4rem;">
                 <h3 style="font-size: 1.5rem; font-weight: 800; color: var(--secondary); margin-bottom: 1rem;">2D GD&T
                     Drawings & Renders Gallery</h3>
                 <div class="drawings-grid">
                     <div class="drawing-item">
-                        <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=500&q=80"
-                            alt="2D GD&T Technical Drawing Sheet">
+                        <img src="assets/images/drawing1.jpg" alt="GD&T technical drawing sheet" loading="lazy">
                         <div class="drawing-overlay">
                             <i class="fa-solid fa-magnifying-glass-plus"
                                 style="font-size: 1.5rem; margin-bottom: 8px;"></i>
@@ -1356,8 +1411,7 @@
                     </div>
 
                     <div class="drawing-item">
-                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=500&q=80"
-                            alt="Photorealistic 3D Model Render">
+                        <img src="assets/images/drawing2.jpg" alt="Photorealistic 3D model render" loading="lazy">
                         <div class="drawing-overlay">
                             <i class="fa-solid fa-magnifying-glass-plus"
                                 style="font-size: 1.5rem; margin-bottom: 8px;"></i>
@@ -1367,8 +1421,7 @@
                     </div>
 
                     <div class="drawing-item">
-                        <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=500&q=80"
-                            alt="Gear Profile Geometry Drawing">
+                        <img src="assets/images/drawing3.jpg" alt="Involute gear profile geometry" loading="lazy">
                         <div class="drawing-overlay">
                             <i class="fa-solid fa-magnifying-glass-plus"
                                 style="font-size: 1.5rem; margin-bottom: 8px;"></i>
@@ -1380,7 +1433,7 @@
             </div>
         </section>
 
-        <!-- CLIENT & PROFESSOR TESTIMONIALS -->
+        <!-- ===== TESTIMONIALS ===== -->
         <section id="testimonials">
             <div class="section-header">
                 <div class="section-tag"><i class="fa-solid fa-comment-dots"></i> Endorsements</div>
@@ -1417,7 +1470,7 @@
             </div>
         </section>
 
-        <!-- CONTACT SECTION -->
+        <!-- ===== CONTACT ===== -->
         <section id="contact">
             <div class="section-header">
                 <div class="section-tag"><i class="fa-solid fa-paper-plane"></i> Get In Touch</div>
@@ -1453,7 +1506,23 @@
                             <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
                             <div>
                                 <small style="color:var(--text-muted)">Email Address</small>
-                                <div style="font-weight: 700; color: var(--secondary);">rafay.yousuf.mech@gmail.com
+                                <div style="font-weight:700;color:var(--secondary);">
+                                    <a href="mailto:designa3d.eng@gmail.com"
+                                        style="color:inherit;text-decoration:none;">
+                                        designa3d.eng@gmail.com
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div>
+                                <small style="color:var(--text-muted)">Phone / WhatsApp</small>
+                                <div style="font-weight:700;color:var(--secondary);">
+                                    <a href="tel:+923708516762" style="color:inherit;text-decoration:none;">
+                                        +92-3708516762
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -1484,9 +1553,10 @@
                 </form>
             </div>
         </section>
+
     </main>
 
-    <!-- LIGHTBOX SPEC MODAL -->
+    <!-- ===== SPEC MODAL ===== -->
     <div class="modal" id="specModal">
         <div class="modal-container card">
             <span class="close-modal" onclick="closeSpecModal()">&times;</span>
@@ -1513,17 +1583,25 @@
         </div>
     </div>
 
-    <!-- FOOTER -->
+    <!-- ===== FLOATING WHATSAPP BUTTON ===== -->
+    <a href="https://api.whatsapp.com/send/?phone=%2B923708516762&text&type=phone_number&app_absent=0"
+        target="_blank"
+        class="whatsapp-btn"
+        aria-label="Contact on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- ===== FOOTER ===== -->
     <footer>
         <div>&copy; 2026 Abdur Rafay Yousuf • 3D Mech Design. All rights reserved.</div>
         <div class="social-links">
             <a href="https://github.com" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
             <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="mailto:rafay.yousuf.mech@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+            <a href="mailto:designa3d.eng@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
         </div>
     </footer>
 
-    <!-- INTERACTIVE JAVASCRIPT -->
+    <!-- ===== JAVASCRIPT ===== -->
     <script>
         // Mobile Drawer Navigation
         const mobileMenu = document.getElementById('mobile-menu');
@@ -1537,7 +1615,7 @@
             link.addEventListener('click', () => navLinks.classList.remove('active'));
         });
 
-        // Project Category Filtering System
+        // Project Category Filtering
         const filterBtns = document.querySelectorAll('.filter-btn');
         const projectCards = document.querySelectorAll('.project-card');
 
@@ -1558,7 +1636,7 @@
             });
         });
 
-        // Technical Spec Modal Handler
+        // Spec Modal
         const specModal = document.getElementById('specModal');
 
         function openSpecModal(title, mat, analysis, stack, tol) {
@@ -1578,6 +1656,7 @@
             if (e.key === 'Escape') closeSpecModal();
         });
     </script>
+
 </body>
 
 </html>
