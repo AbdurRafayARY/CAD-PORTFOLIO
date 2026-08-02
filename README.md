@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mechanical Design & CAD Engineering Portfolio</title>
+  <title>Mechanical & CAD Design Engineer Portfolio</title>
   
-  <!-- Font Awesome 6 & Google Fonts -->
+  <!-- Font Awesome Icons & Google Fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,18 +13,17 @@
 
   <style>
     /* ==========================================================================
-       1. CORE DESIGN SYSTEM & DARK BLUEPRINT THEME
+       1. CORE DESIGN VARIABLES & RESET
        ========================================================================== */
     :root {
-      --bg-dark: #070a10;
-      --bg-card: rgba(13, 20, 34, 0.8);
-      --bg-card-hover: rgba(20, 32, 54, 0.9);
-      --border-color: rgba(0, 229, 255, 0.18);
-      --border-focus: rgba(0, 229, 255, 0.6);
+      --bg-dark: #080b11;
+      --bg-card: rgba(15, 23, 38, 0.75);
+      --bg-card-hover: rgba(22, 34, 56, 0.85);
+      --border-color: rgba(0, 229, 255, 0.15);
+      --border-focus: rgba(0, 229, 255, 0.5);
       --primary: #00e5ff;
-      --primary-glow: rgba(0, 229, 255, 0.35);
-      --secondary: #3b82f6;
-      --accent-green: #10b981;
+      --primary-glow: rgba(0, 229, 255, 0.3);
+      --accent-blue: #3b82f6;
       --text-main: #f1f5f9;
       --text-muted: #94a3b8;
       --grid-line: rgba(0, 229, 255, 0.04);
@@ -52,7 +51,7 @@
       overflow-x: hidden;
     }
 
-    /* Technical CAD Grid Background Pattern */
+    /* Technical Blueprint Grid Background */
     body::before {
       content: "";
       position: fixed;
@@ -63,14 +62,15 @@
       background-image: 
         linear-gradient(var(--grid-line) 1px, transparent 1px),
         linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-      background-size: 36px 36px;
+      background-size: 32px 32px;
       z-index: -1;
       pointer-events: none;
     }
 
+    /* Container Utilities */
     section {
       padding: 100px 8%;
-      max-width: 1360px;
+      max-width: 1320px;
       margin: 0 auto;
     }
 
@@ -93,9 +93,10 @@
       color: var(--text-muted);
       margin-bottom: 3.5rem;
       font-size: 1rem;
-      max-width: 650px;
+      max-width: 620px;
     }
 
+    /* Glassmorphism Cards */
     .glass-card {
       background: var(--bg-card);
       backdrop-filter: blur(16px);
@@ -123,7 +124,6 @@
       cursor: pointer;
       transition: var(--transition);
       border: 1px solid transparent;
-      font-family: var(--font-main);
     }
 
     .btn-primary {
@@ -152,7 +152,7 @@
     }
 
     /* ==========================================================================
-       2. HEADER & NAVIGATION
+       2. HEADER & NAVBAR
        ========================================================================== */
     header {
       position: fixed;
@@ -164,8 +164,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(7, 10, 16, 0.88);
-      backdrop-filter: blur(16px);
+      background: rgba(8, 11, 17, 0.85);
+      backdrop-filter: blur(15px);
       z-index: 1000;
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
@@ -204,27 +204,6 @@
       color: var(--primary);
     }
 
-    .status-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      padding: 4px 12px;
-      border-radius: 20px;
-      background: rgba(16, 185, 129, 0.1);
-      border: 1px solid rgba(16, 185, 129, 0.3);
-      color: var(--accent-green);
-    }
-
-    .status-dot {
-      width: 6px;
-      height: 6px;
-      background: var(--accent-green);
-      border-radius: 50%;
-      box-shadow: 0 0 8px var(--accent-green);
-    }
-
     .menu-toggle {
       display: none;
       font-size: 1.5rem;
@@ -233,11 +212,11 @@
     }
 
     /* ==========================================================================
-       3. HERO SECTION & INTERACTIVE 3D CAD VIEWPORT
+       3. HERO SECTION WITH 3D CAD VIEWPORT
        ========================================================================== */
     #hero {
       min-height: 100vh;
-      padding-top: 130px;
+      padding-top: 140px;
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
       gap: 3.5rem;
@@ -269,7 +248,7 @@
     }
 
     .hero-subtitle {
-      font-size: 1.25rem;
+      font-size: 1.35rem;
       color: var(--primary);
       margin-bottom: 1rem;
       font-weight: 600;
@@ -278,7 +257,7 @@
     .hero-bio {
       color: var(--text-muted);
       margin-bottom: 2rem;
-      font-size: 1.025rem;
+      font-size: 1.05rem;
       max-width: 560px;
     }
 
@@ -289,10 +268,11 @@
       flex-wrap: wrap;
     }
 
-    /* 3D CAD Stage Card */
+    /* CSS 3D Viewport Simulation Widget */
     .cad-viewport-card {
       position: relative;
       padding: 1.5rem;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       gap: 1rem;
@@ -309,111 +289,63 @@
       padding-bottom: 0.75rem;
     }
 
+    .viewport-status {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #10b981;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background: #10b981;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #10b981;
+    }
+
     .cad-stage {
       width: 100%;
-      height: 290px;
-      background: rgba(4, 8, 15, 0.95);
+      height: 280px;
+      background: rgba(4, 8, 15, 0.9);
       border-radius: 8px;
       border: 1px dashed rgba(0, 229, 255, 0.25);
       display: flex;
       align-items: center;
       justify-content: center;
-      perspective: 900px;
+      perspective: 800px;
       position: relative;
-      cursor: grab;
-      user-select: none;
     }
 
-    .cad-stage:active {
-      cursor: grabbing;
-    }
-
-    /* 3D Cube Visualizer */
+    /* Interactive 3D Wireframe Cube */
     .wireframe-cube {
-      width: 110px;
-      height: 110px;
+      width: 100px;
+      height: 100px;
       position: relative;
       transform-style: preserve-3d;
-      transition: transform 0.1s ease-out;
-    }
-
-    .wireframe-cube.animating {
-      animation: spinCube 14s infinite linear;
+      animation: spinCube 12s infinite linear;
     }
 
     @keyframes spinCube {
-      0% { transform: rotateX(20deg) rotateY(0deg); }
-      100% { transform: rotateX(20deg) rotateY(360deg); }
+      0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+      100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
     }
 
     .cube-face {
       position: absolute;
-      width: 110px;
-      height: 110px;
+      width: 100px;
+      height: 100px;
       border: 1.5px solid var(--primary);
       background: rgba(0, 229, 255, 0.04);
-      box-shadow: inset 0 0 15px rgba(0, 229, 255, 0.12);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-mono);
-      font-size: 0.65rem;
-      color: var(--primary);
-      transition: var(--transition);
+      box-shadow: inset 0 0 12px rgba(0, 229, 255, 0.15);
     }
 
-    .front  { transform: translateZ(55px); }
-    .back   { transform: rotateY(180deg) translateZ(55px); }
-    .right  { transform: rotateY(90deg) translateZ(55px); }
-    .left   { transform: rotateY(-90deg) translateZ(55px); }
-    .top    { transform: rotateX(90deg) translateZ(55px); }
-    .bottom { transform: rotateX(-90deg) translateZ(55px); }
-
-    /* CAD View Modes */
-    .mode-solid .cube-face {
-      background: rgba(0, 229, 255, 0.25);
-      border-color: #fff;
-    }
-    .mode-xray .cube-face {
-      background: rgba(59, 130, 246, 0.15);
-      border-style: dashed;
-    }
-
-    .viewport-controls {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(0, 0, 0, 0.4);
-      padding: 0.6rem 0.8rem;
-      border-radius: 6px;
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .mode-btn-group {
-      display: flex;
-      gap: 4px;
-    }
-
-    .view-btn {
-      background: rgba(0, 229, 255, 0.1);
-      border: 1px solid var(--border-color);
-      color: var(--text-main);
-      padding: 4px 10px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 0.7rem;
-      font-family: var(--font-mono);
-      transition: var(--transition);
-    }
-
-    .view-btn.active, .view-btn:hover {
-      background: var(--primary);
-      color: #000;
-      font-weight: 700;
-    }
+    .front  { transform: translateZ(50px); }
+    .back   { transform: rotateY(180deg) translateZ(50px); }
+    .right  { transform: rotateY(90deg) translateZ(50px); }
+    .left   { transform: rotateY(-90deg) translateZ(50px); }
+    .top    { transform: rotateX(90deg) translateZ(50px); }
+    .bottom { transform: rotateX(-90deg) translateZ(50px); }
 
     .viewport-telemetry {
       display: grid;
@@ -439,139 +371,49 @@
     }
 
     /* ==========================================================================
-       4. NEW FEATURE: INTERACTIVE GEAR CALCULATOR WIDGET
+       4. ABOUT & STATS SECTION
        ========================================================================== */
-    #calculator {
-      padding-top: 40px;
-      padding-bottom: 60px;
-    }
-
-    .calc-card {
-      padding: 2rem;
+    .about-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 2.5rem;
+      gap: 3.5rem;
       align-items: center;
     }
 
-    .calc-inputs {
-      display: flex;
-      flex-direction: column;
+    .about-text p {
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+      font-size: 1.05rem;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
       gap: 1.25rem;
     }
 
-    .input-row {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
+    .stat-card {
+      padding: 1.75rem;
+      text-align: center;
     }
 
-    .input-row label {
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--primary);
       font-family: var(--font-mono);
-      font-size: 0.85rem;
+    }
+
+    .stat-label {
       color: var(--text-muted);
-    }
-
-    .input-row input {
-      padding: 0.75rem 1rem;
-      background: rgba(0, 0, 0, 0.4);
-      border: 1px solid var(--border-color);
-      border-radius: 6px;
-      color: var(--primary);
-      font-family: var(--font-mono);
-      font-size: 1rem;
-    }
-
-    .calc-results {
-      background: rgba(0, 0, 0, 0.5);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .result-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-bottom: 0.75rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-      font-family: var(--font-mono);
-    }
-
-    .result-item:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-
-    .result-value {
-      color: var(--primary);
-      font-weight: 700;
-      font-size: 1.1rem;
+      font-size: 0.85rem;
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     /* ==========================================================================
-       5. ENGINEERING TIMELINE SECTION
-       ========================================================================== */
-    .timeline {
-      position: relative;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .timeline::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 18px;
-      height: 100%;
-      width: 2px;
-      background: var(--border-color);
-    }
-
-    .timeline-item {
-      position: relative;
-      padding-left: 50px;
-      margin-bottom: 2.5rem;
-    }
-
-    .timeline-icon {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      background: var(--bg-dark);
-      border: 2px solid var(--primary);
-      color: var(--primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.9rem;
-    }
-
-    .timeline-content {
-      padding: 1.5rem;
-    }
-
-    .timeline-date {
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      color: var(--primary);
-      margin-bottom: 0.35rem;
-    }
-
-    .timeline-title {
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-
-    /* ==========================================================================
-       6. CORE COMPETENCIES & SKILLS
+       5. SKILLS & COMPETENCIES SECTION
        ========================================================================== */
     .skills-grid {
       display: grid;
@@ -617,12 +459,12 @@
 
     .progress-fill {
       height: 100%;
-      background: linear-gradient(90deg, var(--secondary), var(--primary));
+      background: linear-gradient(90deg, var(--accent-blue), var(--primary));
       border-radius: 4px;
     }
 
     /* ==========================================================================
-       7. FEATURED PROJECTS GRID & FILTERS
+       6. FEATURED PROJECTS SECTION
        ========================================================================== */
     .filter-menu {
       display: flex;
@@ -724,14 +566,11 @@
       align-items: center;
       gap: 8px;
       font-size: 0.9rem;
-      cursor: pointer;
-      background: none;
-      border: none;
-      font-family: inherit;
+      text-decoration: none;
     }
 
     /* ==========================================================================
-       8. GALLERY & LIGHTBOX MODAL
+       7. CAD RENDERS & DRAWINGS GALLERY
        ========================================================================== */
     .gallery-grid {
       display: grid;
@@ -760,7 +599,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(7, 10, 16, 0.88);
+      background: rgba(8, 11, 17, 0.85);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -779,62 +618,19 @@
       transform: scale(1.08);
     }
 
-    /* Lightbox Spec Modal */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.92);
-      z-index: 2000;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
+    .gallery-overlay h4 {
+      font-size: 1.1rem;
+      margin-bottom: 4px;
     }
 
-    .modal-container {
-      max-width: 800px;
-      width: 100%;
-      padding: 2rem;
-      position: relative;
-    }
-
-    .modal-title {
-      font-size: 1.5rem;
+    .gallery-overlay p {
       color: var(--primary);
-      margin-bottom: 1rem;
-    }
-
-    .spec-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1.25rem 0;
+      font-size: 0.825rem;
       font-family: var(--font-mono);
-      font-size: 0.85rem;
-    }
-
-    .spec-table td {
-      padding: 0.6rem 1rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .spec-table td:first-child {
-      color: var(--text-muted);
-    }
-
-    .close-modal {
-      position: absolute;
-      top: 20px;
-      right: 25px;
-      color: #fff;
-      font-size: 2rem;
-      cursor: pointer;
     }
 
     /* ==========================================================================
-       9. CONTACT SECTION & FOOTER
+       8. CONTACT SECTION
        ========================================================================== */
     .contact-container {
       display: grid;
@@ -906,6 +702,39 @@
       box-shadow: 0 0 12px var(--primary-glow);
     }
 
+    /* Lightbox Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.92);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .modal-content {
+      max-width: 90%;
+      max-height: 85vh;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 0 40px rgba(0, 229, 255, 0.2);
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 25px;
+      right: 35px;
+      color: #fff;
+      font-size: 2.2rem;
+      cursor: pointer;
+    }
+
+    /* Footer */
     footer {
       padding: 40px 8%;
       border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -914,7 +743,7 @@
       align-items: center;
       color: var(--text-muted);
       font-size: 0.875rem;
-      max-width: 1360px;
+      max-width: 1320px;
       margin: 0 auto;
     }
 
@@ -933,8 +762,9 @@
       color: var(--primary);
     }
 
+    /* Responsive Breakpoints */
     @media (max-width: 992px) {
-      #hero, .calc-card, .contact-container {
+      #hero, .about-container, .contact-container {
         grid-template-columns: 1fr;
       }
       .hero-title {
@@ -975,67 +805,55 @@
 </head>
 <body>
 
-  <!-- NAVBAR -->
+  <!-- NAVIGATION NAVBAR -->
   <header>
     <a href="#" class="logo">
-      <i class="fa-solid fa-cube"></i> 3D MECH<span>.DESIGN</span>
+      <i class="fa-solid fa-cube"></i> CAD<span>.DEVS</span>
     </a>
-    <div class="status-badge"><span class="status-dot"></span> OPEN FOR CAD CONSULTATION</div>
     <div class="menu-toggle" id="mobile-menu">
       <i class="fa-solid fa-bars"></i>
     </div>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
-      <li><a href="#calculator">Gear Tool</a></li>
-      <li><a href="#timeline">Milestones</a></li>
-      <li><a href="#skills">Competencies</a></li>
+      <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#gallery">Gallery</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </header>
 
   <main>
-    <!-- HERO SECTION WITH INTERACTIVE 3D CAD STAGE -->
+    <!-- HERO SECTION WITH INTERACTIVE CAD VIEWPORT -->
     <section id="hero">
       <div class="hero-left">
-        <div class="hero-tag"><i class="fa-solid fa-gear"></i> MECHANICAL DESIGN & CAD CONSULTANT</div>
-        <h1 class="hero-title">Precision Parametric.<br>Functional Design.</h1>
-        <h2 class="hero-subtitle">Specialized in mechanical assemblies, gear profiling, and thermal/fluid CFD analysis.</h2>
+        <div class="hero-tag"><i class="fa-solid fa-microchip"></i> MECHANICAL DESIGN & CAD ENGINEER</div>
+        <h1 class="hero-title">Precision Engineering.<br>Functional Design.</h1>
+        <h2 class="hero-subtitle">Transforming complex mechanical concepts into production-ready CAD models.</h2>
         <p class="hero-bio">
-          Combining mathematical gear calculations, CFD thermal simulations, and production-ready DFM drafting across SolidWorks, AutoCAD, and Fusion 360.
+          Specializing in 3D parametric modeling, mechanical assembly design, sheet metal enclosures, and photorealistic rendering using SolidWorks, Fusion 360, and AutoCAD.
         </p>
         <div class="hero-btns">
-          <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-layer-group"></i> Explore CAD Projects</a>
-          <a href="#calculator" class="btn btn-secondary"><i class="fa-solid fa-calculator"></i> Launch Gear Tool</a>
+          <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-layer-group"></i> View CAD Projects</a>
+          <a href="#" class="btn btn-secondary"><i class="fa-solid fa-file-arrow-down"></i> Download Resume</a>
         </div>
       </div>
 
-      <!-- 3D INTERACTIVE VIEWPORT CARD -->
+      <!-- 3D Interactive Bounding-Box Viewport Card -->
       <div class="cad-viewport-card glass-card">
         <div class="viewport-header">
-          <span><i class="fa-solid fa-compass-drafting"></i> VIEWPORT: INVOLUTE_HOBBING_ARBOR.SLDPRT</span>
-          <span style="color:var(--primary)">PITCH DIA: 120mm</span>
+          <span><i class="fa-solid fa-compass-drafting"></i> VIEWPORT: MODEL_INSPECTOR.SLDPRT</span>
+          <div class="viewport-status"><span class="status-dot"></span> LIVE CAD</div>
         </div>
 
-        <div class="cad-stage" id="cadStage">
-          <div class="wireframe-cube animating" id="wireframeCube">
-            <div class="cube-face front">FRONT</div>
-            <div class="cube-face back">BACK</div>
-            <div class="cube-face right">RIGHT</div>
-            <div class="cube-face left">LEFT</div>
-            <div class="cube-face top">TOP</div>
-            <div class="cube-face bottom">BOTTOM</div>
+        <div class="cad-stage">
+          <div class="wireframe-cube">
+            <div class="cube-face front"></div>
+            <div class="cube-face back"></div>
+            <div class="cube-face right"></div>
+            <div class="cube-face left"></div>
+            <div class="cube-face top"></div>
+            <div class="cube-face bottom"></div>
           </div>
-        </div>
-
-        <div class="viewport-controls">
-          <span>MODE:</span>
-          <div class="mode-btn-group">
-            <button class="view-btn active" id="btnWireframe">WIRE</button>
-            <button class="view-btn" id="btnSolid">SOLID</button>
-            <button class="view-btn" id="btnXray">X-RAY</button>
-          </div>
-          <button class="view-btn" id="toggleAnimBtn">PAUSE SPIN</button>
         </div>
 
         <div class="viewport-telemetry">
@@ -1045,7 +863,7 @@
           </div>
           <div class="telemetry-item">
             <label>TOLERANCE</label>
-            <val>±0.02 mm</val>
+            <val>±0.05 mm</val>
           </div>
           <div class="telemetry-item">
             <label>DFM STATUS</label>
@@ -1055,78 +873,36 @@
       </div>
     </section>
 
-    <!-- NEW FEATURE: INTERACTIVE GEAR CALCULATOR WIDGET -->
-    <section id="calculator">
-      <h2 class="section-title"><span>01.</span> Involute Gear Parameter Calculator</h2>
-      <p class="section-subtitle">Live interactive engineering utility for calculating pitch diameter and circular pitch based on module and tooth counts.</p>
-
-      <div class="calc-card glass-card">
-        <div class="calc-inputs">
-          <div class="input-row">
-            <label for="numTeeth">Number of Teeth ($N$)</label>
-            <input type="number" id="numTeeth" value="24" min="6" max="200">
-          </div>
-          <div class="input-row">
-            <label for="moduleVal">Gear Module ($m$ in mm)</label>
-            <input type="number" id="moduleVal" value="2.5" step="0.1" min="0.5" max="20">
-          </div>
-          <div class="input-row">
-            <label for="pressAngle">Pressure Angle ($\alpha$)</label>
-            <input type="number" id="pressAngle" value="20" disabled style="opacity: 0.6;">
-          </div>
+    <!-- ABOUT SECTION -->
+    <section id="about">
+      <h2 class="section-title"><span>01.</span> About Me</h2>
+      <p class="section-subtitle">Engineering background, prototyping approach, and design methodology.</p>
+      
+      <div class="about-container">
+        <div class="about-text">
+          <p>
+            I am a Mechanical Design Engineer passionate about product design, rapid prototyping, and manufacturing optimization. My design process balances structural integrity with sleek visual aesthetics.
+          </p>
+          <p>
+            Whether engineering internal gear trains, sheet metal chassis, or consumer product enclosures, I focus heavily on Design for Manufacturing (DFM) and Design for Assembly (DFA).
+          </p>
         </div>
-
-        <div class="calc-results">
-          <div class="result-item">
-            <span>Pitch Diameter ($D = N \times m$):</span>
-            <span class="result-value" id="resPitchDia">60.00 mm</span>
+        <div class="stats-grid">
+          <div class="stat-card glass-card">
+            <div class="stat-number">25+</div>
+            <div class="stat-label">CAD Models Built</div>
           </div>
-          <div class="result-item">
-            <span>Circular Pitch ($p = \pi \times m$):</span>
-            <span class="result-value" id="resCircPitch">7.85 mm</span>
+          <div class="stat-card glass-card">
+            <div class="stat-number">4+</div>
+            <div class="stat-label">CAD/FEA Suites</div>
           </div>
-          <div class="result-item">
-            <span>Addendum ($a = m$):</span>
-            <span class="result-value" id="resAddendum">2.50 mm</span>
+          <div class="stat-card glass-card">
+            <div class="stat-number">3+</div>
+            <div class="stat-label">Years Experience</div>
           </div>
-          <div class="result-item">
-            <span>Dedendum ($b = 1.25 \times m$):</span>
-            <span class="result-value" id="resDedendum">3.13 mm</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ENGINEERING TIMELINE -->
-    <section id="timeline">
-      <h2 class="section-title"><span>02.</span> Milestones & Engineering History</h2>
-      <p class="section-subtitle">Timeline of technical consulting projects and R&D milestones.</p>
-
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-icon"><i class="fa-solid fa-wheelchair"></i></div>
-          <div class="timeline-content glass-card">
-            <div class="timeline-date">PROJECT R&D</div>
-            <h3 class="timeline-title">Stair-Lifting Assistive Mobility Device</h3>
-            <p style="color:var(--text-muted)">Designed and prototyped a locally producible stair-ascending mobility mechanism with custom torque reduction gearboxes and dynamic load frame simulation.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-icon"><i class="fa-solid fa-fire-flame-curved"></i></div>
-          <div class="timeline-content glass-card">
-            <div class="timeline-date">THERMAL ANALYSIS</div>
-            <h3 class="timeline-title">Thermal Energy Storage Sand Battery Prototype</h3>
-            <p style="color:var(--text-muted)">Engineered an insulated thermal energy storage vessel using silica sand media. Conducted full CFD flow distribution and heat transfer modeling.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-icon"><i class="fa-solid fa-gear"></i></div>
-          <div class="timeline-content glass-card">
-            <div class="timeline-date">MACHINING & GEARING</div>
-            <h3 class="timeline-title">Custom Involute Hobbing & Inspection Arbors</h3>
-            <p style="color:var(--text-muted)">Formulated custom mathematical algorithms to calculate exact involute pitch profiles, designing specialized hobbing and inspection arbors.</p>
+          <div class="stat-card glass-card">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">DFM Compliant</div>
           </div>
         </div>
       </div>
@@ -1134,13 +910,13 @@
 
     <!-- SKILLS SECTION -->
     <section id="skills">
-      <h2 class="section-title"><span>03.</span> Core Competencies</h2>
-      <p class="section-subtitle">Core software suites and mechanical design capabilities.</p>
+      <h2 class="section-title"><span>02.</span> Software & Competencies</h2>
+      <p class="section-subtitle">Core software proficiencies and engineering tools.</p>
 
       <div class="skills-grid">
         <div class="skill-card glass-card">
           <div class="skill-header">
-            <span class="skill-title"><i class="fa-solid fa-cube"></i> SolidWorks (3D Parametric CAD)</span>
+            <span class="skill-title"><i class="fa-solid fa-gear"></i> SolidWorks</span>
             <span class="skill-percent">95%</span>
           </div>
           <div class="progress-bar">
@@ -1150,31 +926,31 @@
 
         <div class="skill-card glass-card">
           <div class="skill-header">
-            <span class="skill-title"><i class="fa-solid fa-wind"></i> Computational Fluid Dynamics (CFD)</span>
-            <span class="skill-percent">88%</span>
-          </div>
-          <div class="progress-bar">
-            <div class="progress-fill" style="width: 88%;"></div>
-          </div>
-        </div>
-
-        <div class="skill-card glass-card">
-          <div class="skill-header">
-            <span class="skill-title"><i class="fa-solid fa-gear"></i> Gear Engineering & Involute Profiles</span>
-            <span class="skill-percent">92%</span>
-          </div>
-          <div class="progress-bar">
-            <div class="progress-fill" style="width: 92%;"></div>
-          </div>
-        </div>
-
-        <div class="skill-card glass-card">
-          <div class="skill-header">
-            <span class="skill-title"><i class="fa-solid fa-compass-drafting"></i> AutoCAD & GD&T Technical Drafting</span>
+            <span class="skill-title"><i class="fa-solid fa-compass-drafting"></i> AutoCAD</span>
             <span class="skill-percent">90%</span>
           </div>
           <div class="progress-bar">
             <div class="progress-fill" style="width: 90%;"></div>
+          </div>
+        </div>
+
+        <div class="skill-card glass-card">
+          <div class="skill-header">
+            <span class="skill-title"><i class="fa-solid fa-cube"></i> Autodesk Fusion 360</span>
+            <span class="skill-percent">85%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 85%;"></div>
+          </div>
+        </div>
+
+        <div class="skill-card glass-card">
+          <div class="skill-header">
+            <span class="skill-title"><i class="fa-solid fa-chart-line"></i> ANSYS / FEA Simulation</span>
+            <span class="skill-percent">75%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 75%;"></div>
           </div>
         </div>
       </div>
@@ -1182,65 +958,103 @@
 
     <!-- PROJECTS SECTION -->
     <section id="projects">
-      <h2 class="section-title"><span>04.</span> Featured CAD Projects</h2>
-      <p class="section-subtitle">Filter through mechanical assemblies, thermal energy storage, and mobility prototypes.</p>
+      <h2 class="section-title"><span>03.</span> Featured Projects</h2>
+      <p class="section-subtitle">Filter through mechanical assemblies, product designs, and sheet metal parts.</p>
 
       <div class="filter-menu">
-        <button class="filter-btn active" data-filter="all">All Work</button>
-        <button class="filter-btn" data-filter="mobility">Mobility Systems</button>
-        <button class="filter-btn" data-filter="thermal">Thermal & Fluid</button>
-        <button class="filter-btn" data-filter="gears">Gear Engineering</button>
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="mechanical">Mechanical</button>
+        <button class="filter-btn" data-filter="product">Product Design</button>
+        <button class="filter-btn" data-filter="sheet-metal">Sheet Metal</button>
       </div>
 
       <div class="projects-grid">
         <!-- Project 1 -->
-        <div class="project-card glass-card" data-category="mobility">
+        <div class="project-card glass-card" data-category="mechanical">
           <div class="project-img">
-            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Stair Climbing Frame">
+            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Robotic Arm">
           </div>
           <div class="project-content">
             <div class="project-tags">
               <span class="tag">SolidWorks</span>
               <span class="tag">Kinematics</span>
-              <span class="tag">Mobility</span>
+              <span class="tag">FEA</span>
             </div>
-            <h3 class="project-title">Stair-Ascending Mobility Frame</h3>
-            <p class="project-desc">Locally producible stair-ascending mechanism optimized for load distribution and torque transmission.</p>
-            <button class="project-link" onclick="openSpecModal('Stair-Ascending Mobility Frame', 'AL 6061-T6 Chassis', '3.2 FEA Factor', 'SolidWorks / Kinematics', '±0.05 mm')">View Specifications <i class="fa-solid fa-arrow-right"></i></button>
+            <h3 class="project-title">6-Axis Robotic Arm Assembly</h3>
+            <p class="project-desc">Parametric assembly featuring integrated planetary gearboxes, cable routing channels, and static load stress analysis.</p>
+            <a href="#" class="project-link">View Details <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
 
         <!-- Project 2 -->
-        <div class="project-card glass-card" data-category="thermal">
+        <div class="project-card glass-card" data-category="product">
           <div class="project-img">
-            <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=600&q=80" alt="Sand Battery CFD">
+            <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80" alt="Ergonomic Mouse">
           </div>
           <div class="project-content">
             <div class="project-tags">
-              <span class="tag">CFD</span>
-              <span class="tag">Thermal Storage</span>
-              <span class="tag">Heat Transfer</span>
+              <span class="tag">Fusion 360</span>
+              <span class="tag">Surfacing</span>
             </div>
-            <h3 class="project-title">Sand Thermal Battery Vessel</h3>
-            <p class="project-desc">High-temperature silica sand thermal storage vessel with internal heat exchanger coil fluid analysis.</p>
-            <button class="project-link" onclick="openSpecModal('Sand Thermal Battery Vessel', 'Insulated Steel + Silica Sand', 'Velocity Flow Contours', 'CFD / ANSYS', 'High Temp Sealed')">View Specifications <i class="fa-solid fa-arrow-right"></i></button>
+            <h3 class="project-title">Ergonomic Wireless Mouse</h3>
+            <p class="project-desc">Class-A surface modeling focused on palm ergonomics, internal PCB mounting bosses, and injection molding draft angles.</p>
+            <a href="#" class="project-link">View Details <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
 
         <!-- Project 3 -->
-        <div class="project-card glass-card" data-category="gears">
+        <div class="project-card glass-card" data-category="sheet-metal">
           <div class="project-img">
-            <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=600&q=80" alt="Involute Hobbing Arbor">
+            <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=600&q=80" alt="Server Rack">
           </div>
           <div class="project-content">
             <div class="project-tags">
-              <span class="tag">Involute Gear</span>
-              <span class="tag">MATLAB</span>
-              <span class="tag">GD&T</span>
+              <span class="tag">SolidWorks</span>
+              <span class="tag">Sheet Metal</span>
             </div>
-            <h3 class="project-title">Involute Gear Inspection Arbor</h3>
-            <p class="project-desc">Custom gear arbor designed with exact pitch diameter formula scripts and tight tolerance GD&T callouts.</p>
-            <button class="project-link" onclick="openSpecModal('Involute Gear Inspection Arbor', 'Tool Steel (HRC 58-60)', 'Pitch Dia: 120.00mm', 'MATLAB / AutoCAD', '±0.01 mm')">View Specifications <i class="fa-solid fa-arrow-right"></i></button>
+            <h3 class="project-title">Rackmount Server Enclosure</h3>
+            <p class="project-desc">Sheet metal design featuring bend allowances, self-clinching PEM fasteners, ventilation louvers, and flat pattern DXF exports.</p>
+            <a href="#" class="project-link">View Details <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section id="gallery">
+      <h2 class="section-title"><span>04.</span> Renders & Drawings</h2>
+      <p class="section-subtitle">Click any item to inspect high-resolution CAD renders and technical blueprints.</p>
+
+      <div class="gallery-grid">
+        <div class="gallery-item glass-card" onclick="openModal(this)">
+          <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" alt="Gearbox">
+          <div class="gallery-overlay">
+            <h4>Planetary Gearbox</h4>
+            <p>KeyShot Photorealistic Render</p>
+          </div>
+        </div>
+
+        <div class="gallery-item glass-card" onclick="openModal(this)">
+          <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80" alt="Blueprint">
+          <div class="gallery-overlay">
+            <h4>GD&T Blueprint</h4>
+            <p>2D AutoCAD Production Drawing</p>
+          </div>
+        </div>
+
+        <div class="gallery-item glass-card" onclick="openModal(this)">
+          <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=800&q=80" alt="Quadcopter Frame">
+          <div class="gallery-overlay">
+            <h4>Quadcopter Carbon Frame</h4>
+            <p>Fusion 360 CAD Model</p>
+          </div>
+        </div>
+
+        <div class="gallery-item glass-card" onclick="openModal(this)">
+          <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80" alt="Turbine FEA">
+          <div class="gallery-overlay">
+            <h4>Turbine Stress FEA</h4>
+            <p>ANSYS Simulation Analysis</p>
           </div>
         </div>
       </div>
@@ -1249,18 +1063,18 @@
     <!-- CONTACT SECTION -->
     <section id="contact">
       <h2 class="section-title"><span>05.</span> Get In Touch</h2>
-      <p class="section-subtitle">Inquire about 3D CAD modeling, gear calculations, CFD thermal simulations, or mechanical consultations.</p>
+      <p class="section-subtitle">Open for freelance CAD consulting, mechanical design projects, and engineering roles.</p>
 
       <div class="contact-container">
         <div class="contact-info">
-          <p>Have a mechanical design requirement or need production-ready CAD drawings? Send your requirements below.</p>
+          <p>Need parametric 3D models, manufacturing drawings, or product engineering support? Let's connect.</p>
           
           <div class="info-list">
             <div class="info-item">
-              <div class="info-icon"><i class="fa-solid fa-briefcase"></i></div>
+              <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
               <div>
-                <small style="color:var(--text-muted)">Firm / Brand</small>
-                <div>3D Mech Design</div>
+                <small style="color:var(--text-muted)">Email</small>
+                <div>engineer@example.com</div>
               </div>
             </div>
 
@@ -1274,9 +1088,9 @@
           </div>
         </div>
 
-        <form class="contact-form glass-card" onsubmit="event.preventDefault(); alert('Message submitted successfully!');">
+        <form class="contact-form glass-card" onsubmit="event.preventDefault(); alert('Message sent!');">
           <div class="form-group">
-            <label for="name">Your Name / Organization</label>
+            <label for="name">Your Name</label>
             <input type="text" id="name" placeholder="John Doe" required>
           </div>
 
@@ -1286,34 +1100,25 @@
           </div>
 
           <div class="form-group">
-            <label for="message">Project Specifications</label>
-            <textarea id="message" rows="4" placeholder="Describe your CAD modeling, gear calculation, or CFD needs..." required></textarea>
+            <label for="message">Project Requirements</label>
+            <textarea id="message" rows="4" placeholder="Describe your CAD modeling needs..." required></textarea>
           </div>
 
-          <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Send Specs</button>
+          <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
         </form>
       </div>
     </section>
   </main>
 
-  <!-- LIGHTBOX SPEC MODAL -->
-  <div class="modal" id="specModal">
-    <div class="modal-container glass-card">
-      <span class="close-modal" onclick="closeSpecModal()">&times;</span>
-      <h3 class="modal-title" id="mTitle">Project Specifications</h3>
-      <table class="spec-table">
-        <tr><td>Material Spec:</td><td id="mMat">AL 6061-T6</td></tr>
-        <tr><td>Stress / Analysis:</td><td id="mAnalysis">Passed DFM Verification</td></tr>
-        <tr><td>Software Stack:</td><td id="mStack">SolidWorks / ANSYS</td></tr>
-        <tr><td>Machining Tolerance:</td><td id="mTol">±0.02 mm</td></tr>
-      </table>
-      <button class="btn btn-secondary" onclick="closeSpecModal()">Close Specification Sheet</button>
-    </div>
+  <!-- LIGHTBOX MODAL -->
+  <div class="modal" id="imageModal">
+    <span class="close-modal" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImg" alt="Expanded Image">
   </div>
 
   <!-- FOOTER -->
   <footer>
-    <div>&copy; 2026 3D Mech Design. All rights reserved.</div>
+    <div>&copy; 2026 CAD Portfolio. All rights reserved.</div>
     <div class="social-links">
       <a href="#"><i class="fa-brands fa-github"></i></a>
       <a href="#"><i class="fa-brands fa-linkedin"></i></a>
@@ -1335,87 +1140,7 @@
       link.addEventListener('click', () => navLinks.classList.remove('active'));
     });
 
-    // 3D Viewport Controls & Display Modes
-    const cadStage = document.getElementById('cadStage');
-    const wireframeCube = document.getElementById('wireframeCube');
-    const toggleAnimBtn = document.getElementById('toggleAnimBtn');
-    const btnWireframe = document.getElementById('btnWireframe');
-    const btnSolid = document.getElementById('btnSolid');
-    const btnXray = document.getElementById('btnXray');
-
-    let isDragging = false, previousMouseX = 0, previousMouseY = 0, rotX = 20, rotY = 0;
-
-    toggleAnimBtn.addEventListener('click', () => {
-      wireframeCube.classList.toggle('animating');
-      toggleAnimBtn.textContent = wireframeCube.classList.contains('animating') ? 'PAUSE SPIN' : 'RESUME SPIN';
-    });
-
-    // View Mode Toggles
-    btnWireframe.addEventListener('click', () => {
-      wireframeCube.className = 'wireframe-cube animating';
-      setActiveModeBtn(btnWireframe);
-    });
-
-    btnSolid.addEventListener('click', () => {
-      wireframeCube.className = 'wireframe-cube mode-solid animating';
-      setActiveModeBtn(btnSolid);
-    });
-
-    btnXray.addEventListener('click', () => {
-      wireframeCube.className = 'wireframe-cube mode-xray animating';
-      setActiveModeBtn(btnXray);
-    });
-
-    function setActiveModeBtn(activeBtn) {
-      [btnWireframe, btnSolid, btnXray].forEach(btn => btn.classList.remove('active'));
-      activeBtn.classList.add('active');
-    }
-
-    // Orbit Drag Controls
-    cadStage.addEventListener('mousedown', (e) => {
-      isDragging = true;
-      wireframeCube.classList.remove('animating');
-      toggleAnimBtn.textContent = 'RESUME SPIN';
-      previousMouseX = e.clientX;
-      previousMouseY = e.clientY;
-    });
-
-    window.addEventListener('mousemove', (e) => {
-      if (!isDragging) return;
-      const deltaX = e.clientX - previousMouseX;
-      const deltaY = e.clientY - previousMouseY;
-      rotY += deltaX * 0.8;
-      rotX -= deltaY * 0.8;
-      wireframeCube.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
-      previousMouseX = e.clientX;
-      previousMouseY = e.clientY;
-    });
-
-    window.addEventListener('mouseup', () => { isDragging = false; });
-
-    // Live Involute Gear Calculator JS
-    const numTeethInput = document.getElementById('numTeeth');
-    const moduleValInput = document.getElementById('moduleVal');
-
-    function calculateGear() {
-      const N = parseFloat(numTeethInput.value) || 0;
-      const m = parseFloat(moduleValInput.value) || 0;
-
-      const pitchDia = N * m;
-      const circPitch = Math.PI * m;
-      const addendum = m;
-      const dedendum = 1.25 * m;
-
-      document.getElementById('resPitchDia').textContent = pitchDia.toFixed(2) + ' mm';
-      document.getElementById('resCircPitch').textContent = circPitch.toFixed(2) + ' mm';
-      document.getElementById('resAddendum').textContent = addendum.toFixed(2) + ' mm';
-      document.getElementById('resDedendum').textContent = dedendum.toFixed(2) + ' mm';
-    }
-
-    numTeethInput.addEventListener('input', calculateGear);
-    moduleValInput.addEventListener('input', calculateGear);
-
-    // Filter System
+    // Interactive Category Filtering
     const filterBtns = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
 
@@ -1436,24 +1161,21 @@
       });
     });
 
-    // Technical Spec Modal
-    const specModal = document.getElementById('specModal');
+    // Lightbox Modal Functionality
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImg');
 
-    function openSpecModal(title, mat, analysis, stack, tol) {
-      document.getElementById('mTitle').textContent = title;
-      document.getElementById('mMat').textContent = mat;
-      document.getElementById('mAnalysis').textContent = analysis;
-      document.getElementById('mStack').textContent = stack;
-      document.getElementById('mTol').textContent = tol;
-      specModal.style.display = 'flex';
+    function openModal(element) {
+      modal.style.display = 'flex';
+      modalImg.src = element.querySelector('img').src;
     }
 
-    function closeSpecModal() {
-      specModal.style.display = 'none';
+    function closeModal() {
+      modal.style.display = 'none';
     }
 
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeSpecModal();
+      if (e.key === 'Escape') closeModal();
     });
   </script>
 </body>
