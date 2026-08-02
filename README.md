@@ -3,33 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mechanical & CAD Design Engineer Portfolio</title>
+  <title>Abdur Rafay Yousuf | Mechanical Design & CAD Engineer</title>
   
-  <!-- Font Awesome Icons & Google Fonts -->
+  <!-- Font Awesome 6 & Google Fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     /* ==========================================================================
-       1. CORE DESIGN VARIABLES & RESET
+       1. LIGHT BLUEPRINT DESIGN SYSTEM & DESIGN VARIABLES
        ========================================================================== */
     :root {
-      --bg-dark: #080b11;
-      --bg-card: rgba(15, 23, 38, 0.75);
-      --bg-card-hover: rgba(22, 34, 56, 0.85);
-      --border-color: rgba(0, 229, 255, 0.15);
-      --border-focus: rgba(0, 229, 255, 0.5);
-      --primary: #00e5ff;
-      --primary-glow: rgba(0, 229, 255, 0.3);
-      --accent-blue: #3b82f6;
-      --text-main: #f1f5f9;
-      --text-muted: #94a3b8;
-      --grid-line: rgba(0, 229, 255, 0.04);
+      --bg-main: #f8fafc;
+      --bg-card: #ffffff;
+      --bg-alt: #f1f5f9;
+      --border-color: #e2e8f0;
+      --border-accent: rgba(37, 99, 235, 0.3);
+      
+      --primary: #2563eb;         /* Engineering Royal Blue */
+      --primary-hover: #1d4ed8;
+      --primary-light: #eff6ff;
+      --secondary: #0f172a;       /* Deep Slate / Charcoal */
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --accent-green: #059669;
+      
+      --grid-line: rgba(37, 99, 235, 0.05);
       --font-main: 'Plus Jakarta Sans', sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
-      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 20px -2px rgba(15, 23, 42, 0.08);
+      --shadow-hover: 0 12px 30px -4px rgba(37, 99, 235, 0.15);
+      --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     * {
@@ -40,18 +48,17 @@
 
     html {
       scroll-behavior: smooth;
-      color-scheme: dark;
     }
 
     body {
-      background-color: var(--bg-dark);
+      background-color: var(--bg-main);
       color: var(--text-main);
       font-family: var(--font-main);
       line-height: 1.6;
       overflow-x: hidden;
     }
 
-    /* Technical Blueprint Grid Background */
+    /* Subtle Technical Blueprint Grid Background */
     body::before {
       content: "";
       position: fixed;
@@ -67,92 +74,107 @@
       pointer-events: none;
     }
 
-    /* Container Utilities */
     section {
-      padding: 100px 8%;
+      padding: 90px 8%;
       max-width: 1320px;
       margin: 0 auto;
+    }
+
+    /* Section Headings */
+    .section-header {
+      margin-bottom: 3.5rem;
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+      background: var(--primary-light);
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
+      border: 1px solid var(--border-accent);
     }
 
     .section-title {
       font-size: 2.25rem;
       font-weight: 800;
-      margin-bottom: 0.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .section-title span {
-      color: var(--primary);
-      font-family: var(--font-mono);
-      font-size: 1.1rem;
+      color: var(--secondary);
+      letter-spacing: -0.02em;
     }
 
     .section-subtitle {
       color: var(--text-muted);
-      margin-bottom: 3.5rem;
-      font-size: 1rem;
+      margin-top: 0.5rem;
+      font-size: 1.05rem;
       max-width: 620px;
     }
 
-    /* Glassmorphism Cards */
-    .glass-card {
+    /* UI Cards */
+    .card {
       background: var(--bg-card);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
       border: 1px solid var(--border-color);
-      border-radius: 12px;
+      border-radius: 16px;
+      box-shadow: var(--shadow-md);
       transition: var(--transition);
     }
 
-    .glass-card:hover {
-      border-color: var(--border-focus);
-      box-shadow: 0 12px 30px -10px var(--primary-glow);
+    .card:hover {
+      border-color: var(--border-accent);
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-3px);
     }
 
     /* Buttons */
     .btn {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 0.6rem;
-      padding: 0.85rem 1.75rem;
-      border-radius: 6px;
+      padding: 0.85rem 1.6rem;
+      border-radius: 8px;
       font-weight: 600;
       font-size: 0.95rem;
       text-decoration: none;
       cursor: pointer;
       transition: var(--transition);
       border: 1px solid transparent;
+      font-family: var(--font-main);
     }
 
     .btn-primary {
       background: var(--primary);
-      color: #040914;
-      box-shadow: 0 0 20px var(--primary-glow);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
     }
 
     .btn-primary:hover {
-      background: #33ecff;
+      background: var(--primary-hover);
       transform: translateY(-2px);
-      box-shadow: 0 0 30px var(--primary-glow);
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
     }
 
     .btn-secondary {
-      background: transparent;
-      color: var(--text-main);
+      background: #ffffff;
+      color: var(--secondary);
       border-color: var(--border-color);
     }
 
     .btn-secondary:hover {
       border-color: var(--primary);
       color: var(--primary);
-      background: rgba(0, 229, 255, 0.05);
+      background: var(--primary-light);
       transform: translateY(-2px);
     }
 
     /* ==========================================================================
-       2. HEADER & NAVBAR
+       2. HEADER & NAVIGATION
        ========================================================================== */
     header {
       position: fixed;
@@ -164,17 +186,17 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(8, 11, 17, 0.85);
-      backdrop-filter: blur(15px);
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(12px);
       z-index: 1000;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      border-bottom: 1px solid var(--border-color);
     }
 
     .logo {
       font-size: 1.25rem;
       font-weight: 800;
       font-family: var(--font-mono);
-      color: var(--text-main);
+      color: var(--secondary);
       text-decoration: none;
       display: flex;
       align-items: center;
@@ -187,14 +209,14 @@
 
     .nav-links {
       display: flex;
-      gap: 2.2rem;
+      gap: 2rem;
       list-style: none;
       align-items: center;
     }
 
     .nav-links a {
-      font-size: 0.9rem;
-      font-weight: 500;
+      font-size: 0.925rem;
+      font-weight: 600;
       color: var(--text-muted);
       text-decoration: none;
       transition: var(--transition);
@@ -204,216 +226,176 @@
       color: var(--primary);
     }
 
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 20px;
+      background: rgba(5, 150, 105, 0.08);
+      border: 1px solid rgba(5, 150, 105, 0.25);
+      color: var(--accent-green);
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--accent-green);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--accent-green);
+    }
+
     .menu-toggle {
       display: none;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       cursor: pointer;
-      color: var(--text-main);
+      color: var(--secondary);
     }
 
     /* ==========================================================================
-       3. HERO SECTION WITH 3D CAD VIEWPORT
+       3. HERO SECTION (Who are you? What do you design? Why hire you?)
        ========================================================================== */
     #hero {
       min-height: 100vh;
       padding-top: 140px;
+      padding-bottom: 60px;
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 3.5rem;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 4rem;
       align-items: center;
     }
 
-    .hero-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
+    .hero-greeting {
       font-family: var(--font-mono);
       color: var(--primary);
-      font-size: 0.85rem;
-      margin-bottom: 1rem;
-      padding: 0.35rem 0.85rem;
-      background: rgba(0, 229, 255, 0.08);
-      border: 1px solid var(--primary-glow);
-      border-radius: 4px;
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
     }
 
     .hero-title {
       font-size: 3.25rem;
       font-weight: 800;
       line-height: 1.15;
+      color: var(--secondary);
       margin-bottom: 1.25rem;
-      background: linear-gradient(135deg, #ffffff 40%, #94a3b8 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.03em;
     }
 
     .hero-subtitle {
-      font-size: 1.35rem;
+      font-size: 1.2rem;
       color: var(--primary);
       margin-bottom: 1rem;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     .hero-bio {
       color: var(--text-muted);
-      margin-bottom: 2rem;
+      margin-bottom: 2.25rem;
       font-size: 1.05rem;
-      max-width: 560px;
+      max-width: 580px;
+    }
+
+    .hero-highlights {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px dashed var(--border-color);
+    }
+
+    .metric-item strong {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--secondary);
+      font-family: var(--font-mono);
+    }
+
+    .metric-item span {
+      font-size: 0.825rem;
+      color: var(--text-muted);
+      font-weight: 500;
     }
 
     .hero-btns {
       display: flex;
       gap: 1rem;
-      margin-bottom: 3rem;
       flex-wrap: wrap;
     }
 
-    /* CSS 3D Viewport Simulation Widget */
-    .cad-viewport-card {
+    /* Profile Photo Card */
+    .hero-image-wrapper {
       position: relative;
-      padding: 1.5rem;
-      overflow: hidden;
       display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .viewport-header {
-      display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 0.75rem;
     }
 
-    .viewport-status {
-      display: flex;
+    .profile-card {
+      position: relative;
+      padding: 1.25rem;
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      box-shadow: var(--shadow-hover);
+      text-align: center;
+      width: 100%;
+      max-width: 380px;
+    }
+
+    .profile-img-container {
+      width: 220px;
+      height: 220px;
+      margin: 0 auto 1.5rem auto;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid #ffffff;
+      box-shadow: 0 0 0 2px var(--primary);
+      background: #f1f5f9;
+      position: relative;
+    }
+
+    .profile-img-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .profile-info h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--secondary);
+    }
+
+    .profile-info p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      margin-top: 2px;
+    }
+
+    .blueprint-badge {
+      display: inline-flex;
       align-items: center;
       gap: 6px;
-      color: #10b981;
-    }
-
-    .status-dot {
-      width: 8px;
-      height: 8px;
-      background: #10b981;
-      border-radius: 50%;
-      box-shadow: 0 0 10px #10b981;
-    }
-
-    .cad-stage {
-      width: 100%;
-      height: 280px;
-      background: rgba(4, 8, 15, 0.9);
-      border-radius: 8px;
-      border: 1px dashed rgba(0, 229, 255, 0.25);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      perspective: 800px;
-      position: relative;
-    }
-
-    /* Interactive 3D Wireframe Cube */
-    .wireframe-cube {
-      width: 100px;
-      height: 100px;
-      position: relative;
-      transform-style: preserve-3d;
-      animation: spinCube 12s infinite linear;
-    }
-
-    @keyframes spinCube {
-      0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
-      100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
-    }
-
-    .cube-face {
-      position: absolute;
-      width: 100px;
-      height: 100px;
-      border: 1.5px solid var(--primary);
-      background: rgba(0, 229, 255, 0.04);
-      box-shadow: inset 0 0 12px rgba(0, 229, 255, 0.15);
-    }
-
-    .front  { transform: translateZ(50px); }
-    .back   { transform: rotateY(180deg) translateZ(50px); }
-    .right  { transform: rotateY(90deg) translateZ(50px); }
-    .left   { transform: rotateY(-90deg) translateZ(50px); }
-    .top    { transform: rotateX(90deg) translateZ(50px); }
-    .bottom { transform: rotateX(-90deg) translateZ(50px); }
-
-    .viewport-telemetry {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0.75rem;
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      text-align: center;
-      background: rgba(0, 0, 0, 0.3);
-      padding: 0.75rem;
+      margin-top: 1rem;
+      padding: 6px 12px;
+      background: var(--primary-light);
+      border: 1px solid var(--border-accent);
       border-radius: 6px;
-    }
-
-    .telemetry-item label {
-      display: block;
-      color: var(--text-muted);
-      font-size: 0.65rem;
-    }
-
-    .telemetry-item val {
-      color: var(--primary);
-      font-weight: 700;
-    }
-
-    /* ==========================================================================
-       4. ABOUT & STATS SECTION
-       ========================================================================== */
-    .about-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3.5rem;
-      align-items: center;
-    }
-
-    .about-text p {
-      color: var(--text-muted);
-      margin-bottom: 1.25rem;
-      font-size: 1.05rem;
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.25rem;
-    }
-
-    .stat-card {
-      padding: 1.75rem;
-      text-align: center;
-    }
-
-    .stat-number {
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: var(--primary);
+      font-size: 0.75rem;
       font-family: var(--font-mono);
-    }
-
-    .stat-label {
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      margin-top: 4px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+      color: var(--primary);
+      font-weight: 600;
     }
 
     /* ==========================================================================
-       5. SKILLS & COMPETENCIES SECTION
+       4. CORE COMPETENCIES & SKILLS (With Engineering Icons)
        ========================================================================== */
     .skills-grid {
       display: grid;
@@ -422,49 +404,164 @@
     }
 
     .skill-card {
-      padding: 1.5rem;
+      padding: 1.75rem;
     }
 
-    .skill-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 0.75rem;
-    }
-
-    .skill-title {
-      font-weight: 600;
+    .skill-icon-header {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 14px;
+      margin-bottom: 1rem;
     }
 
-    .skill-title i {
+    .skill-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--primary-light);
+      border: 1px solid var(--border-accent);
       color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
     }
 
-    .skill-percent {
+    .skill-title-group h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--secondary);
+    }
+
+    .skill-title-group span {
+      font-size: 0.75rem;
       font-family: var(--font-mono);
       color: var(--primary);
-      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .skill-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
     }
 
     .progress-bar {
       width: 100%;
-      height: 8px;
-      background: rgba(255, 255, 255, 0.06);
-      border-radius: 4px;
+      height: 7px;
+      background: #e2e8f0;
+      border-radius: 10px;
       overflow: hidden;
     }
 
     .progress-fill {
       height: 100%;
-      background: linear-gradient(90deg, var(--accent-blue), var(--primary));
-      border-radius: 4px;
+      background: var(--primary);
+      border-radius: 10px;
     }
 
     /* ==========================================================================
-       6. FEATURED PROJECTS SECTION
+       5. WORK EXPERIENCE & MILESTONES (TIMELINE)
+       ========================================================================== */
+    .timeline {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 20px;
+      height: 100%;
+      width: 2px;
+      background: var(--border-color);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 60px;
+      margin-bottom: 2.5rem;
+    }
+
+    .timeline-icon {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .timeline-content {
+      padding: 1.75rem;
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.5rem;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .timeline-role {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--secondary);
+    }
+
+    .timeline-company {
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .timeline-date {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      padding: 3px 10px;
+      background: var(--primary-light);
+      color: var(--primary);
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .timeline-body p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-top: 0.75rem;
+    }
+
+    .timeline-tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .tag-sm {
+      font-family: var(--font-mono);
+      font-size: 0.725rem;
+      padding: 2px 8px;
+      background: #f1f5f9;
+      color: var(--text-muted);
+      border-radius: 4px;
+      border: 1px solid var(--border-color);
+    }
+
+    /* ==========================================================================
+       6. FEATURED CAD PROJECTS & MANUFACTURING DRAWINGS
        ========================================================================== */
     .filter-menu {
       display: flex;
@@ -475,21 +572,22 @@
 
     .filter-btn {
       padding: 8px 18px;
-      background: transparent;
+      background: #ffffff;
       border: 1px solid var(--border-color);
       color: var(--text-muted);
-      border-radius: 20px;
+      border-radius: 30px;
       cursor: pointer;
-      font-size: 0.85rem;
+      font-size: 0.875rem;
+      font-weight: 600;
       font-family: var(--font-mono);
       transition: var(--transition);
     }
 
     .filter-btn.active, .filter-btn:hover {
       background: var(--primary);
-      color: #040914;
+      color: #ffffff;
       border-color: var(--primary);
-      font-weight: 700;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
     }
 
     .projects-grid {
@@ -507,9 +605,10 @@
     .project-img {
       width: 100%;
       height: 220px;
-      background-color: #111827;
+      background-color: #f1f5f9;
       overflow: hidden;
       position: relative;
+      border-bottom: 1px solid var(--border-color);
     }
 
     .project-img img {
@@ -541,14 +640,17 @@
       font-family: var(--font-mono);
       font-size: 0.7rem;
       padding: 3px 8px;
-      background: rgba(0, 229, 255, 0.1);
+      background: var(--primary-light);
       color: var(--primary);
       border-radius: 4px;
-      border: 1px solid rgba(0, 229, 255, 0.2);
+      border: 1px solid var(--border-accent);
+      font-weight: 600;
     }
 
     .project-title {
-      font-size: 1.25rem;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--secondary);
       margin-bottom: 0.5rem;
     }
 
@@ -561,106 +663,165 @@
 
     .project-link {
       color: var(--primary);
-      font-weight: 600;
+      font-weight: 700;
       display: inline-flex;
       align-items: center;
       gap: 8px;
       font-size: 0.9rem;
-      text-decoration: none;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: inherit;
     }
 
-    /* ==========================================================================
-       7. CAD RENDERS & DRAWINGS GALLERY
-       ========================================================================== */
-    .gallery-grid {
+    /* Drawings & Renders Showcase Grid */
+    .drawings-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 1.25rem;
+      margin-top: 2rem;
     }
 
-    .gallery-item {
+    .drawing-item {
       position: relative;
-      border-radius: 10px;
+      border-radius: 12px;
       overflow: hidden;
-      height: 220px;
+      height: 200px;
       cursor: pointer;
+      border: 1px solid var(--border-color);
+      background: #ffffff;
     }
 
-    .gallery-item img {
+    .drawing-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: var(--transition);
     }
 
-    .gallery-overlay {
+    .drawing-overlay {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(8, 11, 17, 0.85);
+      background: rgba(15, 23, 42, 0.85);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       opacity: 0;
       transition: var(--transition);
-      padding: 1.5rem;
+      padding: 1rem;
       text-align: center;
+      color: #ffffff;
     }
 
-    .gallery-item:hover .gallery-overlay {
+    .drawing-item:hover .drawing-overlay {
       opacity: 1;
     }
 
-    .gallery-item:hover img {
+    .drawing-item:hover img {
       transform: scale(1.08);
     }
 
-    .gallery-overlay h4 {
-      font-size: 1.1rem;
-      margin-bottom: 4px;
+    /* ==========================================================================
+       7. CLIENT & PROFESSOR TESTIMONIALS
+       ========================================================================== */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
     }
 
-    .gallery-overlay p {
+    .testimonial-card {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .quote-icon {
+      font-size: 1.75rem;
       color: var(--primary);
-      font-size: 0.825rem;
+      margin-bottom: 1rem;
+      opacity: 0.6;
+    }
+
+    .testimonial-text {
+      color: var(--text-muted);
+      font-size: 0.975rem;
+      font-style: italic;
+      margin-bottom: 1.5rem;
+    }
+
+    .author-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-top: 1px solid var(--border-color);
+      padding-top: 1rem;
+    }
+
+    .author-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
       font-family: var(--font-mono);
+      border: 1px solid var(--border-accent);
+    }
+
+    .author-details h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--secondary);
+    }
+
+    .author-details span {
+      font-size: 0.8rem;
+      color: var(--text-muted);
     }
 
     /* ==========================================================================
-       8. CONTACT SECTION
+       8. CONTACT SECTION & FOOTER
        ========================================================================== */
     .contact-container {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1.2fr;
       gap: 3.5rem;
     }
 
     .contact-info p {
       color: var(--text-muted);
       margin-bottom: 2rem;
+      font-size: 1.025rem;
     }
 
     .info-list {
       display: flex;
       flex-direction: column;
       gap: 1.25rem;
+      margin-bottom: 2rem;
     }
 
     .info-item {
       display: flex;
       align-items: center;
-      gap: 15px;
+      gap: 16px;
     }
 
     .info-icon {
-      width: 46px;
-      height: 46px;
-      border-radius: 8px;
-      background: rgba(0, 229, 255, 0.1);
-      border: 1px solid var(--primary-glow);
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      background: var(--primary-light);
+      border: 1px solid var(--border-accent);
       color: var(--primary);
       display: flex;
       align-items: center;
@@ -669,7 +830,7 @@
     }
 
     .contact-form {
-      padding: 2rem;
+      padding: 2.25rem;
       display: flex;
       flex-direction: column;
       gap: 1.25rem;
@@ -682,62 +843,32 @@
     }
 
     .form-group label {
-      font-size: 0.85rem;
-      color: var(--text-muted);
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--secondary);
     }
 
     .form-group input, .form-group textarea {
       padding: 0.85rem 1rem;
-      background: rgba(0, 0, 0, 0.3);
+      background: #f8fafc;
       border: 1px solid var(--border-color);
-      border-radius: 6px;
+      border-radius: 8px;
       color: var(--text-main);
       font-family: inherit;
       transition: var(--transition);
+      font-size: 0.95rem;
     }
 
     .form-group input:focus, .form-group textarea:focus {
       outline: none;
       border-color: var(--primary);
-      box-shadow: 0 0 12px var(--primary-glow);
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
     }
 
-    /* Lightbox Modal */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.92);
-      z-index: 2000;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
-
-    .modal-content {
-      max-width: 90%;
-      max-height: 85vh;
-      border-radius: 8px;
-      border: 1px solid var(--border-color);
-      box-shadow: 0 0 40px rgba(0, 229, 255, 0.2);
-    }
-
-    .close-modal {
-      position: absolute;
-      top: 25px;
-      right: 35px;
-      color: #fff;
-      font-size: 2.2rem;
-      cursor: pointer;
-    }
-
-    /* Footer */
     footer {
       padding: 40px 8%;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      border-top: 1px solid var(--border-color);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -753,22 +884,102 @@
     }
 
     .social-links a {
-      font-size: 1.2rem;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 1px solid var(--border-color);
       color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       transition: var(--transition);
+      text-decoration: none;
     }
 
     .social-links a:hover {
       color: var(--primary);
+      border-color: var(--primary);
+      background: var(--primary-light);
+      transform: translateY(-2px);
     }
 
-    /* Responsive Breakpoints */
+    /* Modal Component */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(4px);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .modal-container {
+      max-width: 700px;
+      width: 100%;
+      padding: 2.25rem;
+      position: relative;
+    }
+
+    .modal-title {
+      font-size: 1.5rem;
+      color: var(--secondary);
+      margin-bottom: 1rem;
+      font-weight: 800;
+    }
+
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.25rem 0;
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+    }
+
+    .spec-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .spec-table td:first-child {
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .spec-table td:last-child {
+      color: var(--secondary);
+      font-weight: 700;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      color: var(--text-muted);
+      font-size: 1.75rem;
+      cursor: pointer;
+    }
+
+    .close-modal:hover {
+      color: var(--secondary);
+    }
+
+    /* Responsive Queries */
     @media (max-width: 992px) {
-      #hero, .about-container, .contact-container {
+      #hero, .contact-container {
         grid-template-columns: 1fr;
       }
       .hero-title {
         font-size: 2.75rem;
+      }
+      .hero-image-wrapper {
+        order: -1;
       }
     }
 
@@ -779,10 +990,11 @@
         top: 80px;
         left: 0;
         width: 100%;
-        background: var(--bg-dark);
+        background: #ffffff;
         flex-direction: column;
         padding: 20px 8%;
         border-bottom: 1px solid var(--border-color);
+        box-shadow: var(--shadow-md);
       }
 
       .nav-links.active {
@@ -797,182 +1009,240 @@
         font-size: 2.2rem;
       }
 
+      .hero-highlights {
+        grid-template-columns: 1fr;
+      }
+
       section {
-        padding: 70px 6%;
+        padding: 60px 6%;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAVIGATION NAVBAR -->
+  <!-- NAVBAR -->
   <header>
     <a href="#" class="logo">
-      <i class="fa-solid fa-cube"></i> CAD<span>.DEVS</span>
+      <i class="fa-solid fa-drafting-compass"></i> ABDUR RAFAY<span>.DESIGNS</span>
     </a>
+    <div class="status-badge"><span class="status-dot"></span> OPEN FOR CAD CONSULTATION</div>
     <div class="menu-toggle" id="mobile-menu">
       <i class="fa-solid fa-bars"></i>
     </div>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#skills">Competencies</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">CAD Projects</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </header>
 
   <main>
-    <!-- HERO SECTION WITH INTERACTIVE CAD VIEWPORT -->
+    <!-- HERO SECTION -->
     <section id="hero">
       <div class="hero-left">
-        <div class="hero-tag"><i class="fa-solid fa-microchip"></i> MECHANICAL DESIGN & CAD ENGINEER</div>
-        <h1 class="hero-title">Precision Engineering.<br>Functional Design.</h1>
-        <h2 class="hero-subtitle">Transforming complex mechanical concepts into production-ready CAD models.</h2>
+        <div class="hero-greeting">Hi, I am Abdur Rafay Yousuf</div>
+        <h1 class="hero-title">Mechanical CAD Engineer & Product Designer</h1>
+        <h2 class="hero-subtitle">I transform complex engineering problems into production-ready 3D assemblies & DFM drawings.</h2>
         <p class="hero-bio">
-          Specializing in 3D parametric modeling, mechanical assembly design, sheet metal enclosures, and photorealistic rendering using SolidWorks, Fusion 360, and AutoCAD.
+          Founder of 3D Mech Design & Mechanical Engineering Specialist. I craft mathematically accurate involute gears, fluid/thermal CFD simulations, and lightweight structural assemblies optimized for modern manufacturing.
         </p>
+
+        <div class="hero-highlights">
+          <div class="metric-item">
+            <strong>3+ Years</strong>
+            <span>Parametric CAD Modeling</span>
+          </div>
+          <div class="metric-item">
+            <strong>±0.01 mm</strong>
+            <span>Precision Machining GD&T</span>
+          </div>
+          <div class="metric-item">
+            <strong>100% DFM</strong>
+            <span>Manufacturing Compliant</span>
+          </div>
+        </div>
+
         <div class="hero-btns">
-          <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-layer-group"></i> View CAD Projects</a>
-          <a href="#" class="btn btn-secondary"><i class="fa-solid fa-file-arrow-down"></i> Download Resume</a>
+          <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-layer-group"></i> Explore CAD Portfolio</a>
+          <a href="Abdur_Rafay_Resume.pdf" target="_blank" class="btn btn-secondary"><i class="fa-solid fa-file-pdf"></i> Download Resume</a>
         </div>
       </div>
 
-      <!-- 3D Interactive Bounding-Box Viewport Card -->
-      <div class="cad-viewport-card glass-card">
-        <div class="viewport-header">
-          <span><i class="fa-solid fa-compass-drafting"></i> VIEWPORT: MODEL_INSPECTOR.SLDPRT</span>
-          <div class="viewport-status"><span class="status-dot"></span> LIVE CAD</div>
-        </div>
-
-        <div class="cad-stage">
-          <div class="wireframe-cube">
-            <div class="cube-face front"></div>
-            <div class="cube-face back"></div>
-            <div class="cube-face right"></div>
-            <div class="cube-face left"></div>
-            <div class="cube-face top"></div>
-            <div class="cube-face bottom"></div>
+      <!-- PROFESSIONAL PROFILE PHOTO CARD -->
+      <div class="hero-image-wrapper">
+        <div class="profile-card">
+          <div class="profile-img-container">
+            <!-- Replace with your clean profile photo -->
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Abdur Rafay Yousuf - Mechanical Engineer">
           </div>
-        </div>
-
-        <div class="viewport-telemetry">
-          <div class="telemetry-item">
-            <label>MATERIAL</label>
-            <val>AL 6061-T6</val>
-          </div>
-          <div class="telemetry-item">
-            <label>TOLERANCE</label>
-            <val>±0.05 mm</val>
-          </div>
-          <div class="telemetry-item">
-            <label>DFM STATUS</label>
-            <val style="color:#10b981;">PASSED</val>
+          <div class="profile-info">
+            <h3>Abdur Rafay Yousuf</h3>
+            <p>Mechanical Design Consultant</p>
+            <div class="blueprint-badge">
+              <i class="fa-solid fa-certificate"></i> SolidWorks & CFD Certified
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ABOUT SECTION -->
-    <section id="about">
-      <h2 class="section-title"><span>01.</span> About Me</h2>
-      <p class="section-subtitle">Engineering background, prototyping approach, and design methodology.</p>
-      
-      <div class="about-container">
-        <div class="about-text">
-          <p>
-            I am a Mechanical Design Engineer passionate about product design, rapid prototyping, and manufacturing optimization. My design process balances structural integrity with sleek visual aesthetics.
-          </p>
-          <p>
-            Whether engineering internal gear trains, sheet metal chassis, or consumer product enclosures, I focus heavily on Design for Manufacturing (DFM) and Design for Assembly (DFA).
-          </p>
-        </div>
-        <div class="stats-grid">
-          <div class="stat-card glass-card">
-            <div class="stat-number">25+</div>
-            <div class="stat-label">CAD Models Built</div>
-          </div>
-          <div class="stat-card glass-card">
-            <div class="stat-number">4+</div>
-            <div class="stat-label">CAD/FEA Suites</div>
-          </div>
-          <div class="stat-card glass-card">
-            <div class="stat-number">3+</div>
-            <div class="stat-label">Years Experience</div>
-          </div>
-          <div class="stat-card glass-card">
-            <div class="stat-number">100%</div>
-            <div class="stat-label">DFM Compliant</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SKILLS SECTION -->
+    <!-- SKILLS SECTION WITH ICONS -->
     <section id="skills">
-      <h2 class="section-title"><span>02.</span> Software & Competencies</h2>
-      <p class="section-subtitle">Core software proficiencies and engineering tools.</p>
+      <div class="section-header">
+        <div class="section-tag"><i class="fa-solid fa-gears"></i> Technical Stack</div>
+        <h2 class="section-title">Core Engineering Competencies</h2>
+        <p class="section-subtitle">Specialized software suites and mechanical design principles applied across every project.</p>
+      </div>
 
       <div class="skills-grid">
-        <div class="skill-card glass-card">
-          <div class="skill-header">
-            <span class="skill-title"><i class="fa-solid fa-gear"></i> SolidWorks</span>
-            <span class="skill-percent">95%</span>
+        <div class="skill-card card">
+          <div class="skill-icon-header">
+            <div class="skill-icon"><i class="fa-solid fa-cube"></i></div>
+            <div class="skill-title-group">
+              <h3>SolidWorks & 3D CAD</h3>
+              <span>Parametric Modeling</span>
+            </div>
           </div>
-          <div class="progress-bar">
-            <div class="progress-fill" style="width: 95%;"></div>
+          <p class="skill-desc">Complex assembly design, motion simulation, parametric feature trees, and sheet metal design.</p>
+          <div class="progress-bar"><div class="progress-fill" style="width: 95%;"></div></div>
+        </div>
+
+        <div class="skill-card card">
+          <div class="skill-icon-header">
+            <div class="skill-icon"><i class="fa-solid fa-wind"></i></div>
+            <div class="skill-title-group">
+              <h3>CFD & Thermal Analysis</h3>
+              <span>ANSYS / Flow Simulation</span>
+            </div>
+          </div>
+          <p class="skill-desc">Internal flow distribution, thermal energy storage modeling, forced convection, and turbulence estimation.</p>
+          <div class="progress-bar"><div class="progress-fill" style="width: 88%;"></div></div>
+        </div>
+
+        <div class="skill-card card">
+          <div class="skill-icon-header">
+            <div class="skill-icon"><i class="fa-solid fa-gear"></i></div>
+            <div class="skill-title-group">
+              <h3>Involute Gear Engineering</h3>
+              <span>MATLAB & Custom Arbors</span>
+            </div>
+          </div>
+          <p class="skill-desc">Mathematical involute tooth profile calculations, diametral pitch analysis, hobbing & inspection arbors.</p>
+          <div class="progress-bar"><div class="progress-fill" style="width: 92%;"></div></div>
+        </div>
+
+        <div class="skill-card card">
+          <div class="skill-icon-header">
+            <div class="skill-icon"><i class="fa-solid fa-compass-drafting"></i></div>
+            <div class="skill-title-group">
+              <h3>AutoCAD & GD&T Drafting</h3>
+              <span>ASME Y14.5 Standards</span>
+            </div>
+          </div>
+          <p class="skill-desc">Production drawings with geometric dimensioning and tolerancing, datum reference frames, and BOMs.</p>
+          <div class="progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK EXPERIENCE TIMELINE -->
+    <section id="experience">
+      <div class="section-header">
+        <div class="section-tag"><i class="fa-solid fa-briefcase"></i> Track Record</div>
+        <h2 class="section-title">Work Experience & R&D Milestones</h2>
+        <p class="section-subtitle">Engineering roles, consulting projects, and industrial prototype developments.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-icon"><i class="fa-solid fa-building"></i></div>
+          <div class="timeline-content card">
+            <div class="timeline-header">
+              <div>
+                <div class="timeline-role">Founder & Principal Design Engineer</div>
+                <div class="timeline-company">3D Mech Design • Consultancy</div>
+              </div>
+              <span class="timeline-date">2025 - Present</span>
+            </div>
+            <div class="timeline-body">
+              <p>Leading mechanical engineering consultancy providing custom 3D CAD modeling, DFM drawing sheets, and FEA/CFD analysis for industrial clients.</p>
+              <div class="timeline-tags">
+                <span class="tag-sm">SolidWorks</span>
+                <span class="tag-sm">DFM/DFA</span>
+                <span class="tag-sm">Client Consulting</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="skill-card glass-card">
-          <div class="skill-header">
-            <span class="skill-title"><i class="fa-solid fa-compass-drafting"></i> AutoCAD</span>
-            <span class="skill-percent">90%</span>
-          </div>
-          <div class="progress-bar">
-            <div class="progress-fill" style="width: 90%;"></div>
+        <div class="timeline-item">
+          <div class="timeline-icon"><i class="fa-solid fa-wheelchair"></i></div>
+          <div class="timeline-content card">
+            <div class="timeline-header">
+              <div>
+                <div class="timeline-role">Lead Mechanical Engineer (FYDP)</div>
+                <div class="timeline-company">Mahfooz Stair-Lifting Mobility Project</div>
+              </div>
+              <span class="timeline-date">2025 - 2026</span>
+            </div>
+            <div class="timeline-body">
+              <p>Engineered a stair-ascending assistive mobility mechanism featuring custom torque reduction gearboxes, structural frame loading FEA, and local manufacturing integration.</p>
+              <div class="timeline-tags">
+                <span class="tag-sm">Kinematics</span>
+                <span class="tag-sm">Structural FEA</span>
+                <span class="tag-sm">Prototyping</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="skill-card glass-card">
-          <div class="skill-header">
-            <span class="skill-title"><i class="fa-solid fa-cube"></i> Autodesk Fusion 360</span>
-            <span class="skill-percent">85%</span>
-          </div>
-          <div class="progress-bar">
-            <div class="progress-fill" style="width: 85%;"></div>
-          </div>
-        </div>
-
-        <div class="skill-card glass-card">
-          <div class="skill-header">
-            <span class="skill-title"><i class="fa-solid fa-chart-line"></i> ANSYS / FEA Simulation</span>
-            <span class="skill-percent">75%</span>
-          </div>
-          <div class="progress-bar">
-            <div class="progress-fill" style="width: 75%;"></div>
+        <div class="timeline-item">
+          <div class="timeline-icon"><i class="fa-solid fa-fire-flame-curved"></i></div>
+          <div class="timeline-content card">
+            <div class="timeline-header">
+              <div>
+                <div class="timeline-role">Thermal Systems Research Engineer</div>
+                <div class="timeline-company">Thermal Energy Storage Sand Battery</div>
+              </div>
+              <span class="timeline-date">2025 - 2026</span>
+            </div>
+            <div class="timeline-body">
+              <p>Designed a high-temperature insulated silica sand thermal storage vessel. Simulated internal heat exchanger coil fluid dynamics and velocity contours.</p>
+              <div class="timeline-tags">
+                <span class="tag-sm">CFD Analysis</span>
+                <span class="tag-sm">Heat Transfer</span>
+                <span class="tag-sm">Thermal Storage</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS SECTION -->
+    <!-- FEATURED CAD PROJECTS -->
     <section id="projects">
-      <h2 class="section-title"><span>03.</span> Featured Projects</h2>
-      <p class="section-subtitle">Filter through mechanical assemblies, product designs, and sheet metal parts.</p>
+      <div class="section-header">
+        <div class="section-tag"><i class="fa-solid fa-folder-open"></i> Portfolio</div>
+        <h2 class="section-title">Featured CAD & Engineering Projects</h2>
+        <p class="section-subtitle">Explore selected mechanical assemblies, thermal CFD models, and manufacturing drawings.</p>
+      </div>
 
       <div class="filter-menu">
-        <button class="filter-btn active" data-filter="all">All Projects</button>
-        <button class="filter-btn" data-filter="mechanical">Mechanical</button>
-        <button class="filter-btn" data-filter="product">Product Design</button>
-        <button class="filter-btn" data-filter="sheet-metal">Sheet Metal</button>
+        <button class="filter-btn active" data-filter="all">All Work</button>
+        <button class="filter-btn" data-filter="mobility">Mobility Systems</button>
+        <button class="filter-btn" data-filter="thermal">Thermal & CFD</button>
+        <button class="filter-btn" data-filter="gears">Precision Gears</button>
       </div>
 
       <div class="projects-grid">
         <!-- Project 1 -->
-        <div class="project-card glass-card" data-category="mechanical">
+        <div class="project-card card" data-category="mobility">
           <div class="project-img">
-            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Robotic Arm">
+            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Stair-Lifting Assistive Mechanism">
           </div>
           <div class="project-content">
             <div class="project-tags">
@@ -980,81 +1250,111 @@
               <span class="tag">Kinematics</span>
               <span class="tag">FEA</span>
             </div>
-            <h3 class="project-title">6-Axis Robotic Arm Assembly</h3>
-            <p class="project-desc">Parametric assembly featuring integrated planetary gearboxes, cable routing channels, and static load stress analysis.</p>
-            <a href="#" class="project-link">View Details <i class="fa-solid fa-arrow-right"></i></a>
+            <h3 class="project-title">Stair-Ascending Mobility Chassis</h3>
+            <p class="project-desc">Locally manufacturable stair-lifting mechanism with custom high-torque gearing and FEA load factor validation.</p>
+            <button class="project-link" onclick="openSpecModal('Stair-Ascending Mobility Chassis', 'AL 6061-T6 Frame', '3.2 FEA Safety Factor', 'SolidWorks / Motion Study', '±0.05 mm')">View Engineering Specs <i class="fa-solid fa-arrow-right"></i></button>
           </div>
         </div>
 
         <!-- Project 2 -->
-        <div class="project-card glass-card" data-category="product">
+        <div class="project-card card" data-category="thermal">
           <div class="project-img">
-            <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80" alt="Ergonomic Mouse">
+            <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=600&q=80" alt="Sand Battery Thermal Vessel">
           </div>
           <div class="project-content">
             <div class="project-tags">
-              <span class="tag">Fusion 360</span>
-              <span class="tag">Surfacing</span>
+              <span class="tag">CFD</span>
+              <span class="tag">Heat Transfer</span>
+              <span class="tag">Thermal Storage</span>
             </div>
-            <h3 class="project-title">Ergonomic Wireless Mouse</h3>
-            <p class="project-desc">Class-A surface modeling focused on palm ergonomics, internal PCB mounting bosses, and injection molding draft angles.</p>
-            <a href="#" class="project-link">View Details <i class="fa-solid fa-arrow-right"></i></a>
+            <h3 class="project-title">Sand Thermal Energy Battery</h3>
+            <p class="project-desc">High-temperature silica sand energy storage unit equipped with internal heat exchanger coil flow contours.</p>
+            <button class="project-link" onclick="openSpecModal('Sand Thermal Energy Battery', 'Insulated Mild Steel + Silica Sand', 'Flow & Heat Transfer Simulation', 'CFD / ANSYS', 'Sealed Thermal Fit')">View Engineering Specs <i class="fa-solid fa-arrow-right"></i></button>
           </div>
         </div>
 
         <!-- Project 3 -->
-        <div class="project-card glass-card" data-category="sheet-metal">
+        <div class="project-card card" data-category="gears">
           <div class="project-img">
-            <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=600&q=80" alt="Server Rack">
+            <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=600&q=80" alt="Involute Inspection Arbor">
           </div>
           <div class="project-content">
             <div class="project-tags">
-              <span class="tag">SolidWorks</span>
-              <span class="tag">Sheet Metal</span>
+              <span class="tag">Involute Gear</span>
+              <span class="tag">MATLAB</span>
+              <span class="tag">GD&T</span>
             </div>
-            <h3 class="project-title">Rackmount Server Enclosure</h3>
-            <p class="project-desc">Sheet metal design featuring bend allowances, self-clinching PEM fasteners, ventilation louvers, and flat pattern DXF exports.</p>
-            <a href="#" class="project-link">View Details <i class="fa-solid fa-arrow-right"></i></a>
+            <h3 class="project-title">Involute Gear Hobbing Arbor</h3>
+            <p class="project-desc">Custom arbor engineered with exact mathematical pitch diameter scripts and tight tolerance GD&T callouts.</p>
+            <button class="project-link" onclick="openSpecModal('Involute Gear Hobbing Arbor', 'Tool Steel (HRC 58-60)', 'Pitch Dia Profile Scripts', 'MATLAB / AutoCAD', '±0.01 mm')">View Engineering Specs <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- MANUFACTURING DRAWINGS GALLERY -->
+      <div style="margin-top: 4rem;">
+        <h3 style="font-size: 1.5rem; font-weight: 800; color: var(--secondary); margin-bottom: 1rem;">2D GD&T Drawings & Renders Gallery</h3>
+        <div class="drawings-grid">
+          <div class="drawing-item">
+            <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=500&q=80" alt="2D GD&T Technical Drawing Sheet">
+            <div class="drawing-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus" style="font-size: 1.5rem; margin-bottom: 8px;"></i>
+              <strong>GD&T Assembly Drawing</strong>
+              <small style="font-size: 0.75rem;">ASME Y14.5 Compliant</small>
+            </div>
+          </div>
+
+          <div class="drawing-item">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=500&q=80" alt="Photorealistic 3D Model Render">
+            <div class="drawing-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus" style="font-size: 1.5rem; margin-bottom: 8px;"></i>
+              <strong>Photorealistic 3D Render</strong>
+              <small style="font-size: 0.75rem;">KeyShot / SolidWorks Visualize</small>
+            </div>
+          </div>
+
+          <div class="drawing-item">
+            <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=500&q=80" alt="Gear Profile Geometry Drawing">
+            <div class="drawing-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus" style="font-size: 1.5rem; margin-bottom: 8px;"></i>
+              <strong>Involute Profile Geometry</strong>
+              <small style="font-size: 0.75rem;">Pitch Diameter Blueprint</small>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- GALLERY SECTION -->
-    <section id="gallery">
-      <h2 class="section-title"><span>04.</span> Renders & Drawings</h2>
-      <p class="section-subtitle">Click any item to inspect high-resolution CAD renders and technical blueprints.</p>
+    <!-- CLIENT & PROFESSOR TESTIMONIALS -->
+    <section id="testimonials">
+      <div class="section-header">
+        <div class="section-tag"><i class="fa-solid fa-comment-dots"></i> Endorsements</div>
+        <h2 class="section-title">Client & Academic Feedback</h2>
+        <p class="section-subtitle">What faculty mentors and consulting clients say about my work quality.</p>
+      </div>
 
-      <div class="gallery-grid">
-        <div class="gallery-item glass-card" onclick="openModal(this)">
-          <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" alt="Gearbox">
-          <div class="gallery-overlay">
-            <h4>Planetary Gearbox</h4>
-            <p>KeyShot Photorealistic Render</p>
+      <div class="testimonials-grid">
+        <div class="testimonial-card card">
+          <i class="fa-solid fa-quote-left quote-icon"></i>
+          <p class="testimonial-text">"Rafay delivered flawless DFM-ready CAD drawings for our mechanical assembly. His attention to geometric tolerances saved us significant re-machining costs."</p>
+          <div class="author-group">
+            <div class="author-avatar">3D</div>
+            <div class="author-details">
+              <h4>Industrial Design Client</h4>
+              <span>3D Mech Design Client</span>
+            </div>
           </div>
         </div>
 
-        <div class="gallery-item glass-card" onclick="openModal(this)">
-          <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80" alt="Blueprint">
-          <div class="gallery-overlay">
-            <h4>GD&T Blueprint</h4>
-            <p>2D AutoCAD Production Drawing</p>
-          </div>
-        </div>
-
-        <div class="gallery-item glass-card" onclick="openModal(this)">
-          <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=800&q=80" alt="Quadcopter Frame">
-          <div class="gallery-overlay">
-            <h4>Quadcopter Carbon Frame</h4>
-            <p>Fusion 360 CAD Model</p>
-          </div>
-        </div>
-
-        <div class="gallery-item glass-card" onclick="openModal(this)">
-          <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80" alt="Turbine FEA">
-          <div class="gallery-overlay">
-            <h4>Turbine Stress FEA</h4>
-            <p>ANSYS Simulation Analysis</p>
+        <div class="testimonial-card card">
+          <i class="fa-solid fa-quote-left quote-icon"></i>
+          <p class="testimonial-text">"His work on the Thermal Energy Storage sand battery prototype showed deep understanding of both fluid flow CFD and solid modeling."</p>
+          <div class="author-group">
+            <div class="author-avatar">DU</div>
+            <div class="author-details">
+              <h4>Senior Faculty Advisor</h4>
+              <span>DHA Suffa University</span>
+            </div>
           </div>
         </div>
       </div>
@@ -1062,19 +1362,22 @@
 
     <!-- CONTACT SECTION -->
     <section id="contact">
-      <h2 class="section-title"><span>05.</span> Get In Touch</h2>
-      <p class="section-subtitle">Open for freelance CAD consulting, mechanical design projects, and engineering roles.</p>
+      <div class="section-header">
+        <div class="section-tag"><i class="fa-solid fa-paper-plane"></i> Get In Touch</div>
+        <h2 class="section-title">Let's Discuss Your CAD Project</h2>
+        <p class="section-subtitle">Have a mechanical design requirement, gear calculation task, or CFD simulation need? Reach out today.</p>
+      </div>
 
       <div class="contact-container">
         <div class="contact-info">
-          <p>Need parametric 3D models, manufacturing drawings, or product engineering support? Let's connect.</p>
+          <p>Available for freelance CAD design, mechanical engineering consultations, and full 3D assembly modeling projects.</p>
           
           <div class="info-list">
             <div class="info-item">
-              <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div class="info-icon"><i class="fa-solid fa-briefcase"></i></div>
               <div>
-                <small style="color:var(--text-muted)">Email</small>
-                <div>engineer@example.com</div>
+                <small style="color:var(--text-muted)">Consultancy Brand</small>
+                <div style="font-weight: 700; color: var(--secondary);">3D Mech Design</div>
               </div>
             </div>
 
@@ -1082,47 +1385,64 @@
               <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
               <div>
                 <small style="color:var(--text-muted)">Location</small>
-                <div>Karachi, Pakistan / Remote</div>
+                <div style="font-weight: 700; color: var(--secondary);">Karachi, Pakistan / Remote Worldwide</div>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <small style="color:var(--text-muted)">Email Address</small>
+                <div style="font-weight: 700; color: var(--secondary);">rafay.yousuf.mech@gmail.com</div>
               </div>
             </div>
           </div>
         </div>
 
-        <form class="contact-form glass-card" onsubmit="event.preventDefault(); alert('Message sent!');">
+        <form class="contact-form card" onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent successfully.');">
           <div class="form-group">
-            <label for="name">Your Name</label>
+            <label for="name">Your Name / Organization</label>
             <input type="text" id="name" placeholder="John Doe" required>
           </div>
 
           <div class="form-group">
-            <label for="email">Your Email</label>
+            <label for="email">Your Email Address</label>
             <input type="email" id="email" placeholder="john@example.com" required>
           </div>
 
           <div class="form-group">
             <label for="message">Project Requirements</label>
-            <textarea id="message" rows="4" placeholder="Describe your CAD modeling needs..." required></textarea>
+            <textarea id="message" rows="4" placeholder="Describe your CAD modeling, gear calculation, or CFD needs..." required></textarea>
           </div>
 
-          <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+          <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Send Specifications</button>
         </form>
       </div>
     </section>
   </main>
 
-  <!-- LIGHTBOX MODAL -->
-  <div class="modal" id="imageModal">
-    <span class="close-modal" onclick="closeModal()">&times;</span>
-    <img class="modal-content" id="modalImg" alt="Expanded Image">
+  <!-- LIGHTBOX SPEC MODAL -->
+  <div class="modal" id="specModal">
+    <div class="modal-container card">
+      <span class="close-modal" onclick="closeSpecModal()">&times;</span>
+      <h3 class="modal-title" id="mTitle">Project Specifications</h3>
+      <table class="spec-table">
+        <tr><td>Material Specification:</td><td id="mMat">AL 6061-T6</td></tr>
+        <tr><td>Stress & FEA Status:</td><td id="mAnalysis">Passed DFM Verification</td></tr>
+        <tr><td>Software Stack:</td><td id="mStack">SolidWorks / ANSYS</td></tr>
+        <tr><td>Machining Tolerance:</td><td id="mTol">±0.02 mm</td></tr>
+      </table>
+      <button class="btn btn-secondary" onclick="closeSpecModal()">Close Spec Sheet</button>
+    </div>
   </div>
 
   <!-- FOOTER -->
   <footer>
-    <div>&copy; 2026 CAD Portfolio. All rights reserved.</div>
+    <div>&copy; 2026 Abdur Rafay Yousuf • 3D Mech Design. All rights reserved.</div>
     <div class="social-links">
-      <a href="#"><i class="fa-brands fa-github"></i></a>
-      <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-      <a href="#"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://github.com" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="mailto:rafay.yousuf.mech@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
     </div>
   </footer>
 
@@ -1140,7 +1460,7 @@
       link.addEventListener('click', () => navLinks.classList.remove('active'));
     });
 
-    // Interactive Category Filtering
+    // Project Category Filtering System
     const filterBtns = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
 
@@ -1161,21 +1481,24 @@
       });
     });
 
-    // Lightbox Modal Functionality
-    const modal = document.getElementById('imageModal');
-    const modalImg = document.getElementById('modalImg');
+    // Technical Spec Modal Handler
+    const specModal = document.getElementById('specModal');
 
-    function openModal(element) {
-      modal.style.display = 'flex';
-      modalImg.src = element.querySelector('img').src;
+    function openSpecModal(title, mat, analysis, stack, tol) {
+      document.getElementById('mTitle').textContent = title;
+      document.getElementById('mMat').textContent = mat;
+      document.getElementById('mAnalysis').textContent = analysis;
+      document.getElementById('mStack').textContent = stack;
+      document.getElementById('mTol').textContent = tol;
+      specModal.style.display = 'flex';
     }
 
-    function closeModal() {
-      modal.style.display = 'none';
+    function closeSpecModal() {
+      specModal.style.display = 'none';
     }
 
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeModal();
+      if (e.key === 'Escape') closeSpecModal();
     });
   </script>
 </body>
