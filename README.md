@@ -1,802 +1,3049 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Abdur Rafay Yousuf | 3D CAD Portfolio</title>
 
-    <!-- Font Awesome 6 & Google Fonts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
-    <!-- ========== YOUR ORIGINAL STYLES (with additions) ========== -->
+    <!-- ======================================================================
+         META TAGS & SEO
+         ====================================================================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description"
+        content="Abdur Rafay Yousuf - Mechanical Engineer & CAD Consultant. Founder of 3D Mech Design, specializing in parametric modeling, CFD, and thermal systems.">
+    <meta name="keywords"
+        content="Mechanical Engineering, CAD Consultant, SolidWorks, CFD Analysis, Thermodynamics, 3D Mech Design, Karachi">
+    <meta name="author" content="Abdur Rafay Yousuf">
+    <meta name="robots" content="index, follow">
+    <title>Abdur Rafay Yousuf | Advanced Engineering Portfolio</title>
+
+    <!-- ======================================================================
+         EXTERNAL ASSETS & FONTS
+         ====================================================================== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Plus Jakarta Sans for UI, JetBrains Mono for Technical Data -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- ======================================================================
+         MASTER CSS STYLESHEET
+         ====================================================================== -->
     <style>
-        /* ==========================================================================
-           1. PREMIUM DESIGN SYSTEM & VARIABLES (LIGHT/DARK MODE)
-           ========================================================================== */
+        /* --------------------------------------------------------------------
+           01. CSS RESET & CUSTOM PROPERTIES
+           -------------------------------------------------------------------- */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+            font-size: 16px;
+        }
+
         :root {
-            --bg: #f8fafc;
-            --bg2: #eef6ff;
-            --text: #0f172a;
-            --primary: #2563eb;
-            --card: rgba(255, 255, 255, 0.65);
-            --primary-hover: #1d4ed8;
-            --primary-light: rgba(37, 99, 235, 0.1);
-            --secondary: #0f172a;
+            /* LIGHT THEME VARIABLES */
+            --bg-base: #f8fafc;
+            --bg-gradient-1: #eef6ff;
+            --bg-gradient-2: #f1f5f9;
+            --bg-surface: #ffffff;
+
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
             --text-muted: #64748b;
-            --accent-green: #059669;
-            --border-color: rgba(15, 23, 42, 0.1);
-            --border-accent: rgba(37, 99, 235, 0.3);
-            --grid-line: rgba(37, 99, 235, 0.06);
-            --font-main: 'Plus Jakarta Sans', sans-serif;
+            --text-inverse: #ffffff;
+
+            --brand-primary: #2563eb;
+            --brand-primary-hover: #1d4ed8;
+            --brand-primary-light: rgba(37, 99, 235, 0.1);
+            --brand-accent: #8b5cf6;
+            --brand-success: #059669;
+            --brand-warning: #d97706;
+            --brand-danger: #e11d48;
+
+            --glass-bg: rgba(255, 255, 255, 0.65);
+            --glass-border: rgba(15, 23, 42, 0.1);
+            --glass-highlight: rgba(255, 255, 255, 0.8);
+
+            --grid-line: rgba(37, 99, 235, 0.05);
+            --particle-color: rgba(37, 99, 235, 0.3);
+
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.02);
+            --shadow-md: 0 10px 40px rgba(15, 23, 42, 0.06);
+            --shadow-lg: 0 20px 60px rgba(37, 99, 235, 0.12);
+            --shadow-glow: 0 0 30px rgba(37, 99, 235, 0.3);
+
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-full: 9999px;
+
+            --font-sans: 'Plus Jakarta Sans', sans-serif;
             --font-mono: 'JetBrains Mono', monospace;
-            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 10px 40px rgba(0, 0, 0, 0.08);
-            --shadow-hover: 0 20px 60px rgba(37, 99, 235, 0.15);
-            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+            --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-normal: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --transition-slow: 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+            --z-negative: -1;
+            --z-normal: 1;
+            --z-sticky: 100;
+            --z-drawer: 200;
+            --z-modal: 300;
+            --z-cursor: 9999;
         }
 
         [data-theme="dark"] {
-            --bg: #050816;
-            --bg2: #0f172a;
-            --text: #ffffff;
-            --primary: #4f9bff;
-            --card: rgba(15, 23, 42, 0.55);
-            --primary-hover: #60a5fa;
-            --primary-light: rgba(79, 155, 255, 0.15);
-            --secondary: #f8fafc;
+            /* DARK THEME VARIABLES (No pure black, using deep slate/blues) */
+            --bg-base: #050816;
+            --bg-gradient-1: #0f172a;
+            --bg-gradient-2: #0a0f1d;
+            --bg-surface: #0f172a;
+
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
             --text-muted: #94a3b8;
-            --accent-green: #10b981;
-            --border-color: rgba(255, 255, 255, 0.12);
-            --border-accent: rgba(79, 155, 255, 0.3);
-            --grid-line: rgba(79, 155, 255, 0.08);
-            --shadow-md: 0 10px 40px rgba(0, 0, 0, 0.3);
-            --shadow-hover: 0 20px 60px rgba(79, 155, 255, 0.25);
+            --text-inverse: #0f172a;
+
+            --brand-primary: #3b82f6;
+            --brand-primary-hover: #60a5fa;
+            --brand-primary-light: rgba(59, 130, 246, 0.15);
+            --brand-accent: #a855f7;
+            --brand-success: #10b981;
+
+            --glass-bg: rgba(15, 23, 42, 0.55);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-highlight: rgba(255, 255, 255, 0.05);
+
+            --grid-line: rgba(59, 130, 246, 0.08);
+            --particle-color: rgba(96, 165, 250, 0.25);
+
+            --shadow-md: 0 10px 40px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.6);
+            --shadow-glow: 0 0 30px rgba(59, 130, 246, 0.2);
         }
 
-        /* Scrollbar */
-        ::-webkit-scrollbar { width: 10px; }
-        ::-webkit-scrollbar-track { background: var(--bg); }
-        ::-webkit-scrollbar-thumb { background: var(--border-accent); border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: var(--primary); }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-
-        /* ==========================================================================
-           2. PREMIUM BACKGROUND: MESH + AURORA (original)
-           ========================================================================== */
+        /* --------------------------------------------------------------------
+           02. BASE TYPOGRAPHY & BODY
+           -------------------------------------------------------------------- */
         body {
-            color: var(--text);
-            background: 
-                radial-gradient(circle at 10% 20%, rgba(37,99,235,0.15), transparent 35%),
-                radial-gradient(circle at 90% 20%, rgba(0,212,255,0.12), transparent 30%),
-                radial-gradient(circle at 50% 90%, rgba(139,92,246,0.15), transparent 35%),
-                linear-gradient(135deg, var(--bg), var(--bg2));
-            background-size: cover;
-            background-attachment: fixed;
-            min-height: 100vh;
-            font-family: var(--font-main);
-            line-height: 1.6;
+            font-family: var(--font-sans);
+            color: var(--text-primary);
+            background-color: var(--bg-base);
+            line-height: 1.7;
             overflow-x: hidden;
             position: relative;
+            min-height: 100vh;
         }
 
-        /* Animated Aurora */
-        body::before {
-            content: "";
-            position: fixed;
-            inset: -20%;
-            background: 
-                radial-gradient(circle, rgba(37,99,235,0.15) 0%, transparent 40%),
-                radial-gradient(circle, rgba(6,182,212,0.15) 0%, transparent 35%),
-                radial-gradient(circle, rgba(139,92,246,0.15) 0%, transparent 40%);
-            filter: blur(120px);
-            animation: aurora 30s linear infinite alternate;
-            z-index: -2;
-            pointer-events: none;
+        ::-webkit-scrollbar {
+            width: 10px;
         }
 
-        @keyframes aurora {
-            0% { transform: translate(-10%, -5%) rotate(0deg); }
-            100% { transform: translate(10%, 8%) rotate(20deg); }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-base);
         }
 
-        /* ===== NEW: 3D BACKGROUND (CSS 3D scene) ===== */
-        #three-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            pointer-events: none;
-            overflow: hidden;
+        ::-webkit-scrollbar-thumb {
+            background: var(--glass-border);
+            border-radius: 10px;
+            border: 2px solid var(--bg-base);
         }
 
-        #three-bg .scene {
-            width: 100%;
-            height: 100%;
-            perspective: 800px;
-            perspective-origin: 50% 50%;
-            transform-style: preserve-3d;
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--brand-primary);
         }
 
-        #three-bg .cube {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 300px;
-            height: 300px;
-            margin: -150px 0 0 -150px;
-            transform-style: preserve-3d;
-            animation: spinCube 40s infinite linear;
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
         }
 
-        #three-bg .cube .face {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            border: 2px solid rgba(37, 99, 235, 0.15);
-            background: rgba(37, 99, 235, 0.03);
-            backdrop-filter: blur(4px);
-            box-shadow: inset 0 0 60px rgba(37, 99, 235, 0.05);
+        p {
+            margin-bottom: 1.25rem;
+            color: var(--text-secondary);
         }
 
-        #three-bg .cube .face:nth-child(1) { transform: translateZ(150px); }
-        #three-bg .cube .face:nth-child(2) { transform: rotateY(90deg) translateZ(150px); }
-        #three-bg .cube .face:nth-child(3) { transform: rotateY(180deg) translateZ(150px); }
-        #three-bg .cube .face:nth-child(4) { transform: rotateY(-90deg) translateZ(150px); }
-        #three-bg .cube .face:nth-child(5) { transform: rotateX(90deg) translateZ(150px); }
-        #three-bg .cube .face:nth-child(6) { transform: rotateX(-90deg) translateZ(150px); }
-
-        @keyframes spinCube {
-            0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
-            100% { transform: rotateX(360deg) rotateY(720deg) rotateZ(360deg); }
+        a {
+            color: var(--brand-primary);
+            text-decoration: none;
+            transition: var(--transition-fast);
         }
 
-        /* Floating particles (canvas will overlay) */
-        #particles-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            pointer-events: none;
+        strong {
+            font-weight: 700;
+            color: var(--text-primary);
         }
 
-        /* Mouse-Following Spotlight (original) */
-        .spotlight {
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            z-index: 9998;
-            background: radial-gradient(600px circle at var(--x, 50%) var(--y, 50%), rgba(255,255,255,0.06), transparent 40%);
-        }
-
-        /* ==========================================================================
-           3. GLASSMORPHISM & 3D CARDS
-           ========================================================================== */
-        .card, .project-card, .skill-card, .testimonial-card, .drawing-item, .modal-container,
-        .service-card, .edu-card, .cert-card, .faq-item {
-            background: var(--card);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            box-shadow: var(--shadow-md);
-            transition: var(--transition);
-            transform: perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1);
-        }
-
-        .card:hover, .project-card:hover, .skill-card:hover, .testimonial-card:hover,
-        .drawing-item:hover, .service-card:hover, .edu-card:hover, .cert-card:hover,
-        .faq-item:hover {
-            transform: perspective(1000px) translateY(-8px) rotateX(2deg) rotateY(-2deg) scale3d(1.02, 1.02, 1.02);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--border-accent);
-        }
-
-        /* ==========================================================================
-           4. LAYOUT & TYPOGRAPHY
-           ========================================================================== */
-        section { padding: 90px 8%; max-width: 1320px; margin: 0 auto; position: relative; }
-        .section-header { margin-bottom: 3.5rem; }
-        .section-tag {
-            display: inline-flex; align-items: center; gap: 0.5rem;
-            font-family: var(--font-mono); color: var(--primary); font-size: 0.85rem;
-            font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
-            margin-bottom: 0.5rem; background: var(--primary-light);
-            padding: 0.25rem 0.75rem; border-radius: 6px; border: 1px solid var(--border-accent);
-        }
-        .section-title { font-size: 2.25rem; font-weight: 800; color: var(--secondary); letter-spacing: -0.02em; }
-        .section-subtitle { color: var(--text-muted); margin-top: 0.5rem; font-size: 1.05rem; max-width: 620px; }
         .text-gradient {
-            background: linear-gradient(to right, var(--primary), #8b5cf6, var(--primary));
+            background: linear-gradient(135deg, var(--brand-primary), var(--brand-accent), var(--brand-primary));
             background-size: 200% auto;
             color: transparent;
             -webkit-background-clip: text;
             background-clip: text;
-            animation: textShine 4s linear infinite;
-        }
-        @keyframes textShine { to { background-position: 200% center; } }
-
-        /* ==========================================================================
-           5. BUTTONS & TOGGLES
-           ========================================================================== */
-        .btn { /* same as original */ }
-        .btn-primary { /* same */ }
-        .btn-secondary { /* same */ }
-        #theme-toggle { /* same */ }
-        .whatsapp-btn { /* same */ }
-
-        /* ===== EDITOR TOGGLE (new) ===== */
-        #editor-toggle {
-            position: fixed; bottom: 95px; right: 25px; width: 54px; height: 54px;
-            border: 1px solid var(--border-accent); border-radius: 50%; cursor: pointer;
-            font-size: 22px; background: var(--card); backdrop-filter: blur(12px);
-            color: var(--primary); z-index: 1001; box-shadow: var(--shadow-md);
-            transition: var(--transition); display: flex; align-items: center; justify-content: center;
-        }
-        #editor-toggle:hover { transform: scale(1.1) rotate(10deg); border-color: var(--primary); background: var(--primary-light); }
-        #editor-toggle.active { background: var(--primary); color: #fff; border-color: var(--primary); }
-
-        /* ==========================================================================
-           6. HEADER (Glass Navigation)
-           ========================================================================== */
-        header { /* same as original */ }
-        .header-content { /* same */ }
-        .logo { /* same */ }
-        .nav-links { /* same */ }
-        .menu-toggle { /* same */ }
-
-        /* ==========================================================================
-           7. HERO SECTION
-           ========================================================================== */
-        #hero { /* same */ }
-        #hero::before { /* same */ }
-        .hero-greeting { /* same */ }
-        .hero-title { /* same */ }
-        .hero-subtitle { /* same */ }
-        .hero-bio { /* same */ }
-        .hero-highlights { /* same */ }
-        .metric-item { /* same */ }
-        .hero-btns { /* same */ }
-        .profile-card { /* same */ }
-        .profile-img-container { /* same */ }
-        .profile-img-container::before { /* same */ }
-        .profile-img-container img { /* same */ }
-        .profile-info { /* same */ }
-
-        /* ==========================================================================
-           8. SKILLS SECTION
-           ========================================================================== */
-        .skills-grid { /* same */ }
-        .skill-card { /* same */ }
-        .skill-icon-header { /* same */ }
-        .skill-icon { /* same */ }
-        .skill-title-group { /* same */ }
-        .skill-desc { /* same */ }
-        .progress-bar { /* same */ }
-        .progress-fill { /* same */ }
-
-        /* ==========================================================================
-           9. EXPERIENCE TIMELINE
-           ========================================================================== */
-        .timeline { /* same */ }
-        .timeline::before { /* same */ }
-        .timeline-item { /* same */ }
-        .timeline-icon { /* same */ }
-        .timeline-content { /* same */ }
-        .timeline-role { /* same */ }
-        .timeline-company { /* same */ }
-        .timeline-date { /* same */ }
-        .timeline-body p { /* same */ }
-        .timeline-tags { /* same */ }
-        .tag-sm { /* same */ }
-
-        /* ==========================================================================
-           10. PROJECTS & DRAWINGS
-           ========================================================================== */
-        .filter-menu { /* same */ }
-        .filter-btn { /* same */ }
-        .projects-grid { /* same */ }
-        .project-card { /* same */ }
-        .project-img { /* same */ }
-        .project-content { /* same */ }
-        .tag { /* same */ }
-        .project-title { /* same */ }
-        .project-desc { /* same */ }
-        .project-link { /* same */ }
-        .drawings-grid { /* same */ }
-        .drawing-item { /* same */ }
-        .drawing-overlay { /* same */ }
-
-        /* ==========================================================================
-           11. TESTIMONIALS
-           ========================================================================== */
-        .testimonials-grid { /* same */ }
-        .testimonial-card { /* same */ }
-        .quote-icon { /* same */ }
-        .testimonial-text { /* same */ }
-        .author-group { /* same */ }
-        .author-avatar { /* same */ }
-
-        /* ==========================================================================
-           12. NEW SECTIONS (Services, Education, Stats, FAQ)
-           ========================================================================== */
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
-        .service-card { padding: 2rem; text-align: center; }
-        .service-icon { font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem; }
-        .service-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--secondary); margin-bottom: 0.5rem; }
-        .service-card p { color: var(--text-muted); font-size: 0.9rem; }
-
-        .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-        .edu-card { padding: 1.75rem; }
-        .edu-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--secondary); }
-        .edu-card .meta { color: var(--primary); font-weight: 600; font-size: 0.9rem; margin: 4px 0 8px; }
-        .edu-card p { color: var(--text-muted); font-size: 0.9rem; }
-
-        .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-top: 2rem; }
-        .cert-card { padding: 1.25rem; text-align: center; }
-        .cert-card i { font-size: 2rem; color: var(--primary); margin-bottom: 0.5rem; }
-        .cert-card h4 { font-size: 1rem; color: var(--secondary); font-weight: 700; }
-        .cert-card span { font-size: 0.8rem; color: var(--text-muted); }
-
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; text-align: center; margin-top: 2rem; }
-        .stat-item .stat-number { font-size: 2.8rem; font-weight: 800; font-family: var(--font-mono); color: var(--secondary); line-height: 1.2; }
-        .stat-item .stat-label { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; }
-
-        .faq-grid { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 0.75rem; }
-        .faq-item { padding: 1.25rem 1.5rem; cursor: pointer; transition: var(--transition); }
-        .faq-item .faq-q { display: flex; justify-content: space-between; align-items: center; font-weight: 700; color: var(--secondary); font-size: 1rem; }
-        .faq-item .faq-q i { transition: var(--transition); color: var(--primary); }
-        .faq-item .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); color: var(--text-muted); font-size: 0.95rem; padding-top: 0; }
-        .faq-item.open .faq-a { max-height: 300px; padding-top: 1rem; }
-        .faq-item.open .faq-q i { transform: rotate(180deg); }
-
-        /* ==========================================================================
-           13. CONTACT & FOOTER
-           ========================================================================== */
-        .contact-container { /* same */ }
-        .contact-info p { /* same */ }
-        .info-list { /* same */ }
-        .info-item { /* same */ }
-        .info-icon { /* same */ }
-        .contact-form { /* same */ }
-        .form-group { /* same */ }
-        .form-group input, .form-group textarea { /* same */ }
-        .alert-success { /* same */ }
-        footer { /* same */ }
-        .social-links { /* same */ }
-
-        /* ==========================================================================
-           14. MODAL
-           ========================================================================== */
-        .modal { /* same */ }
-        .modal-container { /* same */ }
-        .modal-title { /* same */ }
-        .spec-table { /* same */ }
-        .close-modal { /* same */ }
-
-        /* ==========================================================================
-           15. EDITOR PANEL (slide-out) – fixed password field
-           ========================================================================== */
-        #editor-panel {
-            position: fixed; top: 0; right: -480px; width: 480px; max-width: 94vw;
-            height: 100vh; background: var(--card); backdrop-filter: blur(28px);
-            -webkit-backdrop-filter: blur(28px); border-left: 1px solid var(--border-color);
-            box-shadow: -10px 0 60px rgba(0,0,0,0.15); z-index: 3000;
-            transition: right 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            padding: 2rem 1.5rem; overflow-y: auto; display: flex; flex-direction: column; gap: 1.25rem;
-        }
-        #editor-panel.open { right: 0; }
-        #editor-panel .panel-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; }
-        #editor-panel .panel-header h2 { font-size: 1.3rem; font-weight: 800; color: var(--secondary); }
-        #editor-panel .panel-header .close-editor { font-size: 1.5rem; cursor: pointer; color: var(--text-muted); transition: var(--transition); }
-        #editor-panel .panel-header .close-editor:hover { color: var(--primary); transform: rotate(90deg); }
-        #editor-panel .editor-section { border-bottom: 1px solid var(--border-color); padding-bottom: 1.25rem; }
-        #editor-panel .editor-section:last-child { border-bottom: none; }
-        #editor-panel .editor-section h3 { font-size: 0.9rem; font-weight: 700; color: var(--secondary); margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 1px; font-family: var(--font-mono); color: var(--primary); }
-        #editor-panel label { font-size: 0.825rem; font-weight: 600; color: var(--secondary); display: block; margin-top: 0.5rem; }
-        #editor-panel input, #editor-panel textarea {
-            width: 100%; padding: 0.6rem 0.8rem;
-            background: var(--bg); border: 1px solid var(--border-color);
-            border-radius: 12px; color: var(--text);
-            font-family: inherit; font-size: 0.9rem;
-            transition: var(--transition); margin-top: 4px;
-        }
-        #editor-panel input:focus, #editor-panel textarea:focus {
-            outline: none; border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
-        }
-        #editor-panel textarea { resize: vertical; min-height: 60px; }
-        #editor-panel .editor-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
-        #editor-panel .btn-sm {
-            padding: 0.5rem 1.2rem; font-size: 0.8rem; border-radius: 8px;
-            border: none; font-weight: 600; cursor: pointer;
-            transition: var(--transition);
-            background: var(--primary); color: #fff;
-            width: 100%; margin-top: 0.5rem;
-        }
-        #editor-panel .btn-sm:hover { opacity: 0.85; transform: translateY(-2px); }
-        #editor-panel .btn-sm.danger { background: #ef4444; }
-        #editor-panel .btn-sm.danger:hover { background: #dc2626; }
-        #editor-panel .btn-sm.outline { background: transparent; border: 1px solid var(--border-color); color: var(--secondary); }
-        #editor-panel .btn-sm.outline:hover { border-color: var(--primary); color: var(--primary); background: var(--primary-light); }
-        #editor-panel .file-upload-wrap { position: relative; overflow: hidden; margin-top: 6px; }
-        #editor-panel .file-upload-wrap input[type="file"] { position: absolute; left: 0; top: 0; opacity: 0; width: 100%; height: 100%; cursor: pointer; }
-        #editor-panel .file-upload-wrap .fake-btn {
-            display: inline-block; padding: 0.5rem 1.2rem;
-            background: var(--primary-light); border: 1px solid var(--border-accent);
-            border-radius: 8px; color: var(--primary); font-weight: 600; font-size: 0.8rem;
-            cursor: pointer; transition: var(--transition);
-            width: 100%; text-align: center;
-        }
-        #editor-panel .file-upload-wrap .fake-btn:hover { background: var(--primary); color: #fff; }
-        #editor-panel .editor-status {
-            font-size: 0.8rem; color: var(--accent-green);
-            padding: 0.4rem 0.8rem; background: rgba(16,185,129,0.1);
-            border-radius: 6px; display: none; align-items: center; gap: 8px;
-        }
-        #editor-panel .editor-status.show { display: flex; }
-        #editor-panel .editor-password {
-            display: flex; gap: 0.5rem; align-items: center;
-        }
-        #editor-panel .editor-password input {
-            flex: 1;
-            /* ENSURE PASSWORD FIELD IS ALWAYS ENABLED */
-            pointer-events: auto !important;
-            opacity: 1 !important;
-            background: var(--bg) !important;
-            border-color: var(--border-color) !important;
-        }
-        #editor-panel .editor-password .btn-sm {
-            width: auto; padding: 0.5rem 1.2rem; margin-top: 0;
+            animation: gradientText 5s linear infinite;
         }
 
-        /* ==========================================================================
-           16. REVEAL ANIMATIONS
-           ========================================================================== */
-        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        .reveal.active { opacity: 1; transform: translateY(0); }
+        .mono {
+            font-family: var(--font-mono);
+        }
 
-        /* ==========================================================================
-           17. RESPONSIVE
-           ========================================================================== */
+        /* --------------------------------------------------------------------
+           03. ADVANCED BACKGROUND ENGINE
+           -------------------------------------------------------------------- */
+        .bg-engine {
+            position: fixed;
+            inset: 0;
+            z-index: var(--z-negative);
+            pointer-events: none;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--bg-base), var(--bg-gradient-1));
+        }
+
+        .bg-mesh {
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(6, 182, 212, 0.15) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(37, 99, 235, 0.15) 0px, transparent 50%);
+            filter: blur(80px);
+            opacity: 0.8;
+            animation: breatheMesh 20s ease-in-out infinite alternate;
+        }
+
+        .bg-grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(var(--grid-line) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+            background-size: 40px 40px;
+            mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 80%);
+            -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 80%);
+            opacity: 0.5;
+        }
+
+        #particle-canvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* --------------------------------------------------------------------
+           04. PRELOADER
+           -------------------------------------------------------------------- */
+        .preloader {
+            position: fixed;
+            inset: 0;
+            background: var(--bg-base);
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.8s ease, visibility 0.8s;
+        }
+
+        .preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .gear-loader {
+            width: 80px;
+            height: 80px;
+            border: 6px dashed var(--brand-primary);
+            border-radius: 50%;
+            animation: spinGear 4s linear infinite;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .gear-loader::before {
+            content: '';
+            position: absolute;
+            inset: 10px;
+            border: 4px solid var(--brand-accent);
+            border-radius: 50%;
+            animation: spinGear 2s linear infinite reverse;
+        }
+
+        .loading-text {
+            font-family: var(--font-mono);
+            font-size: 14px;
+            color: var(--brand-primary);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        /* --------------------------------------------------------------------
+           05. UI COMPONENTS (Buttons, Glass Panels, Badges)
+           -------------------------------------------------------------------- */
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition-normal);
+        }
+
+        .glass-panel::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--glass-highlight), transparent);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: var(--radius-md);
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition-normal);
+            border: 1px solid transparent;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--brand-primary), var(--brand-accent));
+            color: #ffffff !important;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--brand-accent), var(--brand-primary));
+            opacity: 0;
+            transition: var(--transition-normal);
+            z-index: -1;
+        }
+
+        .btn-primary:hover::before {
+            opacity: 1;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: var(--glass-bg);
+            color: var(--text-primary);
+            border-color: var(--glass-border);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--brand-primary);
+            color: var(--brand-primary);
+            background: var(--brand-primary-light);
+            transform: translateY(-3px);
+        }
+
+        .btn-icon {
+            width: 45px;
+            height: 45px;
+            padding: 0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            transition: var(--transition-normal);
+            backdrop-filter: blur(10px);
+            cursor: pointer;
+        }
+
+        .btn-icon:hover {
+            background: var(--brand-primary);
+            color: white;
+            border-color: var(--brand-primary);
+            transform: translateY(-3px) rotate(10deg);
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: var(--radius-full);
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            font-weight: 600;
+            background: var(--brand-primary-light);
+            color: var(--brand-primary);
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --------------------------------------------------------------------
+           06. LAYOUT & NAVIGATION
+           -------------------------------------------------------------------- */
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
+            position: relative;
+        }
+
+        section {
+            padding: 120px 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px auto;
+        }
+
+        .section-header .badge {
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .section-desc {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            z-index: var(--z-sticky);
+            transition: var(--transition-normal);
+            border-bottom: 1px solid transparent;
+        }
+
+        header.scrolled {
+            height: 75px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(24px);
+            border-bottom: 1px solid var(--glass-border);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            font-family: var(--font-mono);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--brand-primary);
+            color: white;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transform: rotate(45deg);
+            transition: var(--transition-normal);
+        }
+
+        .logo-icon i {
+            transform: rotate(-45deg);
+        }
+
+        .logo:hover .logo-icon {
+            transform: rotate(135deg);
+            border-radius: 50%;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-link {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition-fast);
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--brand-primary);
+            transition: var(--transition-normal);
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--brand-primary);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------
+           07. INFINITE SCROLL MARQUEE (Tech Stack)
+           -------------------------------------------------------------------- */
+        .marquee-wrapper {
+            width: 100%;
+            overflow: hidden;
+            padding: 40px 0;
+            background: var(--bg-surface);
+            border-top: 1px solid var(--glass-border);
+            border-bottom: 1px solid var(--glass-border);
+            position: relative;
+        }
+
+        .marquee-wrapper::before,
+        .marquee-wrapper::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 250px;
+            height: 100%;
+            z-index: 2;
+        }
+
+        .marquee-wrapper::before {
+            left: 0;
+            background: linear-gradient(to right, var(--bg-surface), transparent);
+        }
+
+        .marquee-wrapper::after {
+            right: 0;
+            background: linear-gradient(to left, var(--bg-surface), transparent);
+        }
+
+        .marquee-content {
+            display: flex;
+            width: max-content;
+            animation: marquee 30s linear infinite;
+        }
+
+        .marquee-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 0 40px;
+            font-family: var(--font-mono);
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            opacity: 0.6;
+            transition: var(--transition-fast);
+        }
+
+        .marquee-item:hover {
+            color: var(--brand-primary);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        .marquee-item i {
+            font-size: 2rem;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* --------------------------------------------------------------------
+           08. HERO SECTION
+           -------------------------------------------------------------------- */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 120px;
+            padding-bottom: 60px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content .badge {
+            margin-bottom: 30px;
+            animation: slideDown 1s ease forwards;
+            opacity: 0;
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 5vw, 5rem);
+            line-height: 1.1;
+            margin-bottom: 25px;
+            opacity: 0;
+            animation: slideUp 1s ease 0.2s forwards;
+        }
+
+        /* Typewriter specific styling */
+        .typewriter-wrapper {
+            height: 1.2em;
+            display: block;
+            overflow: hidden;
+        }
+
+        .typewriter-text {
+            color: var(--brand-primary);
+            border-right: 4px solid var(--brand-primary);
+            white-space: nowrap;
+            animation: blink-caret 0.75s step-end infinite;
+        }
+
+        .hero-desc {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: slideUp 1s ease 0.4s forwards;
+        }
+
+        .hero-metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+            padding-top: 30px;
+            border-top: 1px dashed var(--glass-border);
+            opacity: 0;
+            animation: slideUp 1s ease 0.6s forwards;
+        }
+
+        .metric {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .metric-value {
+            font-family: var(--font-mono);
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-primary);
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            opacity: 0;
+            animation: slideUp 1s ease 0.8s forwards;
+        }
+
+        /* 3D Visual Profile */
+        .hero-visual {
+            position: relative;
+            opacity: 0;
+            animation: fadeIn 1.5s ease 1s forwards;
+            perspective: 1000px;
+        }
+
+        .profile-card {
+            padding: 50px;
+            text-align: center;
+            z-index: 2;
+            transform-style: preserve-3d;
+            transition: transform 0.1s ease;
+        }
+
+        .profile-img-wrap {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto 30px auto;
+            border-radius: 50%;
+            padding: 10px;
+            background: linear-gradient(135deg, var(--brand-primary), var(--brand-accent));
+            position: relative;
+            transform: translateZ(30px);
+        }
+
+        .profile-img-wrap::before {
+            content: '';
+            position: absolute;
+            inset: -20px;
+            background: radial-gradient(circle, var(--brand-primary) 0%, transparent 70%);
+            opacity: 0.4;
+            filter: blur(40px);
+            animation: pulseGlow 4s infinite alternate;
+            z-index: -1;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--bg-surface);
+        }
+
+        .profile-card h3 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+            transform: translateZ(20px);
+        }
+
+        .profile-card p {
+            font-family: var(--font-mono);
+            color: var(--brand-primary);
+            margin-bottom: 20px;
+            font-weight: 600;
+            transform: translateZ(15px);
+        }
+
+        .float-badge {
+            position: absolute;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            padding: 15px 25px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: var(--shadow-md);
+            z-index: 3;
+            animation: float 6s ease-in-out infinite;
+            transform: translateZ(40px);
+        }
+
+        .float-1 {
+            top: 5%;
+            right: -30px;
+            animation-delay: 0s;
+        }
+
+        .float-2 {
+            bottom: 15%;
+            left: -40px;
+            animation-delay: 2s;
+        }
+
+        .float-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--brand-primary-light);
+            color: var(--brand-primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.3rem;
+        }
+
+        .float-text {
+            font-weight: 700;
+            font-size: 1rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .float-text span {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* --------------------------------------------------------------------
+           09. ABOUT & TABBED INTERFACE
+           -------------------------------------------------------------------- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        .about-visual {
+            position: relative;
+        }
+
+        .about-image {
+            width: 100%;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .location-badge {
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            background: var(--bg-surface);
+            padding: 20px 30px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--shadow-md);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .location-badge i {
+            font-size: 2rem;
+            color: var(--brand-primary);
+        }
+
+        /* Custom Tabs System */
+        .tabs-header {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--glass-border);
+            padding-bottom: 10px;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            font-family: var(--font-sans);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            cursor: pointer;
+            padding: 10px 20px;
+            position: relative;
+            transition: var(--transition-fast);
+        }
+
+        .tab-btn.active {
+            color: var(--brand-primary);
+        }
+
+        .tab-btn::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--brand-primary);
+            transition: var(--transition-normal);
+            border-radius: 3px 3px 0 0;
+        }
+
+        .tab-btn.active::after {
+            width: 100%;
+        }
+
+        .tab-pane {
+            display: none;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .tab-pane.active {
+            display: block;
+        }
+
+        .tab-pane p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .highlight-box {
+            background: var(--brand-primary-light);
+            border-left: 4px solid var(--brand-primary);
+            padding: 20px;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            margin: 25px 0;
+        }
+
+        .highlight-box h4 {
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        /* --------------------------------------------------------------------
+           10. ENGINEERING SKILLS & GEAR CALCULATOR WIDGET
+           -------------------------------------------------------------------- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .skill-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .skill-item {
+            background: var(--glass-bg);
+            padding: 30px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--glass-border);
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .skill-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .skill-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: var(--brand-primary-light);
+            color: var(--brand-primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+        }
+
+        .skill-pct {
+            font-family: var(--font-mono);
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: var(--brand-primary);
+        }
+
+        .progress-track {
+            width: 100%;
+            height: 10px;
+            background: var(--glass-border);
+            border-radius: var(--radius-full);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: linear-gradient(90deg, var(--brand-primary), var(--brand-accent));
+            border-radius: var(--radius-full);
+            width: 0;
+            transition: width 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        /* Interactive Gear Math Widget */
+        .calculator-widget {
+            background: var(--bg-surface);
+            padding: 40px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .calc-header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 15px;
+        }
+
+        .calc-title {
+            font-family: var(--font-mono);
+            font-size: 1.2rem;
+            color: var(--brand-primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .calc-form-group {
+            margin-bottom: 20px;
+        }
+
+        .calc-label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .calc-input {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--glass-border);
+            background: var(--bg-base);
+            color: var(--text-primary);
+            font-family: var(--font-mono);
+            transition: var(--transition-fast);
+        }
+
+        .calc-input:focus {
+            outline: none;
+            border-color: var(--brand-primary);
+            box-shadow: 0 0 0 3px var(--brand-primary-light);
+        }
+
+        .calc-result-box {
+            margin-top: 30px;
+            background: var(--brand-primary-light);
+            padding: 20px;
+            border-radius: var(--radius-sm);
+            border: 1px dashed var(--brand-primary);
+            text-align: center;
+        }
+
+        .calc-result-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            color: var(--text-secondary);
+        }
+
+        .calc-result-value {
+            font-family: var(--font-mono);
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--brand-primary);
+            margin-top: 5px;
+        }
+
+        .calc-note {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* --------------------------------------------------------------------
+           11. EXPANDED PORTFOLIO SECTION (Grid + Modals)
+           -------------------------------------------------------------------- */
+        .portfolio-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 50px;
+        }
+
+        .filter-btn {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 12px 28px;
+            border-radius: var(--radius-full);
+            font-family: var(--font-mono);
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: var(--transition-normal);
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--brand-primary);
+            color: white;
+            border-color: var(--brand-primary);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 40px;
+        }
+
+        .portfolio-card {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            padding: 0;
+            cursor: pointer;
+        }
+
+        .port-img-wrap {
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+            background: var(--glass-border);
+        }
+
+        .port-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .portfolio-card:hover .port-img-wrap img {
+            transform: scale(1.1) rotate(1deg);
+        }
+
+        .port-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.75);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: var(--transition-normal);
+            backdrop-filter: blur(5px);
+        }
+
+        .portfolio-card:hover .port-overlay {
+            opacity: 1;
+        }
+
+        .port-view-btn {
+            width: 60px;
+            height: 60px;
+            background: var(--brand-primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            transform: translateY(20px);
+            transition: var(--transition-normal);
+        }
+
+        .portfolio-card:hover .port-view-btn {
+            transform: translateY(0);
+        }
+
+        .port-content {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .port-cat {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--brand-primary);
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .port-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .port-desc {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .port-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--glass-border);
+            padding-top: 20px;
+        }
+
+        .port-tool {
+            display: flex;
+            gap: 12px;
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+        }
+
+        .port-meta-link {
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-primary);
+            transition: var(--transition-fast);
+        }
+
+        .portfolio-card:hover .port-meta-link {
+            color: var(--brand-primary);
+            gap: 12px;
+        }
+
+        /* --------------------------------------------------------------------
+           12. PUBLICATIONS & INSIGHTS (Blog styling)
+           -------------------------------------------------------------------- */
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .article-card {
+            display: flex;
+            gap: 30px;
+            background: var(--glass-bg);
+            padding: 30px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--glass-border);
+            transition: var(--transition-normal);
+            align-items: center;
+        }
+
+        .article-card:hover {
+            border-color: var(--brand-primary);
+            transform: translateX(10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .article-date {
+            min-width: 100px;
+            text-align: center;
+            padding: 20px;
+            background: var(--bg-surface);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--glass-border);
+        }
+
+        .date-month {
+            display: block;
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: var(--brand-primary);
+            text-transform: uppercase;
+        }
+
+        .date-year {
+            font-family: var(--font-mono);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .article-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .article-content p {
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .read-more {
+            font-family: var(--font-mono);
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--brand-primary);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* --------------------------------------------------------------------
+           13. CONTACT MODULE & MULTI-STEP FORM
+           -------------------------------------------------------------------- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 5rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .contact-card {
+            padding: 30px;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            background: var(--glass-bg);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--glass-border);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: var(--radius-md);
+            background: var(--brand-primary-light);
+            color: var(--brand-primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .contact-details h4 {
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+
+        .contact-details p,
+        .contact-details a {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+        }
+
+        /* Advanced Form Styling */
+        .advanced-form {
+            background: var(--bg-surface);
+            padding: 50px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            position: relative;
+        }
+
+        .input-group label {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .form-control {
+            padding: 16px 20px;
+            border-radius: var(--radius-md);
+            background: var(--bg-base);
+            border: 1px solid var(--glass-border);
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            font-size: 1.05rem;
+            transition: var(--transition-fast);
+            width: 100%;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--brand-primary);
+            box-shadow: 0 0 0 4px var(--brand-primary-light);
+            background: var(--bg-surface);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 180px;
+        }
+
+        /* Custom Checkbox */
+        .custom-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            cursor: pointer;
+        }
+
+        .custom-checkbox input {
+            display: none;
+        }
+
+        .checkmark {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--glass-border);
+            border-radius: 6px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: var(--transition-fast);
+        }
+
+        .custom-checkbox input:checked+.checkmark {
+            background: var(--brand-primary);
+            border-color: var(--brand-primary);
+        }
+
+        .custom-checkbox input:checked+.checkmark::after {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: white;
+            font-size: 0.8rem;
+        }
+
+        .check-label {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        /* --------------------------------------------------------------------
+           14. MEGA FOOTER
+           -------------------------------------------------------------------- */
+        footer {
+            background: var(--bg-gradient-1);
+            border-top: 1px solid var(--glass-border);
+            padding: 100px 0 40px 0;
+            margin-top: 120px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 4rem;
+            margin-bottom: 80px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-brand p {
+            margin-top: 25px;
+            color: var(--text-muted);
+            max-width: 400px;
+            font-size: 1.05rem;
+        }
+
+        .footer-title {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            color: var(--text-primary);
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            transition: var(--transition-fast);
+            font-size: 1.05rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a i {
+            font-size: 0.8rem;
+            color: var(--brand-primary);
+            opacity: 0;
+            transition: var(--transition-fast);
+            transform: translateX(-10px);
+        }
+
+        .footer-links a:hover {
+            color: var(--brand-primary);
+            padding-left: 5px;
+        }
+
+        .footer-links a:hover i {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .social-circle-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-circle-links a {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--bg-surface);
+            border: 1px solid var(--glass-border);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            transition: var(--transition-fast);
+        }
+
+        .social-circle-links a:hover {
+            background: var(--brand-primary);
+            color: white;
+            border-color: var(--brand-primary);
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 40px;
+            border-top: 1px solid var(--glass-border);
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* --------------------------------------------------------------------
+           15. MODAL SYSTEMS
+           -------------------------------------------------------------------- */
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: var(--z-modal);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-normal);
+            padding: 20px;
+        }
+
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            width: 100%;
+            max-width: 900px;
+            max-height: 90vh;
+            overflow-y: auto;
+            background: var(--bg-surface);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: 50px;
+            position: relative;
+            transform: translateY(50px) scale(0.95);
+            transition: var(--transition-normal);
+        }
+
+        .modal.active .modal-content {
+            transform: translateY(0) scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--bg-base);
+            border: 1px solid var(--glass-border);
+            color: var(--text-primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition-fast);
+        }
+
+        .modal-close:hover {
+            background: var(--brand-danger);
+            color: white;
+            border-color: var(--brand-danger);
+            transform: rotate(90deg);
+        }
+
+        .modal-header {
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 20px;
+        }
+
+        .modal-title {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .modal-body img {
+            width: 100%;
+            border-radius: var(--radius-md);
+            margin-bottom: 30px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+
+        .spec-table td {
+            padding: 15px;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .spec-table tr td:first-child {
+            font-weight: 700;
+            color: var(--text-secondary);
+            width: 30%;
+        }
+
+        .spec-table tr td:last-child {
+            font-family: var(--font-mono);
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* --------------------------------------------------------------------
+           16. ANIMATIONS & RESPONSIVE DESIGN
+           -------------------------------------------------------------------- */
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes spinGear {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        @keyframes pulseGlow {
+            0% {
+                transform: scale(0.95);
+                opacity: 0.3;
+            }
+
+            100% {
+                transform: scale(1.1);
+                opacity: 0.6;
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes breatheMesh {
+            0% {
+                filter: blur(80px) brightness(1);
+            }
+
+            100% {
+                filter: blur(100px) brightness(1.2);
+            }
+        }
+
+        @keyframes gradientText {
+            0% {
+                background-position: 0% center;
+            }
+
+            100% {
+                background-position: 200% center;
+            }
+        }
+
+        @keyframes blink-caret {
+
+            from,
+            to {
+                border-color: transparent
+            }
+
+            50% {
+                border-color: var(--brand-primary);
+            }
+        }
+
+        /* Intersection Observer Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .reveal-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        @media (max-width: 1200px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
         @media (max-width: 992px) {
-            #hero, .contact-container { grid-template-columns: 1fr; }
-            .hero-image-wrapper { order: -1; }
-            .hero-title { font-size: 2.75rem; }
+
+            .hero-grid,
+            .about-grid,
+            .skills-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-visual {
+                order: -1;
+                display: flex;
+                justify-content: center;
+            }
+
+            .about-visual {
+                max-width: 600px;
+                margin: 0 auto;
+            }
         }
+
         @media (max-width: 768px) {
-            .header-content { padding-right: 0; }
-            .nav-links { display: none; position: absolute; top: 80px; left: 0; width: 100%; background: var(--card); backdrop-filter: blur(24px); flex-direction: column; padding: 20px 8%; border-bottom: 1px solid var(--border-color); box-shadow: var(--shadow-md); }
-            .nav-links.active { display: flex; }
-            .menu-toggle { display: block; }
-            section { padding: 70px 6%; }
-            .hero-highlights { grid-template-columns: 1fr; }
-            .whatsapp-btn { right: 16px; bottom: 16px; width: 52px; height: 52px; font-size: 26px; }
-            #theme-toggle { top: 15px; right: 70px; width: 40px; height: 40px; font-size: 16px; }
-            #editor-toggle { bottom: 82px; right: 16px; width: 46px; height: 46px; font-size: 18px; }
-            #editor-panel { width: 100%; right: -100%; padding: 1.5rem 1rem; }
-            .projects-grid { grid-template-columns: 1fr; }
-            .drawings-grid { grid-template-columns: 1fr 1fr; }
-            .hero-title { font-size: 2.2rem; }
-            .section-title { font-size: 1.8rem; }
-            footer { flex-direction: column; text-align: center; }
-            .profile-card { max-width: 100%; }
-            .profile-img-container { width: 160px; height: 160px; }
-            .services-grid { grid-template-columns: 1fr 1fr; }
-            .edu-grid { grid-template-columns: 1fr; }
-            .cert-grid { grid-template-columns: 1fr 1fr; }
-            .contact-container { gap: 2rem; }
-            .contact-form { padding: 1.5rem; }
-        }
-        @media (max-width: 480px) {
-            .services-grid, .cert-grid, .drawings-grid { grid-template-columns: 1fr; }
-            .hero-title { font-size: 1.8rem; }
-            .stats-grid { grid-template-columns: 1fr 1fr; }
-            #editor-panel .editor-row { grid-template-columns: 1fr; }
+            .nav-links {
+                position: absolute;
+                top: 90px;
+                left: 0;
+                width: 100%;
+                background: var(--bg-surface);
+                flex-direction: column;
+                padding: 30px;
+                gap: 20px;
+                border-bottom: 1px solid var(--glass-border);
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+                transition: clip-path 0.4s ease;
+            }
+
+            .nav-links.nav-active {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .hero-metrics {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
         }
     </style>
 </head>
-<body>
 
-    <!-- ===== 3D BACKGROUND (CSS cube + particles canvas) ===== -->
-    <div id="three-bg">
-        <div class="scene">
-            <div class="cube">
-                <div class="face"></div>
-                <div class="face"></div>
-                <div class="face"></div>
-                <div class="face"></div>
-                <div class="face"></div>
-                <div class="face"></div>
-            </div>
-        </div>
+<body class="light-mode">
+
+    <!-- PRELOADER -->
+    <div class="preloader" id="preloader">
+        <div class="gear-loader"></div>
+        <div class="loading-text">Loading Assets...</div>
     </div>
-    <canvas id="particles-canvas"></canvas>
 
-    <!-- ===== THEME TOGGLE ===== -->
-    <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+    <!-- BACKGROUND ENGINE -->
+    <div class="bg-engine">
+        <canvas id="particle-canvas"></canvas>
+        <div class="bg-mesh"></div>
+        <div class="bg-grid"></div>
+    </div>
 
-    <!-- ===== EDITOR TOGGLE ===== -->
-    <button id="editor-toggle" aria-label="Open Editor"><i class="fas fa-pen-fancy"></i></button>
+    <!-- HEADER NAVIGATION -->
+    <header id="header">
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <div class="logo-icon"><i class="fas fa-cube"></i></div>
+                3D Mech<span>Design</span>
+            </a>
 
-    <!-- ===== WHATSAPP ===== -->
-    <a href="https://wa.me/920000000000" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- ===== SPOTLIGHT ===== -->
-    <div class="spotlight"></div>
-
-    <!-- ===== HEADER ===== -->
-    <header>
-        <div class="header-content">
-            <a href="#" class="logo" id="brandLogo">3D Mech<span>Design</span></a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <ul class="nav-links">
+                <li><a href="#hero" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#expertise" class="nav-link">Expertise</a></li>
+                <li><a href="#portfolio" class="nav-link">Projects</a></li>
+                <li><a href="#insights" class="nav-link">Insights</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" class="btn-icon" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
     </header>
 
-    <!-- ===== HERO ===== -->
-    <section id="hero">
-        <div>
-            <p class="hero-greeting" id="heroGreeting"><i class="fas fa-compass"></i> Welcome to my engineering portfolio</p>
-            <h1 class="hero-title">Hi, I'm <span class="text-gradient" id="heroName">Abdur Rafay Yousuf</span></h1>
-            <h2 class="hero-subtitle" id="heroSubtitle">Mechanical Engineer &amp; CAD Consultant</h2>
-            <p class="hero-bio" id="heroBio">Specializing in parametric product design, complex geometric modeling, gear engineering, and computational fluid dynamics (CFD). Founder of 3D Mech Design based in Karachi, Pakistan.</p>
-            
-            <div class="hero-highlights reveal" id="heroMetrics">
-                <div class="metric-item"><strong id="metric1Val">100+</strong><span id="metric1Label">CAD Models</span></div>
-                <div class="metric-item"><strong id="metric2Val">4+</strong><span id="metric2Label">Years Exp.</span></div>
-                <div class="metric-item"><strong id="metric3Val">100%</strong><span id="metric3Label">Precision</span></div>
-            </div>
+    <main>
+        <!-- ==================================================================
+             SECTION 1: HERO
+             ================================================================== -->
+        <section id="hero">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <div class="badge"><i class="fas fa-rocket"></i> Mechanical Design Consultant</div>
+                    <h1 class="hero-title">
+                        Precision Engineering <br>
+                        <span class="typewriter-wrapper">
+                            <span class="typewriter-text" id="typewriter"></span>
+                        </span>
+                    </h1>
+                    <p class="hero-desc">
+                        I am Abdur Rafay Yousuf, based in Karachi, Pakistan. I specialize in complex parametric CAD
+                        modeling, Computational Fluid Dynamics (CFD), and thermodynamic prototyping for industrial
+                        applications.
+                    </p>
 
-            <div class="hero-btns">
-                <a href="#projects" class="btn btn-primary"><i class="fas fa-rocket"></i> View Projects</a>
-                <a href="#contact" class="btn btn-secondary"><i class="fas fa-envelope"></i> Contact Me</a>
-            </div>
-        </div>
-        
-        <div class="hero-image-wrapper">
-            <div class="profile-card card reveal" id="profileCard">
-                <div class="profile-img-container" id="profileImgContainer">
-                    <img src="https://via.placeholder.com/220" alt="Profile" id="profileImg" />
-                </div>
-                <div class="profile-info">
-                    <h3 id="profileName">Abdur Rafay Yousuf</h3>
-                    <p id="profileTitle">Founder @ 3D Mech Design</p>
-                    <div style="margin-top: 10px;">
-                        <span class="tag-sm"><i class="fas fa-university"></i> <span id="profileUni">DHA Suffa University</span></span>
+                    <div class="hero-metrics">
+                        <div class="metric">
+                            <span class="metric-value" data-target="150">0</span>
+                            <span class="metric-label">CAD Models</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value" data-target="4">0</span>
+                            <span class="metric-label">Years Exp.</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">100%</span>
+                            <span class="metric-label">Accuracy</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-btns">
+                        <a href="#portfolio" class="btn btn-primary">
+                            Explore Portfolio <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            Contact Me <i class="fas fa-envelope"></i>
+                        </a>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- ===== SKILLS ===== -->
-    <section id="skills">
-        <div class="section-header">
-            <span class="section-tag">Core Competencies</span>
-            <h2 class="section-title" id="skillsTitle">Technical Expertise</h2>
-            <p class="section-subtitle" id="skillsSub">Specialized engineering skills developed through rigorous academic research and professional consulting.</p>
-        </div>
-        <div class="skills-grid" id="skillsGrid"></div>
-    </section>
-
-    <!-- ===== STATS ===== -->
-    <section id="stats" style="padding-top:0;">
-        <div class="stats-grid" id="statsGrid">
-            <div class="stat-item reveal"><div class="stat-number" data-count="128">0</div><div class="stat-label">CAD Projects</div></div>
-            <div class="stat-item reveal"><div class="stat-number" data-count="24">0</div><div class="stat-label">Happy Clients</div></div>
-            <div class="stat-item reveal"><div class="stat-number" data-count="15">0</div><div class="stat-label">Research Papers</div></div>
-            <div class="stat-item reveal"><div class="stat-number" data-count="8">0</div><div class="stat-label">Industry Awards</div></div>
-        </div>
-    </section>
-
-    <!-- ===== EXPERIENCE ===== -->
-    <section id="experience">
-        <div class="section-header">
-            <span class="section-tag">Professional Timeline</span>
-            <h2 class="section-title" id="expTitle">Work &amp; Projects Experience</h2>
-        </div>
-        <div class="timeline" id="timelineContainer"></div>
-    </section>
-
-    <!-- ===== PROJECTS ===== -->
-    <section id="projects">
-        <div class="section-header">
-            <span class="section-tag">Portfolio</span>
-            <h2 class="section-title" id="projectsTitle">Featured Projects</h2>
-            <p class="section-subtitle" id="projectsSub">A showcase of advanced engineering applications, thermodynamic research, and robotic integrations.</p>
-        </div>
-        <div class="filter-menu reveal" id="filterMenu">
-            <button class="filter-btn active" data-filter="all">All Projects</button>
-            <button class="filter-btn" data-filter="cad">CAD / Mechanical</button>
-            <button class="filter-btn" data-filter="thermo">Thermodynamics</button>
-            <button class="filter-btn" data-filter="robotics">Robotics</button>
-        </div>
-        <div class="projects-grid" id="projectsGrid"></div>
-
-        <h3 class="section-title reveal" style="margin-top:5rem; font-size:1.8rem;">Technical Drawings &amp; Renders</h3>
-        <div class="drawings-grid" id="drawingsGrid"></div>
-    </section>
-
-    <!-- ===== SERVICES ===== -->
-    <section id="services">
-        <div class="section-header">
-            <span class="section-tag">What I Offer</span>
-            <h2 class="section-title" id="servicesTitle">Consulting Services</h2>
-            <p class="section-subtitle" id="servicesSub">Professional mechanical engineering and CAD consulting tailored to your project needs.</p>
-        </div>
-        <div class="services-grid" id="servicesGrid"></div>
-    </section>
-
-    <!-- ===== EDUCATION & CERTIFICATIONS ===== -->
-    <section id="education">
-        <div class="section-header">
-            <span class="section-tag">Academic</span>
-            <h2 class="section-title" id="eduTitle">Education &amp; Certifications</h2>
-        </div>
-        <div class="edu-grid" id="eduGrid"></div>
-        <div class="cert-grid" id="certGrid"></div>
-    </section>
-
-    <!-- ===== TESTIMONIALS ===== -->
-    <section id="testimonials">
-        <div class="section-header">
-            <span class="section-tag">References</span>
-            <h2 class="section-title" id="testTitle">Academic &amp; Professional Feedback</h2>
-        </div>
-        <div class="testimonials-grid" id="testimonialsGrid"></div>
-    </section>
-
-    <!-- ===== FAQ ===== -->
-    <section id="faq">
-        <div class="section-header">
-            <span class="section-tag">FAQ</span>
-            <h2 class="section-title" id="faqTitle">Frequently Asked Questions</h2>
-        </div>
-        <div class="faq-grid" id="faqGrid"></div>
-    </section>
-
-    <!-- ===== CONTACT ===== -->
-    <section id="contact">
-        <div class="section-header">
-            <span class="section-tag">Get in Touch</span>
-            <h2 class="section-title" id="contactTitle">Let's Work Together</h2>
-            <p class="section-subtitle" id="contactSub">Available for mechanical design consultation, parametric modeling contracts, and CFD analysis projects.</p>
-        </div>
-        <div class="contact-container">
-            <div class="contact-info reveal">
-                <p id="contactIntro">Operating primarily out of Karachi, Pakistan, providing high-quality engineering deliverables globally through <strong>3D Mech Design</strong>.</p>
-                <div class="info-list">
-                    <div class="info-item">
-                        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
-                        <div>
-                            <strong style="color:var(--secondary);">Location</strong>
-                            <p style="margin:0; font-size:0.9rem; color:var(--text-muted);" id="contactLocation">Karachi, Pakistan</p>
-                        </div>
+                <div class="hero-visual" id="heroVisual">
+                    <div class="float-badge float-1">
+                        <div class="float-icon"><i class="fas fa-wind"></i></div>
+                        <div class="float-text">CFD Analysis <span>Advanced Flow Regimes</span></div>
                     </div>
-                    <div class="info-item">
-                        <div class="info-icon"><i class="fas fa-building"></i></div>
-                        <div>
-                            <strong style="color:var(--secondary);">Consultancy</strong>
-                            <p style="margin:0; font-size:0.9rem; color:var(--text-muted);" id="contactConsultancy">3D Mech Design</p>
-                        </div>
+                    <div class="float-badge float-2">
+                        <div class="float-icon"><i class="fas fa-cogs"></i></div>
+                        <div class="float-text">Gear Engineering <span>Involute Math Profiles</span></div>
                     </div>
-                    <div class="info-item">
-                        <div class="info-icon"><i class="fas fa-envelope"></i></div>
-                        <div>
-                            <strong style="color:var(--secondary);">Email</strong>
-                            <p style="margin:0; font-size:0.9rem; color:var(--text-muted);" id="contactEmail">contact@example.com</p>
+
+                    <div class="glass-panel profile-card">
+                        <div class="profile-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=600&h=600"
+                                alt="Abdur Rafay Yousuf" class="profile-img">
                         </div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-icon"><i class="fas fa-phone"></i></div>
-                        <div>
-                            <strong style="color:var(--secondary);">Phone</strong>
-                            <p style="margin:0; font-size:0.9rem; color:var(--text-muted);" id="contactPhone">+92 300 1234567</p>
-                        </div>
+                        <h3>Abdur Rafay Yousuf</h3>
+                        <p>Founder, 3D Mech Design</p>
+                        <div class="badge"><i class="fas fa-university"></i> DHA Suffa University</div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="contact-form card reveal">
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label>Full Name</label>
-                        <input type="text" required placeholder="John Doe" id="formName" />
-                    </div>
-                    <div class="form-group">
-                        <label>Email Address</label>
-                        <input type="email" required placeholder="john@example.com" id="formEmail" />
-                    </div>
-                    <div class="form-group">
-                        <label>Project Details</label>
-                        <textarea rows="5" required placeholder="Please provide details..." id="formMessage"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="width:100%;">Submit Inquiry</button>
-                    <div class="alert-success" id="successMsg">
-                        <i class="fas fa-check-circle"></i> Message sent successfully! I will reply shortly.
-                    </div>
-                </form>
+        <!-- ==================================================================
+             INFINITE SCROLL TECH MARQUEE
+             ================================================================== -->
+        <div class="marquee-wrapper">
+            <div class="marquee-content">
+                <!-- Set 1 -->
+                <div class="marquee-item"><i class="fa-solid fa-code"></i> SolidWorks</div>
+                <div class="marquee-item"><i class="fa-brands fa-hubspot"></i> Fusion 360</div>
+                <div class="marquee-item"><i class="fa-solid fa-pen-ruler"></i> AutoCAD</div>
+                <div class="marquee-item"><i class="fa-solid fa-calculator"></i> MATLAB</div>
+                <div class="marquee-item"><i class="fa-solid fa-network-wired"></i> Ansys</div>
+                <div class="marquee-item"><i class="fa-brands fa-usb"></i> Arduino Uno</div>
+                <div class="marquee-item"><i class="fa-solid fa-wind"></i> CFD Simulation</div>
+                <!-- Set 2 (Duplicate for seamless loop) -->
+                <div class="marquee-item"><i class="fa-solid fa-code"></i> SolidWorks</div>
+                <div class="marquee-item"><i class="fa-brands fa-hubspot"></i> Fusion 360</div>
+                <div class="marquee-item"><i class="fa-solid fa-pen-ruler"></i> AutoCAD</div>
+                <div class="marquee-item"><i class="fa-solid fa-calculator"></i> MATLAB</div>
+                <div class="marquee-item"><i class="fa-solid fa-network-wired"></i> Ansys</div>
+                <div class="marquee-item"><i class="fa-brands fa-usb"></i> Arduino Uno</div>
+                <div class="marquee-item"><i class="fa-solid fa-wind"></i> CFD Simulation</div>
             </div>
         </div>
-    </section>
 
-    <!-- ===== FOOTER ===== -->
+        <!-- ==================================================================
+             SECTION 2: ABOUT & TABS
+             ================================================================== -->
+        <section id="about">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="badge">Who I Am</div>
+                    <h2 class="section-title">Bridging Theory & <span class="text-gradient">Manufacturing</span></h2>
+                    <p class="section-desc">Turning abstract physics and thermodynamic concepts into highly precise,
+                        manufacturable engineering solutions.</p>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-visual reveal-left">
+                        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?fit=crop&w=800&h=800"
+                            alt="Engineering Workspace" class="about-image">
+                        <div class="location-badge">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4 style="margin-bottom: 2px;">Based in</h4>
+                                <span class="mono" style="color: var(--text-muted); font-size: 0.9rem;">Karachi,
+                                    Pakistan</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-content reveal-right">
+                        <!-- Custom Tabs -->
+                        <div class="tabs-header">
+                            <button class="tab-btn active" data-tab="mission">Mission</button>
+                            <button class="tab-btn" data-tab="methodology">Methodology</button>
+                            <button class="tab-btn" data-tab="mentorship">Mentorship</button>
+                        </div>
+
+                        <!-- Tab 1: Mission -->
+                        <div class="tab-pane active" id="tab-mission">
+                            <h3 style="font-size: 1.8rem; margin-bottom: 20px;">Engineering with Purpose</h3>
+                            <p>My core mission is to develop localized, highly efficient mechanical solutions. This
+                                drive was heavily inspired by personal family challenges regarding accessibility, which
+                                directly motivated the creation of the <strong>Mahfooz Wheelchair Project</strong>—a
+                                localized mobility device with stair-lifting capabilities.</p>
+                            <div class="highlight-box">
+                                <h4>3D Mech Design</h4>
+                                <p style="margin: 0; font-size: 0.95rem;">Founded to provide professional mechanical
+                                    design consultation. We draft technical proposals, flyers, and operate comprehensive
+                                    parametric modeling projects for industry clients.</p>
+                            </div>
+                        </div>
+
+                        <!-- Tab 2: Methodology -->
+                        <div class="tab-pane" id="tab-methodology">
+                            <h3 style="font-size: 1.8rem; margin-bottom: 20px;">The Design Process</h3>
+                            <p>I strictly adhere to a mathematically validated design process. Whether it is a thermal
+                                sand battery or gear assembly, no dimension is arbitrary.</p>
+                            <ul
+                                style="list-style: none; display: flex; flex-direction: column; gap: 15px; margin-top: 20px;">
+                                <li><i class="fas fa-check-circle"
+                                        style="color: var(--brand-primary); margin-right: 10px;"></i>
+                                    <strong>Ideation:</strong> Mathematical formulation & sketches.</li>
+                                <li><i class="fas fa-check-circle"
+                                        style="color: var(--brand-primary); margin-right: 10px;"></i> <strong>CAD
+                                        Phase:</strong> Parametric design in SolidWorks.</li>
+                                <li><i class="fas fa-check-circle"
+                                        style="color: var(--brand-primary); margin-right: 10px;"></i>
+                                    <strong>Simulation:</strong> Stress testing & CFD validation.</li>
+                                <li><i class="fas fa-check-circle"
+                                        style="color: var(--brand-primary); margin-right: 10px;"></i>
+                                    <strong>Production:</strong> Final manufacturing schematics.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Tab 3: Mentorship -->
+                        <div class="tab-pane" id="tab-mentorship">
+                            <h3 style="font-size: 1.8rem; margin-bottom: 20px;">Community & Skill Sharing</h3>
+                            <p>Knowledge isolation hinders engineering progress. I actively log mentorship and
+                                skill-sharing activities with junior students and associates.</p>
+                            <div class="glass-panel" style="padding: 20px; margin-top: 20px;">
+                                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                                    <div
+                                        style="width: 50px; height: 50px; border-radius: 50%; background: var(--brand-primary); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+                                        FK</div>
+                                    <div>
+                                        <h4 style="margin: 0;">Faizan Khan</h4>
+                                        <span style="font-size: 0.85rem; color: var(--text-muted);">Junior Associate
+                                            Mentee</span>
+                                    </div>
+                                </div>
+                                <p style="margin: 0; font-size: 0.95rem; font-style: italic;">"Mentored directly in
+                                    advanced computer-aided design skills, transferring practical parametric modeling
+                                    knowledge."</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             SECTION 3: EXPERTISE & INTERACTIVE GEAR CALCULATOR
+             ================================================================== -->
+        <section id="expertise">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="badge">Technical Arsenal</div>
+                    <h2 class="section-title">Engineering <span class="text-gradient">Capabilities</span></h2>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-bars reveal-left">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-title">
+                                    <div class="skill-icon"><i class="fas fa-cube"></i></div> 3D CAD & Drafting
+                                </div>
+                                <div class="skill-pct">95%</div>
+                            </div>
+                            <div class="progress-track">
+                                <div class="progress-fill" style="width: 95%;"></div>
+                            </div>
+                            <p style="margin-top: 15px; font-size: 0.9rem; margin-bottom: 0;">SolidWorks, AutoCAD,
+                                Fusion 360. Feature trees & technical drawings.</p>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-title">
+                                    <div class="skill-icon"><i class="fas fa-wind"></i></div> CFD Analysis
+                                </div>
+                                <div class="skill-pct">88%</div>
+                            </div>
+                            <div class="progress-track">
+                                <div class="progress-fill" style="width: 88%;"></div>
+                            </div>
+                            <p style="margin-top: 15px; font-size: 0.9rem; margin-bottom: 0;">Velocity/pressure
+                                distributions across fluid flow regimes.</p>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-title">
+                                    <div class="skill-icon"><i class="fas fa-fire-alt"></i></div> Thermodynamics
+                                </div>
+                                <div class="skill-pct">85%</div>
+                            </div>
+                            <div class="progress-track">
+                                <div class="progress-fill" style="width: 85%;"></div>
+                            </div>
+                            <p style="margin-top: 15px; font-size: 0.9rem; margin-bottom: 0;">Thermal energy storage,
+                                sand batteries, and ICE emissions control.</p>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Gear Calculator Widget -->
+                    <div class="calculator-widget reveal-right">
+                        <div class="calc-header">
+                            <div class="calc-title"><i class="fas fa-cogs"></i> Involute Gear Toolkit</div>
+                            <p style="margin-top: 10px; font-size: 0.9rem; margin-bottom: 0;">Interactive tool
+                                demonstrating gear mathematics. <strong>Note:</strong> $\Delta d_r$ calculates Pitch
+                                Diameter, not root diameter.</p>
+                        </div>
+
+                        <div class="calc-form-group">
+                            <label class="calc-label">Number of Teeth (N)</label>
+                            <input type="number" id="gearTeeth" class="calc-input" value="24" min="10">
+                        </div>
+                        <div class="calc-form-group">
+                            <label class="calc-label">Module / Diametral Pitch (m)</label>
+                            <input type="number" id="gearModule" class="calc-input" value="2.5" step="0.1">
+                        </div>
+
+                        <div class="calc-result-box">
+                            <div class="calc-result-label">Pitch Diameter ($\Delta d_r$)</div>
+                            <div class="calc-result-value" id="gearResult">60.00 <span
+                                    style="font-size: 1rem;">mm</span></div>
+                            <div class="calc-note">Formula: $\Delta d_r = N \times m$</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             SECTION 4: PORTFOLIO
+             ================================================================== -->
+        <section id="portfolio">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="badge">Case Studies</div>
+                    <h2 class="section-title">Featured <span class="text-gradient">Projects</span></h2>
+                </div>
+
+                <div class="portfolio-filters reveal">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="thermo">Thermodynamics</button>
+                    <button class="filter-btn" data-filter="mech">Mechanical CAD</button>
+                    <button class="filter-btn" data-filter="robotics">Robotics</button>
+                </div>
+
+                <div class="portfolio-grid" id="portfolioGrid">
+
+                    <!-- Portfolio Item 1: Wheelchair -->
+                    <div class="portfolio-card glass-panel reveal port-item mech">
+                        <div class="port-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?fit=crop&w=600&h=400"
+                                alt="Mahfooz Wheelchair">
+                            <div class="port-overlay">
+                                <button class="port-view-btn open-modal" data-target="modal-wheelchair"><i
+                                        class="fas fa-search-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="port-content">
+                            <span class="port-cat">Product Design</span>
+                            <h3 class="port-title">Mahfooz Wheelchair</h3>
+                            <p class="port-desc">A locally producible mobility device engineered with advanced
+                                stair-lifting capabilities. Recognized by Sindh HEC.</p>
+                            <div class="port-meta">
+                                <div class="port-tool"><i class="fa-solid fa-code"></i> <i
+                                        class="fas fa-wheelchair"></i></div>
+                                <a href="#" class="port-meta-link open-modal" data-target="modal-wheelchair">Full Specs
+                                    <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Portfolio Item 2: Sand Battery -->
+                    <div class="portfolio-card glass-panel reveal port-item thermo">
+                        <div class="port-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?fit=crop&w=600&h=400"
+                                alt="Sand Battery">
+                            <div class="port-overlay">
+                                <button class="port-view-btn open-modal" data-target="modal-battery"><i
+                                        class="fas fa-search-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="port-content">
+                            <span class="port-cat">Thermodynamics</span>
+                            <h3 class="port-title">Thermal Energy Sand Battery</h3>
+                            <p class="port-desc">Final year design prototype. Insulated silica sand tank with internal
+                                heat exchanger coils and instrumentation sensors.</p>
+                            <div class="port-meta">
+                                <div class="port-tool"><i class="fas fa-thermometer-half"></i> <i
+                                        class="fas fa-cogs"></i></div>
+                                <a href="#" class="port-meta-link open-modal" data-target="modal-battery">Full Specs <i
+                                        class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Portfolio Item 3: Autonomous Robot -->
+                    <div class="portfolio-card glass-panel reveal port-item robotics">
+                        <div class="port-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?fit=crop&w=600&h=400"
+                                alt="Robot">
+                            <div class="port-overlay">
+                                <button class="port-view-btn open-modal" data-target="modal-robot"><i
+                                        class="fas fa-search-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="port-content">
+                            <span class="port-cat">Mechatronics</span>
+                            <h3 class="port-title">Autonomous Line-Follower</h3>
+                            <p class="port-desc">Arduino Uno system featuring complex wiring diagrams, sensor loops, and
+                                real-time processing code for the Instrumentation Lab.</p>
+                            <div class="port-meta">
+                                <div class="port-tool"><i class="fa-brands fa-usb"></i> <i class="fas fa-microchip"></i>
+                                </div>
+                                <a href="#" class="port-meta-link open-modal" data-target="modal-robot">Full Specs <i
+                                        class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             SECTION 5: INSIGHTS & PUBLICATIONS
+             ================================================================== -->
+        <section id="insights">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="badge">Research & Academia</div>
+                    <h2 class="section-title">Engineering <span class="text-gradient">Insights</span></h2>
+                </div>
+
+                <div class="insights-grid">
+                    <!-- Article 1 -->
+                    <div class="article-card reveal-left">
+                        <div class="article-date">
+                            <span class="date-month">FALL</span>
+                            <span class="date-year">2025</span>
+                        </div>
+                        <div class="article-content">
+                            <h3>Emissions in Internal Combustion Engines</h3>
+                            <p>A formal engineering document analyzing pollutant formation mechanisms and evaluating
+                                modern emission control technologies for industrial IC Engines.</p>
+                            <a href="#" class="read-more">Read Abstract <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Article 2 -->
+                    <div class="article-card reveal-right">
+                        <div class="article-date">
+                            <span class="date-month">JAN</span>
+                            <span class="date-year">2026</span>
+                        </div>
+                        <div class="article-content">
+                            <h3>PSX Portfolio Performance Analysis</h3>
+                            <p>Executed a transaction log analysis report for Engineering Economics. Transcribed data
+                                from Pakistan Stock Exchange to analyze market value fluctuations.</p>
+                            <a href="#" class="read-more">Read Abstract <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             SECTION 6: ADVANCED CONTACT MODULE
+             ================================================================== -->
+        <section id="contact">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="badge">Initiate Collaboration</div>
+                    <h2 class="section-title">Let's <span class="text-gradient">Connect</span></h2>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-info reveal-left">
+                        <div class="contact-card">
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="contact-details">
+                                <h4>Global & Local Hub</h4>
+                                <p>Karachi, Sindh, Pakistan.<br>Available globally via remote consulting.</p>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="contact-details">
+                                <h4>Direct Communication</h4>
+                                <a href="mailto:contact@example.com">consult@3dmechdesign.com</a>
+                                <p style="margin-top: 5px;">Response within 24 hours.</p>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial Inline -->
+                        <div class="glass-panel" style="padding: 30px; margin-top: 20px;">
+                            <i class="fas fa-quote-left"
+                                style="color: var(--brand-primary); font-size: 2rem; margin-bottom: 15px;"></i>
+                            <p style="font-style: italic; font-size: 1.05rem;">"Abdur Rafay demonstrates exceptional
+                                diligence... his CFD work sets a high standard for engineering students."</p>
+                            <div style="font-weight: 700; color: var(--text-primary);">Dr. Usama</div>
+                            <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--brand-primary);">
+                                DHA Suffa University</div>
+                        </div>
+                    </div>
+
+                    <div class="advanced-form reveal-right">
+                        <h3 style="font-size: 1.8rem; margin-bottom: 30px;">Project Inquiry Application</h3>
+                        <form id="contactForm">
+                            <div class="form-row">
+                                <div class="input-group">
+                                    <label>First Name</label>
+                                    <input type="text" class="form-control" required placeholder="John">
+                                </div>
+                                <div class="input-group">
+                                    <label>Last Name</label>
+                                    <input type="text" class="form-control" required placeholder="Doe">
+                                </div>
+                            </div>
+
+                            <div class="input-group" style="margin-bottom: 25px;">
+                                <label>Corporate Email</label>
+                                <input type="email" class="form-control" required placeholder="john@engineering.com">
+                            </div>
+
+                            <div class="input-group" style="margin-bottom: 25px;">
+                                <label>Engineering Discipline Required</label>
+                                <select class="form-control">
+                                    <option>Parametric CAD Modeling</option>
+                                    <option>Computational Fluid Dynamics (CFD)</option>
+                                    <option>Gear Mathematical Profiles</option>
+                                    <option>Thermodynamics Prototyping</option>
+                                </select>
+                            </div>
+
+                            <div class="input-group" style="margin-bottom: 25px;">
+                                <label>Project Brief</label>
+                                <textarea class="form-control" required
+                                    placeholder="Describe technical specifications, deliverables, and timelines..."></textarea>
+                            </div>
+
+                            <label class="custom-checkbox">
+                                <input type="checkbox" required>
+                                <span class="checkmark"></span>
+                                <span class="check-label">I agree to the processing of technical data for consultation
+                                    purposes.</span>
+                            </label>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">
+                                Submit Technical Brief <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================================================================
+         SECTION 7: MEGA FOOTER
+         ================================================================== -->
     <footer>
-        <div id="footerText">&copy; 2026 Abdur Rafay Yousuf. All rights reserved.</div>
-        <div class="social-links" id="socialLinks">
-            <a href="#" id="socialLinkedin"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" id="socialGithub"><i class="fab fa-github"></i></a>
-            <a href="#" id="socialInstagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" id="socialTwitter"><i class="fab fa-x-twitter"></i></a>
+        <div class="container">
+            <div class="footer-grid">
+
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <div class="logo-icon"><i class="fas fa-cube"></i></div>
+                        3D Mech<span>Design</span>
+                    </a>
+                    <p>Providing cutting-edge parametric design, thermodynamics prototyping, and computational fluid
+                        dynamics analysis for modern engineering solutions worldwide.</p>
+                    <div class="social-circle-links" style="margin-top: 25px;">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">Disciplines</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> CAD Consulting</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Thermal Simulation</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Gear Analysis</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Prototyping</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="#hero"><i class="fas fa-chevron-right"></i> Home Base</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> Professional Profile</a></li>
+                        <li><a href="#portfolio"><i class="fas fa-chevron-right"></i> Case Studies</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact Protocol</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">Academic Affiliation</h4>
+                    <p style="color: var(--text-muted); line-height: 1.8;">
+                        B.E. Mechanical Engineering<br>
+                        <strong>DHA Suffa University</strong><br>
+                        Project Collaborators: Ayaan Amir<br>
+                        Mentors: Dr. Usama
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Abdur Rafay Yousuf. Engineering Portfolio. All Rights Reserved.</p>
+                <p>System Time: PKT 09:05</p>
+            </div>
         </div>
     </footer>
 
-    <!-- ===== MODALS ===== -->
+    <!-- ==================================================================
+         MODALS (HIDDEN BY DEFAULT)
+         ================================================================== -->
+
+    <!-- Modal: Mahfooz Wheelchair -->
+    <div class="modal" id="modal-wheelchair">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <div class="badge" style="margin-bottom: 15px;">Product Engineering</div>
+                <h2 class="modal-title">Mahfooz Wheelchair Project</h2>
+            </div>
+            <div class="modal-body">
+                <img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?fit=crop&w=800&h=400"
+                    alt="Wheelchair CAD">
+                <p><strong>Inspiration & Overview:</strong> Motivated by severe family mobility limitations, this
+                    project aimed to develop a highly localized, cost-effective mobility device equipped with functional
+                    stair-lifting mechanisms.</p>
+                <p><strong>Engineering Process:</strong> Conducted extensive user surveys to determine ergonomic
+                    parameters. The mechanical chassis was developed using parametric modeling in SolidWorks, followed
+                    by finite element analysis (FEA) on critical load-bearing joints.</p>
+
+                <table class="spec-table">
+                    <tr>
+                        <td>Recognition</td>
+                        <td>Sindh Higher Education Commission (Startup)</td>
+                    </tr>
+                    <tr>
+                        <td>Timeline</td>
+                        <td>2025 - 2026</td>
+                    </tr>
+                    <tr>
+                        <td>Software Used</td>
+                        <td>SolidWorks, Ansys</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Sand Battery -->
     <div class="modal" id="modal-battery">
-        <div class="modal-container">
-            <span class="close-modal">&times;</span>
-            <h3 class="modal-title">Thermal Energy Sand Battery</h3>
-            <p style="color:var(--text-muted); margin-bottom:1rem;">Technical specifications for the final year thermal energy storage project.</p>
-            <table class="spec-table">
-                <tr><td>Storage Medium</td><td>Silica Sand</td></tr>
-                <tr><td>Core Components</td><td>Insulated Tank, Heat Exchanger Coils</td></tr>
-                <tr><td>Application</td><td>Industrial Scale Thermal Storage</td></tr>
-                <tr><td>Key Focus</td><td>Thermodynamics &amp; Heat Transfer</td></tr>
-            </table>
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <div class="badge" style="margin-bottom: 15px;">Thermodynamics</div>
+                <h2 class="modal-title">Thermal Energy Sand Battery</h2>
+            </div>
+            <div class="modal-body">
+                <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?fit=crop&w=800&h=400"
+                    alt="Sand Battery Spec">
+                <p><strong>Overview:</strong> A final year design project exploring high-capacity thermal energy storage
+                    for industrial applications utilizing silica sand media.</p>
+
+                <table class="spec-table">
+                    <tr>
+                        <td>Storage Medium</td>
+                        <td>High-retention Silica Sand</td>
+                    </tr>
+                    <tr>
+                        <td>Physical Layout</td>
+                        <td>Insulated tank, Internal Heat Exchanger Coils</td>
+                    </tr>
+                    <tr>
+                        <td>Data Tracking</td>
+                        <td>Instrumentation Sensors</td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
 
+    <!-- Modal: Robot -->
     <div class="modal" id="modal-robot">
-        <div class="modal-container">
-            <span class="close-modal">&times;</span>
-            <h3 class="modal-title">Autonomous Line-Following Robot</h3>
-            <p style="color:var(--text-muted); margin-bottom:1rem;">Measurement &amp; Instrumentation Lab Project Details.</p>
-            <table class="spec-table">
-                <tr><td>Microcontroller</td><td>Arduino Uno</td></tr>
-                <tr><td>Function</td><td>Real-Time Line Tracking</td></tr>
-                <tr><td>Components</td><td>IR Sensors, Motor Drivers</td></tr>
-                <tr><td>Focus Area</td><td>Wiring diagrams, Signal Processing</td></tr>
-            </table>
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <div class="badge" style="margin-bottom: 15px;">Mechatronics</div>
+                <h2 class="modal-title">Autonomous Line-Following Robot</h2>
+            </div>
+            <div class="modal-body">
+                <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?fit=crop&w=800&h=400"
+                    alt="Robot Internals">
+                <p><strong>Overview:</strong> A Measurement & Instrumentation Lab project executed in November 2025.</p>
+
+                <table class="spec-table">
+                    <tr>
+                        <td>Core Processor</td>
+                        <td>Arduino Uno</td>
+                    </tr>
+                    <tr>
+                        <td>Documentation</td>
+                        <td>Technical report, Wiring Diagrams</td>
+                    </tr>
+                    <tr>
+                        <td>Software Logic</td>
+                        <td>Real-time C++ processing code</td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
 
-    <div class="modal" id="modal-ice">
-        <div class="modal-container">
-            <span class="close-modal">&times;</span>
-            <h3 class="modal-title">ICE Emissions Research</h3>
-            <p style="color:var(--text-muted); margin-bottom:1rem;">Fall 2025 Technical Research Report Data.</p>
-            <table class="spec-table">
-                <tr><td>Subject</td><td>Internal Combustion Engines</td></tr>
-                <tr><td>Primary Focus</td><td>Pollutant Formation Mechanisms</td></tr>
-                <tr><td>Output</td><td>Technical Research Document</td></tr>
-                <tr><td>Key Findings</td><td>Modern Emission Control Technologies</td></tr>
-            </table>
-        </div>
-    </div>
+    <!-- ==================================================================
+         JAVASCRIPT ENGINE
+         ================================================================== -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            /* --- 1. PRELOADER & INITIALIZATION --- */
+            const preloader = document.getElementById('preloader');
+            setTimeout(() => {
+                preloader.classList.add('hidden');
+                setTimeout(() => preloader.style.display = 'none', 800);
+            }, 1200);
+
+            /* --- 2. THEME MANAGER --- */
+            const themeToggle = document.getElementById("theme-toggle");
+            const savedTheme = localStorage.getItem("portfolio_theme");
+
+            if (savedTheme) {
+                document.documentElement.setAttribute("data-theme", savedTheme);
+                themeToggle.innerHTML = savedTheme === "dark" ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+            }
+
+            themeToggle.addEventListener('click', () => {
+                const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+                document.documentElement.setAttribute("data-theme", isDark ? "light" : "dark");
+                localStorage.setItem("portfolio_theme", isDark ? "light" : "dark");
+                themeToggle.innerHTML = isDark ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+                initParticles(); // Re-render particles with new theme colors
+            });
+
+            /* --- 3. DYNAMIC TYPEWRITER EFFECT --- */
+            const typeText = document.getElementById("typewriter");
+            if (typeText) {
+                const words = ["Parametric Design.", "CFD Simulation.", "Thermodynamics.", "Gear Mathematics."];
+                let wordIndex = 0;
+                let charIndex = 0;
+                let isDeleting = false;
+
+                function type() {
+                    const currentWord = words[wordIndex];
+                    if (isDeleting) {
+                        typeText.textContent = currentWord.substring(0, charIndex - 1);
+                        charIndex--;
+                    } else {
+                        typeText.textContent = currentWord.substring(0, charIndex + 1);
+                        charIndex++;
+                    }
+
+                    let speed = isDeleting ? 50 : 100;
+
+                    if (!isDeleting && charIndex === currentWord.length) {
+                        speed = 2000; // Pause at end of word
+                        isDeleting = true;
+                    } else if (isDeleting && charIndex === 0) {
+                        isDeleting = false;
+                        wordIndex = (wordIndex + 1) % words.length;
+                        speed = 500; // Pause before new word
+                    }
+                    setTimeout(type, speed);
+                }
+                setTimeout(type, 1500);
+            }
+
+            /* --- 4. NAVBAR SCROLL & MOBILE MENU --- */
+            const header = document.getElementById('header');
+            const mobileToggle = document.querySelector('.mobile-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            const navItems = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section');
+
+            window.addEventListener('scroll', () => {
+                // Header minimize
+                if (window.scrollY > 50) header.classList.add('scrolled');
+                else header.classList.remove('scrolled');
+
+                // Scroll Spy for Nav links
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - 200) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navItems.forEach(li => {
+                    li.classList.remove('active');
+                    if (li.getAttribute('href') === `#${current}`) {
+                        li.classList.add('active');
+                    }
+                });
+            });
+
+            mobileToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('nav-active');
+                const i = mobileToggle.querySelector('i');
+                i.classList.toggle('fa-bars');
+                i.classList.toggle('fa-times');
+            });
+
+            /* --- 5. TABS LOGIC (About Section) --- */
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const target = btn.getAttribute('data-tab');
+
+                    // Reset all
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabPanes.forEach(p => p.classList.remove('active'));
+
+                    // Activate clicked
+                    btn.classList.add('active');
+                    document.getElementById(`tab-${target}`).classList.add('active');
+                });
+            });
+
+            /* --- 6. GEAR CALCULATOR WIDGET LOGIC --- */
+            const gearTeethInput = document.getElementById('gearTeeth');
+            const gearModuleInput = document.getElementById('gearModule');
+            const gearResultDisplay = document.getElementById('gearResult');
+
+            function calculatePitchDiameter() {
+                const N = parseFloat(gearTeethInput.value) || 0;
+                const m = parseFloat(gearModuleInput.value) || 0;
+                // Formula: Pitch Diameter (delta dr) = N * m
+                const pitchDiameter = (N * m).toFixed(2);
+                gearResultDisplay.innerHTML = `${pitchDiameter} <span style="font-size: 1rem;">mm</span>`;
+            }
+
+            if (gearTeethInput && gearModuleInput) {
+                gearTeethInput.addEventListener('input', calculatePitchDiameter);
+                gearModuleInput.addEventListener('input', calculatePitchDiameter);
+            }
+
+            /* --- 7. PORTFOLIO FILTERING --- */
+            const filterBtns = document.querySelectorAll('.portfolio-filters .filter-btn');
+            const portItems = document.querySelectorAll('.port-item');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const filter = btn.getAttribute('data-filter');
+
+                    portItems.forEach(item => {
+                        item.style.transition = "transform 0.4s ease, opacity 0.4s ease";
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.9)';
+
+                        setTimeout(() => {
+                            if (filter === 'all' || item.classList.contains(filter)) {
+                                item.style.display = 'flex';
+                                setTimeout(() => {
+                                    item.style.opacity = '1';
+                                    item.style.transform = 'scale(1)';
+                                }, 50);
+                            } else {
+                                item.style.display = 'none';
+                            }
+                        }, 400);
+                    });
+                });
+            });
+
+            /* --- 8. MODAL MANAGER --- */
+            const modalTriggers = document.querySelectorAll('.open-modal');
+            const modals = document.querySelectorAll('.modal');
+            const closeBtns = document.querySelectorAll('.modal-close');
+
+            modalTriggers.forEach(trigger => {
+                trigger.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = trigger.getAttribute('data-target');
+                    if (targetId) document.getElementById(targetId).classList.add('active');
+                });
+            });
+
+            closeBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    modals.forEach(m => m.classList.remove('active'));
+                });
+            });
+
+            window.addEventListener('click', (e) => {
+                modals.forEach(m => {
+                    if (e.target === m) m.classList.remove('active');
+                });
+            });
+
+            /* --- 9. METRICS COUNTER ANIMATION --- */
+            const metrics = document.querySelectorAll('.metric-value[data-target]');
+            let counted = false;
+
+            const runCounters = () => {
+                metrics.forEach(metric => {
+                    const target = +metric.getAttribute('data-target');
+                    const count = +metric.innerText;
+                    const inc = target / 100; // Speed control
+
+                    if (count < target) {
+                        metric.innerText = Math.ceil(count + inc);
+                        setTimeout(runCounters, 20);
+                    } else {
+                        metric.innerText = target + "+";
+                    }
+                });
+            }
+
+            /* --- 10. SCROLL REVEAL OBSERVER --- */
+            const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        // Trigger counters if hero metrics are visible
+                        if (entry.target.classList.contains('hero-metrics') && !counted) {
+                            runCounters();
+                            counted = true;
+                        }
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            revealElements.forEach(el => observer.observe(el));
+
+            /* --- 11. FORM SUBMISSION MOCK --- */
+            const form = document.getElementById('contactForm');
+            if (form) {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const btn = form.querySelector('button[type="submit"]');
+                    const originalText = btn.innerHTML;
+                    btn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Processing...';
+
+                    setTimeout(() => {
+                        btn.innerHTML = '<i class="fas fa-check"></i> Brief Submitted Successfully';
+                        btn.style.background = "var(--brand-success)";
+                        btn.style.borderColor = "var(--brand-success)";
+                        form.reset();
+
+                        setTimeout(() => {
+                            btn.innerHTML = originalText;
+                            btn.style.background = "";
+                            btn.style.borderColor = "";
+                        }, 4000);
+                    }, 2000);
+                });
+            }
+
+            /* --- 12. ADVANCED CANVAS PARTICLE ENGINE (CFD SIM) --- */
+            const canvas = document.getElementById('particle-canvas');
+            const ctx = canvas.getContext('2d');
+            let particlesArray = [];
+
+            // Mouse tracking for repulsion effect
+            let mouse = { x: null, y: null, radius: 150 };
+
+            window.addEventListener('mousemove', (event) => {
+                mouse.x = event.x;
+                mouse.y = event.y;
+            });
+            window.addEventListener('mouseout', () => {
+                mouse.x = undefined;
+                mouse.y = undefined;
+            });
+
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                initParticles();
+            }
+            window.addEventListener('resize', resizeCanvas);
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            class Particle {
+                constructor(x, y, directionX, directionY, size, color) {
+                    this.x = x;
+                    this.y = y;
+                    this.baseX = x;
+                    this.baseY = y;
+                    this.directionX = directionX;
+                    this.directionY = directionY;
+                    this.size = size;
+                    this.color = color;
+                    this.density = (Math.random() * 30) + 1;
+                }
+
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+                    ctx.fillStyle = this.color;
+                    ctx.fill();
+                }
+
+                update() {
+                    // Collision with borders
+                    if (this.x > canvas.width || this.x < 0) this.directionX = -this.directionX;
+                    if (this.y > canvas.height || this.y < 0) this.directionY = -this.directionY;
+
+                    // Mouse repulsion physics (Fluid Dynamics feel)
+                    let dx = mouse.x - this.x;
+                    let dy = mouse.y - this.y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < mouse.radius) {
+                        const forceDirectionX = dx / distance;
+                        const forceDirectionY = dy / distance;
+                        const force = (mouse.radius - distance) / mouse.radius;
+                        const directionX = (forceDirectionX * force * this.density);
+                        const directionY = (forceDirectionY * force * this.density);
+
+                        this.x -= directionX;
+                        this.y -= directionY;
+                    } else {
+                        // Slowly return to base direction if untouched
+                        if (this.x !== this.baseX) {
+                            let dx = this.x - this.baseX;
+                            this.x -= dx / 100;
+                        }
+                        if (this.y !== this.baseY) {
+                            let dy = this.y - this.baseY;
+                            this.y -= dy / 100;
+                        }
+                    }
+
+                    // Base movement
+                    this.x += this.directionX;
+                    this.y += this.directionY;
+                    this.draw();
+                }
+            }
+
+            function initParticles() {
+                particlesArray = [];
+                const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+                const pColor = isDark ? 'rgba(96, 165, 250, 0.4)' : 'rgba(37, 99, 235, 0.2)';
+
+                // Scale number of particles based on screen size for performance
+                const numberOfParticles = (canvas.height * canvas.width) / 10000;
+
+                for (let i = 0; i < numberOfParticles; i++) {
+                    let size = (Math.random() * 2) + 1;
+                    let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
+                    let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
+                    let directionX = (Math.random() * 1.5) - 0.75;
+                    let directionY = (Math.random() * 1.5) - 0.75;
+
+                    particlesArray.push(new Particle(x, y, directionX, directionY, size, pColor));
+                }
+            }
+
+            function animateParticles() {
+                requestAnimationFrame(animateParticles);
+                ctx.clearRect(0, 0, innerWidth, innerHeight);
+
+                for (let i = 0; i < particlesArray.length; i++) {
+                    particlesArray[i].update();
+                }
+                connectParticles();
+            }
+
+            function connectParticles() {
+                let opacityValue = 1;
+                for (let a = 0; a < particlesArray.length; a++) {
+                    for (let b = a; b < particlesArray.length; b++) {
+                        let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x))
+                            + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
+
+                        if (distance < (canvas.width / 12) * (canvas.height / 12)) {
+                            const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+                            opacityValue = 1 - (distance / 20000);
+                            ctx.strokeStyle = isDark ? `rgba(96, 165, 250, ${opacityValue * 0.15})` : `rgba(37, 99, 235, ${opacityValue * 0.15})`;
+                            ctx.lineWidth = 1;
+                            ctx.beginPath();
+                            ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                            ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+
+            initParticles();
+            animateParticles();
+
+        });
+    </script>
+
+    <!-- ==================================================================
+         EDITOR MODE (HTML, CSS, JS)
+         ================================================================== -->
+    <!-- ===== EDITOR TOGGLE BUTTON ===== -->
+    <button id="editor-toggle" aria-label="Open Editor"><i class="fas fa-pen-fancy"></i></button>
 
     <!-- ===== EDITOR PANEL ===== -->
     <div id="editor-panel">
         <div class="panel-header">
-            <h2><i class="fas fa-pen-fancy" style="color:var(--primary);"></i> Editor Mode</h2>
+            <h2><i class="fas fa-pen-fancy" style="color:var(--brand-primary);"></i> Editor Mode</h2>
             <span class="close-editor" id="closeEditor">&times;</span>
         </div>
 
@@ -806,7 +3053,8 @@
                 <input type="password" id="editorPassword" placeholder="Enter password" />
                 <button class="btn-sm" id="unlockEditorBtn">Unlock</button>
             </div>
-            <div id="editorLockStatus" style="font-size:0.8rem; color:var(--text-muted); margin-top:4px;">🔒 Locked</div>
+            <div id="editorLockStatus" style="font-size:0.8rem; color:var(--text-muted); margin-top:4px;">🔒 Locked
+            </div>
         </div>
 
         <div class="editor-section" id="editorProfileSection">
@@ -827,7 +3075,8 @@
             <label>Hero Subtitle</label>
             <input type="text" id="editHeroSubtitle" value="Mechanical Engineer &amp; CAD Consultant" />
             <label>Hero Bio</label>
-            <textarea id="editHeroBio" rows="2">Specializing in parametric product design, complex geometric modeling, gear engineering, and computational fluid dynamics (CFD). Founder of 3D Mech Design based in Karachi, Pakistan.</textarea>
+            <textarea id="editHeroBio"
+                rows="2">Specializing in parametric product design, complex geometric modeling, gear engineering, and computational fluid dynamics (CFD). Founder of 3D Mech Design based in Karachi, Pakistan.</textarea>
         </div>
 
         <div class="editor-section">
@@ -875,532 +3124,328 @@
         </div>
     </div>
 
-    <!-- ============================================================
-    JAVASCRIPT – ALL LOGIC, 3D PARTICLES, EDITOR, DATA
-    ============================================================ -->
+    <style>
+        /* ----- Editor Toggle Button ----- */
+        #editor-toggle {
+            position: fixed;
+            bottom: 95px;
+            right: 25px;
+            width: 54px;
+            height: 54px;
+            border: 1px solid var(--glass-border);
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 22px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            color: var(--brand-primary);
+            z-index: 9999;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-normal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #editor-toggle:hover {
+            transform: scale(1.1) rotate(10deg);
+            border-color: var(--brand-primary);
+            background: var(--brand-primary-light);
+        }
+
+        #editor-toggle.active {
+            background: var(--brand-primary);
+            color: #fff;
+            border-color: var(--brand-primary);
+        }
+
+        /* ----- Editor Panel (slide-out) ----- */
+        #editor-panel {
+            position: fixed;
+            top: 0;
+            right: -480px;
+            width: 480px;
+            max-width: 94vw;
+            height: 100vh;
+            background: var(--bg-surface);
+            backdrop-filter: blur(28px);
+            -webkit-backdrop-filter: blur(28px);
+            border-left: 1px solid var(--glass-border);
+            box-shadow: -10px 0 60px rgba(0, 0, 0, 0.15);
+            z-index: 10000;
+            transition: right 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            padding: 2rem 1.5rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        #editor-panel.open {
+            right: 0;
+        }
+
+        #editor-panel .panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 1rem;
+        }
+
+        #editor-panel .panel-header h2 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--text-primary);
+        }
+
+        #editor-panel .panel-header .close-editor {
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-muted);
+            transition: var(--transition-fast);
+        }
+
+        #editor-panel .panel-header .close-editor:hover {
+            color: var(--brand-primary);
+            transform: rotate(90deg);
+        }
+
+        #editor-panel .editor-section {
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 1.25rem;
+        }
+
+        #editor-panel .editor-section:last-child {
+            border-bottom: none;
+        }
+
+        #editor-panel .editor-section h3 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--brand-primary);
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: var(--font-mono);
+        }
+
+        #editor-panel label {
+            font-size: 0.825rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        #editor-panel input,
+        #editor-panel textarea {
+            width: 100%;
+            padding: 0.6rem 0.8rem;
+            background: var(--bg-base);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 0.9rem;
+            transition: var(--transition-fast);
+            margin-top: 4px;
+        }
+
+        #editor-panel input:focus,
+        #editor-panel textarea:focus {
+            outline: none;
+            border-color: var(--brand-primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+        }
+
+        #editor-panel textarea {
+            resize: vertical;
+            min-height: 60px;
+        }
+
+        #editor-panel .btn-sm {
+            padding: 0.5rem 1.2rem;
+            font-size: 0.8rem;
+            border-radius: 6px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-fast);
+            background: var(--brand-primary);
+            color: #fff;
+            width: 100%;
+            margin-top: 0.5rem;
+        }
+
+        #editor-panel .btn-sm:hover {
+            opacity: 0.85;
+            transform: translateY(-2px);
+        }
+
+        #editor-panel .btn-sm.danger {
+            background: #ef4444;
+        }
+
+        #editor-panel .btn-sm.danger:hover {
+            background: #dc2626;
+        }
+
+        #editor-panel .btn-sm.outline {
+            background: transparent;
+            border: 1px solid var(--glass-border);
+            color: var(--text-primary);
+        }
+
+        #editor-panel .btn-sm.outline:hover {
+            border-color: var(--brand-primary);
+            color: var(--brand-primary);
+            background: var(--brand-primary-light);
+        }
+
+        #editor-panel .file-upload-wrap {
+            position: relative;
+            overflow: hidden;
+            margin-top: 6px;
+        }
+
+        #editor-panel .file-upload-wrap input[type="file"] {
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        #editor-panel .file-upload-wrap .fake-btn {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            background: var(--brand-primary-light);
+            border: 1px solid var(--brand-primary-light);
+            border-radius: 6px;
+            color: var(--brand-primary);
+            font-weight: 600;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: var(--transition-fast);
+            width: 100%;
+            text-align: center;
+        }
+
+        #editor-panel .file-upload-wrap .fake-btn:hover {
+            background: var(--brand-primary);
+            color: #fff;
+        }
+
+        #editor-panel .editor-status {
+            font-size: 0.8rem;
+            color: var(--brand-success);
+            padding: 0.4rem 0.8rem;
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: 6px;
+            display: none;
+            align-items: center;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        #editor-panel .editor-status.show {
+            display: flex;
+        }
+
+        #editor-panel .editor-password {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        #editor-panel .editor-password input {
+            flex: 1;
+            pointer-events: auto !important;
+            opacity: 1 !important;
+            background: var(--bg-base) !important;
+            border-color: var(--glass-border) !important;
+        }
+
+        #editor-panel .editor-password .btn-sm {
+            width: auto;
+            padding: 0.5rem 1.2rem;
+            margin-top: 0;
+        }
+
+        @media (max-width: 768px) {
+            #editor-toggle {
+                bottom: 82px;
+                right: 16px;
+                width: 46px;
+                height: 46px;
+                font-size: 18px;
+            }
+
+            #editor-panel {
+                width: 100%;
+                right: -100%;
+                padding: 1.5rem 1rem;
+            }
+        }
+    </style>
+
     <script>
-        // =====================================================================
-        //  3D PARTICLES BACKGROUND (canvas)
-        // =====================================================================
-        (function() {
-            const canvas = document.getElementById('particles-canvas');
-            const ctx = canvas.getContext('2d');
-            let w, h;
-            const particles = [];
-            const COUNT = 120;
+        // ===== DATA & STATE MANAGEMENT =====
+        const EDITOR_PASSWORD = 'admin'; // <--- Change your password here
+        let editorUnlocked = false;
 
-            function resize() {
-                w = canvas.width = window.innerWidth;
-                h = canvas.height = window.innerHeight;
-            }
-            window.addEventListener('resize', resize);
-            resize();
-
-            class Particle {
-                constructor() {
-                    this.reset();
-                }
-                reset() {
-                    this.x = Math.random() * w;
-                    this.y = Math.random() * h;
-                    this.z = Math.random() * 200 - 100; // depth
-                    this.size = Math.random() * 3 + 1;
-                    this.speedX = (Math.random() - 0.5) * 0.3;
-                    this.speedY = (Math.random() - 0.5) * 0.3;
-                    this.speedZ = (Math.random() - 0.5) * 0.2;
-                    this.opacity = Math.random() * 0.5 + 0.3;
-                }
-                update() {
-                    this.x += this.speedX;
-                    this.y += this.speedY;
-                    this.z += this.speedZ;
-                    if (this.x < 0 || this.x > w || this.y < 0 || this.y > h || this.z > 100 || this.z < -100) {
-                        this.reset();
-                    }
-                }
-                draw() {
-                    const scale = 1 + this.z / 200;
-                    const size = this.size * scale;
-                    const alpha = this.opacity * (0.5 + 0.5 * (this.z + 100) / 200);
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, size, 0, Math.PI * 2);
-                    ctx.fillStyle = `rgba(37, 99, 235, ${alpha})`;
-                    ctx.fill();
-                }
-            }
-
-            for (let i = 0; i < COUNT; i++) {
-                particles.push(new Particle());
-            }
-
-            let mouseX = 0,
-                mouseY = 0;
-            document.addEventListener('mousemove', (e) => {
-                mouseX = e.clientX;
-                mouseY = e.clientY;
-            });
-
-            function animate() {
-                ctx.clearRect(0, 0, w, h);
-                // slight parallax
-                const offsetX = (mouseX / w - 0.5) * 20;
-                const offsetY = (mouseY / h - 0.5) * 20;
-
-                particles.forEach(p => {
-                    p.x += p.speedX + offsetX * 0.01;
-                    p.y += p.speedY + offsetY * 0.01;
-                    p.update();
-                    p.draw();
-                });
-                requestAnimationFrame(animate);
-            }
-            animate();
-        })();
-
-        // =====================================================================
-        //  DATA STORE – editable content (extended)
-        // =====================================================================
-        const DEFAULT_DATA = {
+        // Default state structure
+        let appData = JSON.parse(localStorage.getItem('portfolioData')) || {
             profile: {
-                name: 'Abdur Rafay Yousuf',
-                title: 'Founder @ 3D Mech Design',
-                uni: 'DHA Suffa University',
-                img: 'https://via.placeholder.com/220',
-                heroGreeting: 'Welcome to my engineering portfolio',
-                heroSubtitle: 'Mechanical Engineer &amp; CAD Consultant',
-                heroBio: 'Specializing in parametric product design, complex geometric modeling, gear engineering, and computational fluid dynamics (CFD). Founder of 3D Mech Design based in Karachi, Pakistan.'
+                name: "Abdur Rafay Yousuf",
+                title: "Founder, 3D Mech Design",
+                uni: "DHA Suffa University",
+                heroGreeting: "Mechanical Design Consultant",
+                heroSubtitle: "Precision Engineering",
+                heroBio: "I am Abdur Rafay Yousuf, based in Karachi, Pakistan. I specialize in complex parametric CAD modeling, Computational Fluid Dynamics (CFD), and thermodynamic prototyping for industrial applications.",
+                img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=600&h=600"
             },
-            contact: {
-                email: 'contact@example.com',
-                phone: '+92 300 1234567',
-                location: 'Karachi, Pakistan',
-                consultancy: '3D Mech Design'
-            },
-            social: {
-                linkedin: '#',
-                github: '#',
-                instagram: '#',
-                twitter: '#'
-            },
-            brand: {
-                logo: '3D Mech',
-                highlight: 'Design',
-                footer: '&copy; 2026 Abdur Rafay Yousuf. All rights reserved.'
-            },
-            metrics: [
-                { val: '100+', label: 'CAD Models' },
-                { val: '4+', label: 'Years Exp.' },
-                { val: '100%', label: 'Precision' }
-            ],
-            skills: [
-                { icon: 'fa-cube', title: '3D CAD Modeling', sub: 'SolidWorks, AutoCAD, Fusion 360',
-                    desc: 'Expertise in complex parametric geometric modeling, design tables, feature trees, and generating technical manufacturing drawings.',
-                    width: 95 },
-                { icon: 'fa-wind', title: 'CFD Analysis', sub: 'Flow Regimes, Velocity &amp; Pressure',
-                    desc: 'Performing computational fluid dynamics analysis and generating accurate graphical representations of pressure and velocity distributions.',
-                    width: 88 },
-                { icon: 'fa-cogs', title: 'Gear Engineering', sub: 'MATLAB &amp; Custom Equations',
-                    desc: 'Calculating mathematically accurate involute tooth profiles, diametral pitch, and designing specialized hobbing and inspection arbors.',
-                    width: 92 },
-                { icon: 'fa-fire-alt', title: 'Thermodynamics', sub: 'Thermal Energy Storage',
-                    desc: 'Engaged in advanced thermal energy storage solutions, including sand battery technologies and internal combustion engine emissions control.',
-                    width: 85 }
-            ],
-            experiences: [{
-                role: 'Founder &amp; Design Consultant',
-                company: '3D Mech Design',
-                date: '2025 – Present',
-                desc: 'Providing professional mechanical design consultation. Drafting technical proposals, flyers, and operating comprehensive parametric modeling projects for industry clients.',
-                tags: ['Consulting', 'CAD', 'Parametric Design']
-            }, {
-                role: 'Lead Engineer',
-                company: 'Mahfooz Wheelchair Project',
-                date: '2025 – 2026',
-                desc: 'Developed a locally producible mobility device featuring stair-lifting capabilities inspired by personal family challenges. Received official startup recognition from the Sindh Higher Education Commission.',
-                tags: ['Prototyping', 'Accessibility', 'Innovation']
-            }, {
-                role: 'CAD Mentor &amp; Supervisor',
-                company: 'Community Skill-Sharing',
-                date: '2026',
-                desc: 'Mentored junior engineering associates directly in advanced computer-aided design skills, logging community engagement records and fostering practical design logic.',
-                tags: ['Mentorship', 'SolidWorks', 'Leadership']
-            }],
-            projects: [{
-                title: 'Thermal Energy Sand Battery',
-                desc: 'Final year design project featuring an insulated silica sand tank, heat exchanger coils, and precision instrumentation sensors for industrial energy storage.',
-                category: 'thermo',
-                tags: ['Energy Storage', 'Thermodynamics'],
-                img: 'https://via.placeholder.com/400x250',
-                modal: 'modal-battery'
-            }, {
-                title: 'Autonomous Line-Following Robot',
-                desc: 'Developed for Measurement and Instrumentation Lab. Features real-time processing code, wiring diagrams, and integrated sensor feedback.',
-                category: 'robotics',
-                tags: ['Robotics', 'Arduino Uno'],
-                img: 'https://via.placeholder.com/400x250',
-                modal: 'modal-robot'
-            }, {
-                title: 'ICE Emissions Research Report',
-                desc: 'A formal engineering document analyzing pollutant formation mechanisms and modern emission control technologies in Internal Combustion Engines.',
-                category: 'thermo',
-                tags: ['Research', 'IC Engines'],
-                img: 'https://via.placeholder.com/400x250',
-                modal: 'modal-ice'
-            }],
-            drawings: [
-                { title: 'Gear Arbor Profile', sub: 'Involute Tooth / Pitch Dia Calc' },
-                { title: 'CFD Analysis Plot', sub: 'Pressure &amp; Velocity Distribution' },
-                { title: 'Wheelchair Mechanism', sub: 'Mahfooz Project Stair-Lift' },
-                { title: 'Engineering Economics', sub: 'PSX Transaction Log Analysis' }
-            ],
-            services: [
-                { icon: 'fa-cube', title: '3D Parametric Modeling',
-                desc: 'High-precision CAD models for manufacturing and prototyping.' },
-                { icon: 'fa-chart-line', title: 'CFD &amp; Thermal Analysis',
-                    desc: 'Simulation of fluid dynamics and heat transfer for design optimization.' },
-                { icon: 'fa-cogs', title: 'Gear &amp; Mechanical Systems',
-                    desc: 'Custom gear design, mechanical system analysis, and hobbing solutions.' },
-                { icon: 'fa-file-alt', title: 'Technical Documentation',
-                    desc: 'Comprehensive reports, proposals, and manufacturing drawings.' }
-            ],
-            education: [
-                { title: 'B.E. Mechanical Engineering', meta: 'DHA Suffa University, Karachi',
-                    desc: 'Specialization in Thermodynamics, Fluid Mechanics, and Machine Design.' },
-                { title: 'CAD Professional Certification', meta: 'SolidWorks &amp; AutoCAD',
-                    desc: 'Advanced training in parametric modeling and 2D/3D drafting.' }
-            ],
-            certifications: [
-                { icon: 'fa-certificate', title: 'SolidWorks Professional', date: '2025' },
-                { icon: 'fa-certificate', title: 'CFD Fundamentals', date: '2025' },
-                { icon: 'fa-certificate', title: 'Gear Design Specialist', date: '2026' }
-            ],
-            testimonials: [{
-                text: '"Abdur Rafay demonstrates exceptional diligence in complex design architecture. His work on the Thermal Sand Battery and CFD sets a high standard."',
-                author: 'Dr. Usama',
-                role: 'University Professor, DHA Suffa University'
-            }, {
-                text: '"Collaborating with Rafay on lab projects has been incredible. His precision in SolidWorks and ability to translate mathematical gear equations into working CAD models is unmatched."',
-                author: 'Ayaan Amir',
-                role: 'Classmate &amp; Project Collaborator'
-            }, {
-                text: '"The mentorship provided by Rafay in computer-aided design has been invaluable. He breaks down complex geometric modeling into understandable, practical logic."',
-                author: 'Faizan Khan',
-                role: 'Junior Associate &amp; Mentee'
-            }],
-            faq: [
-                { q: 'What CAD software do you specialize in?',
-                    a: 'I work primarily with SolidWorks, AutoCAD, and Fusion 360 for 3D parametric modeling and technical drafting.' },
-                { q: 'Do you offer CFD analysis services?',
-                    a: 'Yes, I perform computational fluid dynamics analysis for a variety of applications including pressure and velocity distribution studies.' },
-                { q: 'Can you help with gear design and manufacturing?',
-                    a: 'Absolutely. I specialize in involute tooth geometry, diametral pitch calculations, and custom hobbing arbor design.' },
-                { q: 'What is your typical project turnaround time?',
-                    a: 'Turnaround time depends on complexity, but most projects are delivered within 5–15 business days.' }
-            ]
+            contact: { email: "consult@3dmechdesign.com", phone: "+92 300 1234567", location: "Karachi, Pakistan", consultancy: "3D Mech Design" },
+            social: { linkedin: "#", github: "#", instagram: "#", twitter: "#" },
+            brand: { logo: "3D Mech", highlight: "Design", footer: "© 2026 Abdur Rafay Yousuf. Engineering Portfolio. All Rights Reserved." }
         };
 
-        // =====================================================================
-        //  STATE
-        // =====================================================================
-        let appData = {};
-        let editorUnlocked = false;
-        const EDITOR_PASSWORD = 'admin123';
+        const DEFAULT_DATA = JSON.parse(JSON.stringify(appData));
 
-        function deepClone(o) { return JSON.parse(JSON.stringify(o)); }
+        function saveData() { localStorage.setItem('portfolioData', JSON.stringify(appData)); }
+        function deepClone(obj) { return JSON.parse(JSON.stringify(obj)); }
 
-        function loadData() {
-            const stored = localStorage.getItem('cad_portfolio_data');
-            if (stored) {
-                try {
-                    const parsed = JSON.parse(stored);
-                    appData = deepMerge(DEFAULT_DATA, parsed);
-                    return;
-                } catch (_) {}
-            }
-            appData = deepClone(DEFAULT_DATA);
-        }
-
-        function deepMerge(target, source) {
-            const result = deepClone(target);
-            for (const k in source) {
-                if (source.hasOwnProperty(k)) {
-                    if (typeof source[k] === 'object' && source[k] !== null && !Array.isArray(source[k])) {
-                        result[k] = deepMerge(result[k] || {}, source[k]);
-                    } else {
-                        result[k] = source[k];
-                    }
-                }
-            }
-            return result;
-        }
-
-        function saveData() {
-            localStorage.setItem('cad_portfolio_data', JSON.stringify(appData));
-        }
-
-        // =====================================================================
-        //  RENDER FUNCTIONS (all sections)
-        // =====================================================================
-        function renderProfile() {
-            const p = appData.profile;
-            document.getElementById('profileImg').src = p.img || 'https://via.placeholder.com/220';
-            document.getElementById('profileName').textContent = p.name;
-            document.getElementById('profileTitle').textContent = p.title;
-            document.getElementById('profileUni').textContent = p.uni;
-            document.getElementById('heroGreeting').innerHTML = '<i class="fas fa-compass"></i> ' + p.heroGreeting;
-            document.getElementById('heroName').textContent = p.name;
-            document.getElementById('heroSubtitle').textContent = p.heroSubtitle;
-            document.getElementById('heroBio').textContent = p.heroBio;
-
-            const m = appData.metrics;
-            if (m.length >= 3) {
-                document.getElementById('metric1Val').textContent = m[0].val;
-                document.getElementById('metric1Label').textContent = m[0].label;
-                document.getElementById('metric2Val').textContent = m[1].val;
-                document.getElementById('metric2Label').textContent = m[1].label;
-                document.getElementById('metric3Val').textContent = m[2].val;
-                document.getElementById('metric3Label').textContent = m[2].label;
-            }
-        }
-
-        function renderSkills() {
-            const container = document.getElementById('skillsGrid');
-            container.innerHTML = '';
-            appData.skills.forEach((sk) => {
-                const div = document.createElement('div');
-                div.className = 'skill-card reveal';
-                div.innerHTML = `
-              <div class="skill-icon-header">
-                <div class="skill-icon"><i class="fas ${sk.icon}"></i></div>
-                <div class="skill-title-group">
-                  <h3>${sk.title}</h3>
-                  <span>${sk.sub}</span>
-                </div>
-              </div>
-              <p class="skill-desc">${sk.desc}</p>
-              <div class="progress-bar"><div class="progress-fill" style="--skill-width:${sk.width}%;"></div></div>
-            `;
-                container.appendChild(div);
-            });
-            setTimeout(() => {
-                document.querySelectorAll('.skill-card.reveal').forEach(el => {
-                    if (el.getBoundingClientRect().top < window.innerHeight * 0.85) el.classList.add('active');
-                });
-            }, 100);
-            setTimeout(() => {
-                document.querySelectorAll('.skill-card.active .progress-fill').forEach(el => {
-                    el.style.width = el.style.getPropertyValue('--skill-width');
-                });
-            }, 200);
-        }
-
-        function renderExperience() {
-            const container = document.getElementById('timelineContainer');
-            container.innerHTML = '';
-            const icons = ['fa-briefcase', 'fa-wheelchair', 'fa-chalkboard-teacher'];
-            appData.experiences.forEach((exp, idx) => {
-                const item = document.createElement('div');
-                item.className = 'timeline-item reveal';
-                item.innerHTML = `
-              <div class="timeline-icon"><i class="fas ${icons[idx % icons.length]}"></i></div>
-              <div class="timeline-content card">
-                <div class="timeline-header" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.5rem;">
-                  <div>
-                    <h3 class="timeline-role">${exp.role}</h3>
-                    <span class="timeline-company">${exp.company}</span>
-                  </div>
-                  <span class="timeline-date">${exp.date}</span>
-                </div>
-                <div class="timeline-body">
-                  <p>${exp.desc}</p>
-                  <div class="timeline-tags">${exp.tags.map(t => `<span class="tag-sm">${t}</span>`).join('')}</div>
-                </div>
-              </div>
-            `;
-                container.appendChild(item);
-            });
-        }
-
-        function renderProjects() {
-            const container = document.getElementById('projectsGrid');
-            container.innerHTML = '';
-            appData.projects.forEach((proj) => {
-                const card = document.createElement('div');
-                card.className = 'project-card card reveal';
-                card.setAttribute('data-category', proj.category);
-                card.innerHTML = `
-              <div class="project-img"><img src="${proj.img}" alt="${proj.title}" loading="lazy" /></div>
-              <div class="project-content">
-                <div>${proj.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
-                <h3 class="project-title">${proj.title}</h3>
-                <p class="project-desc">${proj.desc}</p>
-                <button class="project-link open-modal" data-target="${proj.modal}">View Specs <i class="fas fa-arrow-right"></i></button>
-              </div>
-            `;
-                container.appendChild(card);
-            });
-            document.querySelectorAll('.open-modal').forEach(btn => {
-                btn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    document.getElementById(this.getAttribute('data-target')).classList.add('show');
-                });
-            });
-        }
-
-        function renderDrawings() {
-            const container = document.getElementById('drawingsGrid');
-            container.innerHTML = '';
-            appData.drawings.forEach(d => {
-                const div = document.createElement('div');
-                div.className = 'drawing-item reveal';
-                const color = '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
-                div.innerHTML = `
-              <img src="https://via.placeholder.com/400x300/${color.replace('#','')}/ffffff?text=${encodeURIComponent(d.title)}" alt="${d.title}" loading="lazy" />
-              <div class="drawing-overlay">
-                <h4>${d.title}</h4>
-                <p style="font-size:0.8rem; margin-top:5px;">${d.sub}</p>
-              </div>
-            `;
-                container.appendChild(div);
-            });
-        }
-
-        function renderServices() {
-            const container = document.getElementById('servicesGrid');
-            container.innerHTML = '';
-            appData.services.forEach(s => {
-                const div = document.createElement('div');
-                div.className = 'service-card card reveal';
-                div.innerHTML = `
-              <div class="service-icon"><i class="fas ${s.icon}"></i></div>
-              <h3>${s.title}</h3>
-              <p>${s.desc}</p>
-            `;
-                container.appendChild(div);
-            });
-        }
-
-        function renderEducation() {
-            const container = document.getElementById('eduGrid');
-            container.innerHTML = '';
-            appData.education.forEach(e => {
-                const div = document.createElement('div');
-                div.className = 'edu-card card reveal';
-                div.innerHTML = `
-              <h3>${e.title}</h3>
-              <div class="meta">${e.meta}</div>
-              <p>${e.desc}</p>
-            `;
-                container.appendChild(div);
-            });
-            const certContainer = document.getElementById('certGrid');
-            certContainer.innerHTML = '';
-            appData.certifications.forEach(c => {
-                const div = document.createElement('div');
-                div.className = 'cert-card card reveal';
-                div.innerHTML = `
-              <i class="fas ${c.icon}"></i>
-              <h4>${c.title}</h4>
-              <span>${c.date}</span>
-            `;
-                certContainer.appendChild(div);
-            });
-        }
-
-        function renderTestimonials() {
-            const container = document.getElementById('testimonialsGrid');
-            container.innerHTML = '';
-            appData.testimonials.forEach(t => {
-                const div = document.createElement('div');
-                div.className = 'testimonial-card card reveal';
-                const initial = t.author.charAt(0).toUpperCase();
-                div.innerHTML = `
-              <i class="fas fa-quote-left quote-icon"></i>
-              <p class="testimonial-text">${t.text}</p>
-              <div class="author-group">
-                <div class="author-avatar">${initial}</div>
-                <div class="author-details">
-                  <h4>${t.author}</h4>
-                  <span>${t.role}</span>
-                </div>
-              </div>
-            `;
-                container.appendChild(div);
-            });
-        }
-
-        function renderFAQ() {
-            const container = document.getElementById('faqGrid');
-            container.innerHTML = '';
-            appData.faq.forEach((item) => {
-                const div = document.createElement('div');
-                div.className = 'faq-item card reveal';
-                div.innerHTML = `
-              <div class="faq-q">
-                <span>${item.q}</span>
-                <i class="fas fa-chevron-down"></i>
-              </div>
-              <div class="faq-a">${item.a}</div>
-            `;
-                div.addEventListener('click', function() { this.classList.toggle('open'); });
-                container.appendChild(div);
-            });
-        }
-
-        function renderContact() {
-            const c = appData.contact;
-            document.getElementById('contactLocation').textContent = c.location;
-            document.getElementById('contactConsultancy').textContent = c.consultancy;
-            document.getElementById('contactEmail').textContent = c.email;
-            document.getElementById('contactPhone').textContent = c.phone;
-            document.getElementById('contactIntro').innerHTML =
-                'Operating primarily out of ' + c.location +
-                ', providing high-quality engineering deliverables globally through <strong>' + c.consultancy +
-                '</strong>.';
-        }
-
-        function renderSocial() {
-            const s = appData.social;
-            document.getElementById('socialLinkedin').href = s.linkedin;
-            document.getElementById('socialGithub').href = s.github;
-            document.getElementById('socialInstagram').href = s.instagram;
-            document.getElementById('socialTwitter').href = s.twitter;
-        }
-
-        function renderBrand() {
-            const b = appData.brand;
-            document.getElementById('brandLogo').innerHTML = b.logo + ' <span>' + b.highlight + '</span>';
-            document.getElementById('footerText').innerHTML = b.footer;
-        }
-
+        // Core function: Applies data directly to your website's DOM
         function renderAll() {
-            renderProfile();
-            renderSkills();
-            renderExperience();
-            renderProjects();
-            renderDrawings();
-            renderServices();
-            renderEducation();
-            renderTestimonials();
-            renderFAQ();
-            renderContact();
-            renderSocial();
-            renderBrand();
-            setTimeout(() => {
-                document.querySelectorAll('.reveal').forEach(el => {
-                    if (el.getBoundingClientRect().top < window.innerHeight * 0.85) el.classList.add('active');
-                });
-            }, 200);
-            setTimeout(() => {
-                document.querySelectorAll('.skill-card.active .progress-fill').forEach(el => {
-                    el.style.width = el.style.getPropertyValue('--skill-width');
-                });
-            }, 300);
+            // Render Profile
+            const nameEls = document.querySelectorAll('.profile-card h3');
+            nameEls.forEach(el => el.textContent = appData.profile.name);
+
+            const titleEls = document.querySelectorAll('.profile-card p');
+            titleEls.forEach(el => el.textContent = appData.profile.title);
+
+            const bioEl = document.querySelector('.hero-desc');
+            if (bioEl) bioEl.textContent = appData.profile.heroBio;
+
+            const profileImgs = document.querySelectorAll('.profile-img');
+            profileImgs.forEach(img => img.src = appData.profile.img);
+
+            // Render Contact
+            const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
+            emailLinks.forEach(link => {
+                link.href = `mailto:${appData.contact.email}`;
+                link.textContent = appData.contact.email;
+            });
+
+            // Render Brand
+            const footerText = document.querySelector('.footer-bottom p:first-child');
+            if (footerText) footerText.innerHTML = appData.brand.footer;
         }
 
-        // =====================================================================
-        //  EDITOR – populate & apply
-        // =====================================================================
+        // ===== EDITOR UI LOGIC =====
         function populateEditorFields() {
             const p = appData.profile;
             document.getElementById('editProfileName').value = p.name;
@@ -1443,21 +3488,13 @@
             c.location = document.getElementById('editContactLocation').value.trim() || c.location;
             c.consultancy = document.getElementById('editContactConsultancy').value.trim() || c.consultancy;
 
-            const s = appData.social;
-            s.linkedin = document.getElementById('editSocialLinkedin').value.trim() || s.linkedin;
-            s.github = document.getElementById('editSocialGithub').value.trim() || s.github;
-            s.instagram = document.getElementById('editSocialInstagram').value.trim() || s.instagram;
-            s.twitter = document.getElementById('editSocialTwitter').value.trim() || s.twitter;
-
             const b = appData.brand;
-            b.logo = document.getElementById('editBrandLogo').value.trim() || b.logo;
-            b.highlight = document.getElementById('editBrandHighlight').value.trim() || b.highlight;
             b.footer = document.getElementById('editFooterText').value.trim() || b.footer;
 
             saveData();
             renderAll();
             const status = document.getElementById('editorStatus');
-            status.textContent = '✓ Changes saved!';
+            status.textContent = '✓ Changes live and saved!';
             status.classList.add('show');
             setTimeout(() => status.classList.remove('show'), 3000);
         }
@@ -1475,22 +3512,12 @@
             }
         }
 
-        function exportData() {
-            const blob = new Blob([JSON.stringify(appData, null, 2)], { type: 'application/json' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'cad_portfolio_backup.json';
-            a.click();
-            URL.revokeObjectURL(url);
-        }
-
         function handleImageUpload(file) {
             const reader = new FileReader();
-            reader.onload = function(e) {
+            reader.onload = function (e) {
                 appData.profile.img = e.target.result;
                 saveData();
-                renderProfile();
+                renderAll();
                 const status = document.getElementById('editorStatus');
                 status.textContent = '✓ Profile picture updated!';
                 status.classList.add('show');
@@ -1499,67 +3526,10 @@
             reader.readAsDataURL(file);
         }
 
-        // =====================================================================
-        //  STATS COUNTER ANIMATION
-        // =====================================================================
-        function animateCounters() {
-            const counters = document.querySelectorAll('.stat-number');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const el = entry.target;
-                        const target = parseInt(el.getAttribute('data-count'));
-                        let current = 0;
-                        const increment = Math.ceil(target / 60);
-                        const timer = setInterval(() => {
-                            current += increment;
-                            if (current >= target) {
-                                el.textContent = target;
-                                clearInterval(timer);
-                            } else {
-                                el.textContent = current;
-                            }
-                        }, 25);
-                        observer.unobserve(el);
-                    }
-                });
-            }, { threshold: 0.5 });
-            counters.forEach(c => observer.observe(c));
-        }
-
-        // =====================================================================
-        //  INIT
-        // =====================================================================
-        function init() {
-            loadData();
+        function initEditor() {
+            // Render data immediately on load
             renderAll();
-            populateEditorFields();
-            animateCounters();
 
-            // Theme toggle
-            const themeToggle = document.getElementById('theme-toggle');
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme) {
-                document.documentElement.setAttribute('data-theme', savedTheme);
-                themeToggle.innerHTML = savedTheme === 'dark' ? '☀️' : '🌙';
-            }
-            themeToggle.addEventListener('click', function() {
-                const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-                const newTheme = isDark ? 'light' : 'dark';
-                document.documentElement.setAttribute('data-theme', newTheme);
-                localStorage.setItem('theme', newTheme);
-                this.innerHTML = newTheme === 'dark' ? '☀️' : '🌙';
-            });
-
-            // Mobile menu
-            document.getElementById('menuToggle').addEventListener('click', function() {
-                document.getElementById('navLinks').classList.toggle('active');
-                const icon = this.querySelector('i');
-                icon.classList.toggle('fa-bars');
-                icon.classList.toggle('fa-times');
-            });
-
-            // Editor panel
             const editorPanel = document.getElementById('editor-panel');
             const editorToggle = document.getElementById('editor-toggle');
             const closeEditor = document.getElementById('closeEditor');
@@ -1569,38 +3539,29 @@
                 editorToggle.classList.add('active');
                 populateEditorFields();
             }
-
             function closeEditorPanel() {
                 editorPanel.classList.remove('open');
                 editorToggle.classList.remove('active');
             }
 
-            editorToggle.addEventListener('click', function() {
+            editorToggle.addEventListener('click', function () {
                 if (editorPanel.classList.contains('open')) closeEditorPanel();
                 else openEditor();
             });
             closeEditor.addEventListener('click', closeEditorPanel);
 
-            // Editor unlock – password field is always enabled
             const unlockBtn = document.getElementById('unlockEditorBtn');
             const pwInput = document.getElementById('editorPassword');
             const lockStatus = document.getElementById('editorLockStatus');
-
-            // Ensure password input is always active
-            pwInput.disabled = false;
-            pwInput.style.opacity = '1';
-            pwInput.style.pointerEvents = 'auto';
 
             function checkUnlock() {
                 if (pwInput.value === EDITOR_PASSWORD) {
                     editorUnlocked = true;
                     lockStatus.textContent = '✅ Unlocked — editing enabled';
-                    lockStatus.style.color = 'var(--accent-green)';
-                    // Enable all editor fields except password
+                    lockStatus.style.color = 'var(--brand-success)';
                     document.querySelectorAll('#editor-panel input:not(#editorPassword), #editor-panel textarea, #editor-panel .file-upload-wrap')
                         .forEach(el => { el.disabled = false; el.style.opacity = '1'; });
-                    document.querySelectorAll('#editor-panel .btn-sm:not(#unlockEditorBtn)').forEach(el => el.style
-                        .opacity = '1');
+                    document.querySelectorAll('#editor-panel .btn-sm:not(#unlockEditorBtn)').forEach(el => el.style.opacity = '1');
                     pwInput.value = '';
                 } else {
                     editorUnlocked = false;
@@ -1608,109 +3569,43 @@
                     lockStatus.style.color = '#ef4444';
                     document.querySelectorAll('#editor-panel input:not(#editorPassword), #editor-panel textarea, #editor-panel .file-upload-wrap')
                         .forEach(el => { el.disabled = true; el.style.opacity = '0.5'; });
-                    document.querySelectorAll('#editor-panel .btn-sm:not(#unlockEditorBtn)').forEach(el => el.style
-                        .opacity = '0.5');
+                    document.querySelectorAll('#editor-panel .btn-sm:not(#unlockEditorBtn)').forEach(el => el.style.opacity = '0.5');
                 }
             }
 
-            // Initially lock fields (except password)
+            // Lock form on boot
             document.querySelectorAll('#editor-panel input:not(#editorPassword), #editor-panel textarea, #editor-panel .file-upload-wrap')
                 .forEach(el => { el.disabled = true; el.style.opacity = '0.5'; });
-            document.querySelectorAll('#editor-panel .btn-sm:not(#unlockEditorBtn)').forEach(el => el.style.opacity =
-            '0.5');
+            document.querySelectorAll('#editor-panel .btn-sm:not(#unlockEditorBtn)').forEach(el => el.style.opacity = '0.5');
 
             unlockBtn.addEventListener('click', checkUnlock);
-            pwInput.addEventListener('keydown', function(e) { if (e.key === 'Enter') checkUnlock(); });
+            pwInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') checkUnlock(); });
 
-            // Editor save
-            document.getElementById('saveEditorBtn').addEventListener('click', function() {
+            document.getElementById('saveEditorBtn').addEventListener('click', function () {
                 if (!editorUnlocked) { alert('Please unlock the editor first.'); return; }
                 applyEditorChanges();
             });
 
-            document.getElementById('resetEditorBtn').addEventListener('click', function() {
+            document.getElementById('resetEditorBtn').addEventListener('click', function () {
                 if (!editorUnlocked) { alert('Please unlock the editor first.'); return; }
                 resetToDefaults();
             });
 
-            document.getElementById('exportEditorBtn').addEventListener('click', function() {
-                if (!editorUnlocked) { alert('Please unlock the editor first.'); return; }
-                exportData();
-            });
-
-            document.getElementById('profileUpload').addEventListener('change', function(e) {
+            document.getElementById('profileUpload').addEventListener('change', function (e) {
                 if (!editorUnlocked) { alert('Please unlock the editor first.'); return; }
                 const file = e.target.files[0];
                 if (file) handleImageUpload(file);
                 this.value = '';
             });
-
-            // Contact form
-            document.getElementById('contactForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-                const btn = this.querySelector('button');
-                const original = btn.innerHTML;
-                btn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Sending...';
-                setTimeout(() => {
-                    btn.innerHTML = original;
-                    document.getElementById('successMsg').classList.add('show');
-                    this.reset();
-                    setTimeout(() => document.getElementById('successMsg').classList.remove('show'), 5000);
-                }, 1500);
-            });
-
-            // Modal close
-            document.querySelectorAll('.close-modal').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    document.querySelectorAll('.modal').forEach(m => m.classList.remove('show'));
-                });
-            });
-            window.addEventListener('click', function(e) {
-                document.querySelectorAll('.modal').forEach(m => {
-                    if (e.target === m) m.classList.remove('show');
-                });
-            });
-
-            // Spotlight
-            const spotlight = document.querySelector('.spotlight');
-            document.addEventListener('mousemove', function(e) {
-                if (spotlight) {
-                    spotlight.style.setProperty('--x', e.clientX + 'px');
-                    spotlight.style.setProperty('--y', e.clientY + 'px');
-                }
-            });
-
-            // Reveal observer
-            const revealObs = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) entry.target.classList.add('active');
-                });
-            }, { threshold: 0.15 });
-            document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
-
-            // Filter buttons
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-                    const filter = this.getAttribute('data-filter');
-                    document.querySelectorAll('.project-card').forEach(card => {
-                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                            card.style.display = 'flex';
-                            setTimeout(() => card.classList.add('active'), 50);
-                        } else {
-                            card.style.display = 'none';
-                            card.classList.remove('active');
-                        }
-                    });
-                });
-            });
         }
 
-        // Run
-        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
-        else init();
+        // Initialize
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initEditor);
+        } else {
+            initEditor();
+        }
     </script>
-
 </body>
+
 </html>
