@@ -2,8 +2,6 @@
 <html lang="en">
 
 <head>
-
-
     <!-- ======================================================================
          META TAGS & SEO
          ====================================================================== -->
@@ -104,33 +102,27 @@
         }
 
         [data-theme="dark"] {
-            /* DARK THEME VARIABLES (No pure black, using deep slate/blues) */
-            --bg-base: #050816;
-            --bg-gradient-1: #0f172a;
-            --bg-gradient-2: #0a0f1d;
-            --bg-surface: #0f172a;
-
-            --text-primary: #f8fafc;
-            --text-secondary: #cbd5e1;
-            --text-muted: #94a3b8;
+            --bg-base: #05050c;
+            --bg-gradient-1: #0a0a1a;
+            --bg-gradient-2: #020208;
+            --bg-surface: #0c0c1e;
+            --text-primary: #f0f4ff;
+            --text-secondary: #aab4d4;
+            --text-muted: #6a7a9e;
             --text-inverse: #0f172a;
-
-            --brand-primary: #3b82f6;
-            --brand-primary-hover: #60a5fa;
-            --brand-primary-light: rgba(59, 130, 246, 0.15);
-            --brand-accent: #a855f7;
+            --brand-primary: #00b4ff;
+            --brand-primary-hover: #66d0ff;
+            --brand-primary-light: rgba(0, 180, 255, 0.12);
+            --brand-accent: #7c5cfc;
             --brand-success: #10b981;
-
-            --glass-bg: rgba(15, 23, 42, 0.55);
-            --glass-border: rgba(255, 255, 255, 0.08);
-            --glass-highlight: rgba(255, 255, 255, 0.05);
-
-            --grid-line: rgba(59, 130, 246, 0.08);
-            --particle-color: rgba(96, 165, 250, 0.25);
-
-            --shadow-md: 0 10px 40px rgba(0, 0, 0, 0.4);
-            --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.6);
-            --shadow-glow: 0 0 30px rgba(59, 130, 246, 0.2);
+            --glass-bg: rgba(10, 10, 30, 0.55);
+            --glass-border: rgba(0, 180, 255, 0.08);
+            --glass-highlight: rgba(0, 180, 255, 0.06);
+            --grid-line: rgba(0, 180, 255, 0.06);
+            --particle-color: rgba(0, 180, 255, 0.25);
+            --shadow-md: 0 10px 40px rgba(0, 0, 0, 0.6);
+            --shadow-lg: 0 20px 60px rgba(0, 100, 255, 0.1);
+            --shadow-glow: 0 0 80px rgba(0, 150, 255, 0.10);
         }
 
         /* --------------------------------------------------------------------
@@ -214,20 +206,41 @@
             z-index: var(--z-negative);
             pointer-events: none;
             overflow: hidden;
-            background: linear-gradient(135deg, var(--bg-base), var(--bg-gradient-1));
+            background: var(--bg-base);
+        }
+
+        .bg-orb {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 180, 255, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(80px);
+            animation: pulseOrb 6s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulseOrb {
+            0% { transform: translateX(-50%) scale(0.9); opacity: 0.6; }
+            100% { transform: translateX(-50%) scale(1.2); opacity: 1; }
         }
 
         .bg-mesh {
             position: absolute;
             inset: 0;
-            background-image:
-                radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.15) 0px, transparent 50%),
-                radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.15) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(6, 182, 212, 0.15) 0px, transparent 50%),
-                radial-gradient(at 0% 100%, rgba(37, 99, 235, 0.15) 0px, transparent 50%);
-            filter: blur(80px);
-            opacity: 0.8;
-            animation: breatheMesh 20s ease-in-out infinite alternate;
+            background:
+                radial-gradient(ellipse at 50% 30%, rgba(0, 180, 255, 0.12) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 80%, rgba(124, 92, 252, 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 20% 70%, rgba(0, 180, 255, 0.04) 0%, transparent 40%);
+            filter: blur(60px);
+            animation: breatheGlow 8s ease-in-out infinite alternate;
+        }
+
+        @keyframes breatheGlow {
+            0% { transform: scale(1) translateY(0); opacity: 0.8; }
+            100% { transform: scale(1.1) translateY(-20px); opacity: 1; }
         }
 
         .bg-grid {
@@ -236,10 +249,10 @@
             background-image:
                 linear-gradient(var(--grid-line) 1px, transparent 1px),
                 linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-            background-size: 40px 40px;
-            mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 80%);
-            -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 80%);
-            opacity: 0.5;
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 30%, transparent 80%);
+            -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 30%, transparent 80%);
+            opacity: 0.6;
         }
 
         #particle-canvas {
@@ -1783,16 +1796,6 @@
             }
         }
 
-        @keyframes breatheMesh {
-            0% {
-                filter: blur(80px) brightness(1);
-            }
-
-            100% {
-                filter: blur(100px) brightness(1.2);
-            }
-        }
-
         @keyframes gradientText {
             0% {
                 background-position: 0% center;
@@ -1943,6 +1946,7 @@
     <!-- BACKGROUND ENGINE -->
     <div class="bg-engine">
         <canvas id="particle-canvas"></canvas>
+        <div class="bg-orb"></div>
         <div class="bg-mesh"></div>
         <div class="bg-grid"></div>
     </div>
@@ -2981,18 +2985,16 @@
             function initParticles() {
                 particlesArray = [];
                 const isDark = document.documentElement.getAttribute("data-theme") === "dark";
-                const pColor = isDark ? 'rgba(96, 165, 250, 0.4)' : 'rgba(37, 99, 235, 0.2)';
-
-                // Scale number of particles based on screen size for performance
-                const numberOfParticles = (canvas.height * canvas.width) / 10000;
+                // micro1 palette: crisp cyan & blue
+                const pColor = isDark ? 'rgba(0, 180, 255, 0.25)' : 'rgba(0, 120, 255, 0.15)';
+                const numberOfParticles = Math.min(150, (canvas.height * canvas.width) / 12000);
 
                 for (let i = 0; i < numberOfParticles; i++) {
-                    let size = (Math.random() * 2) + 1;
-                    let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
-                    let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
-                    let directionX = (Math.random() * 1.5) - 0.75;
-                    let directionY = (Math.random() * 1.5) - 0.75;
-
+                    let size = (Math.random() * 2) + 0.5;
+                    let x = Math.random() * canvas.width;
+                    let y = Math.random() * canvas.height;
+                    let directionX = (Math.random() - 0.5) * 0.8;
+                    let directionY = (Math.random() - 0.5) * 0.8;
                     particlesArray.push(new Particle(x, y, directionX, directionY, size, pColor));
                 }
             }
@@ -3009,15 +3011,18 @@
 
             function connectParticles() {
                 let opacityValue = 1;
+                const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+                
                 for (let a = 0; a < particlesArray.length; a++) {
                     for (let b = a; b < particlesArray.length; b++) {
                         let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x))
                             + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
 
                         if (distance < (canvas.width / 12) * (canvas.height / 12)) {
-                            const isDark = document.documentElement.getAttribute("data-theme") === "dark";
                             opacityValue = 1 - (distance / 20000);
-                            ctx.strokeStyle = isDark ? `rgba(96, 165, 250, ${opacityValue * 0.15})` : `rgba(37, 99, 235, ${opacityValue * 0.15})`;
+                            ctx.strokeStyle = isDark 
+                                ? `rgba(0, 180, 255, ${opacityValue * 0.08})` 
+                                : `rgba(0, 120, 255, ${opacityValue * 0.06})`;
                             ctx.lineWidth = 1;
                             ctx.beginPath();
                             ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
