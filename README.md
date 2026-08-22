@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -2077,12 +2077,20 @@
                         <button class="tab-btn" data-target="tab-dha">Leadership</button>
                     </div>
                     
+                    <!-- UPDATED "OUR STORY" TAB AS REQUESTED -->
                     <div class="tab-pane active" id="tab-story">
-                        <p>I am an undergraduate mechanical engineering student and consultant who built a mechanical design consultancy from scratch. By self-teaching advanced CAD modeling, I founded 3D Mech Design to bridge the gap between theoretical engineering and highly precise manufacturing realities.</p>
-                        <p>Specializing in Design for Manufacturing (DFM) and strict adherence to ASME Y14.5 Geometric Dimensioning and Tolerancing (GD&T) standards, we serve high-profile clients like All American Gear and Mechanical.</p>
+                        <h3 style="margin-bottom: 5px; color: var(--text-primary);">Abdur Rafay Yousuf</h3>
+                        <h4 style="margin-bottom: 20px; color: var(--brand-primary); font-family: var(--font-mono); font-size: 1rem;">Founder & Mechanical Design Engineer</h4>
+                        
+                        <p>Abdur Rafay Yousuf is the Founder of 3D Mech Design, a mechanical design and engineering consultancy established in 2023. His work focuses on transforming engineering concepts into precise, manufacturable, and performance-driven mechanical solutions.</p>
+                        
+                        <p>With hands-on experience in 3D CAD, mechanical component design, precision gear engineering, engineering drawings, GD&T, product development, and manufacturing support, Abdur Rafay combines engineering fundamentals with practical manufacturing knowledge.</p>
+                        
+                        <p>Through 3D Mech Design, he has worked on projects ranging from precision gear systems and mechanical components to prototypes and industrial products, supporting clients across Pakistan, the United States, and Germany.</p>
+                        
                         <div class="highlight-box">
-                            <h4>Mentorship & Growth</h4>
-                            <p style="margin:0; font-size:1rem;">Dedicated to the engineering community, I've actively mentored junior students like Fozan Khan in mastering complex computer-aided design modeling skills.</p>
+                            <h4>Vision</h4>
+                            <p style="margin:0; font-size:1rem;">His vision is to build an engineering company that bridges the gap between CAD design and real-world manufacturing—creating designs that do not simply look correct on a screen, but are engineered to function, manufacture, and perform.<br><br><strong>Design Beyond Boundaries.</strong></p>
                         </div>
                     </div>
                     
