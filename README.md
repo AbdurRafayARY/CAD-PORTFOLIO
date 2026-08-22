@@ -1,21 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- ======================================================================
-         META TAGS & SEO
-         ====================================================================== -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description"
-        content="Abdur Rafay Yousuf - Mechanical Engineer & CAD Consultant. Founder of 3D Mech Design, specializing in parametric modeling, CFD, and thermal systems.">
-    <meta name="keywords"
-        content="Mechanical Engineering, CAD Consultant, SolidWorks, CFD Analysis, Thermodynamics, 3D Mech Design, Karachi">
-    <meta name="author" content="Abdur Rafay Yousuf">
-    <meta name="robots" content="index, follow">
-    <title>Abdur Rafay Yousuf | Advanced Engineering Portfolio</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Mech Design - Engineering Excellence</title>
+    
     <!-- ======================================================================
          EXTERNAL ASSETS & FONTS
          ====================================================================== -->
@@ -1935,1683 +1924,595 @@
         }
     </style>
 </head>
+<!-- Add data-theme="dark" to body to enable dark mode if preferred -->
+<body>
 
-<body class="light-mode">
-
-    <!-- PRELOADER -->
-    <div class="preloader" id="preloader">
-        <div class="gear-loader"></div>
-        <div class="loading-text">Loading Assets...</div>
-    </div>
-
-    <!-- BACKGROUND ENGINE -->
+    <!-- ======================================================================
+         ADVANCED BACKGROUND ENGINE
+         ====================================================================== -->
     <div class="bg-engine">
-        <canvas id="particle-canvas"></canvas>
         <div class="bg-orb"></div>
         <div class="bg-mesh"></div>
         <div class="bg-grid"></div>
+        <canvas id="particle-canvas"></canvas>
     </div>
 
-    <!-- HEADER NAVIGATION -->
+    <!-- ======================================================================
+         PRELOADER
+         ====================================================================== -->
+    <div class="preloader" id="preloader">
+        <div class="gear-loader"></div>
+        <div class="loading-text">Initializing Systems</div>
+    </div>
+
+    <!-- ======================================================================
+         HEADER & NAVIGATION
+         ====================================================================== -->
     <header id="header">
-        <div class="container nav-wrapper">
-            <a href="#" class="logo">
-                <div class="logo-icon"><i class="fas fa-cube"></i></div>
-                3D Mech<span>Design</span>
-            </a>
-
-            <ul class="nav-links">
-                <li><a href="#hero" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#expertise" class="nav-link">Expertise</a></li>
-                <li><a href="#portfolio" class="nav-link">Projects</a></li>
-                <li><a href="#insights" class="nav-link">Insights</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-
-            <div class="nav-actions">
-                <button id="theme-toggle" class="btn-icon" aria-label="Toggle Dark Mode">
-                    <i class="fas fa-moon"></i>
-                </button>
-                <button class="mobile-toggle">
-                    <i class="fas fa-bars"></i>
-                </button>
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="#hero" class="logo">
+                    <div class="logo-icon"><i class="fa-solid fa-cube"></i></div>
+                    3D Mech Design
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#hero" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Expertise</a></li>
+                    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                    <li><a href="#insights" class="nav-link">Insights</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="#contact" class="btn btn-primary">Hire Us</a>
+                    <button class="mobile-toggle"><i class="fa-solid fa-bars"></i></button>
+                </div>
             </div>
         </div>
     </header>
 
-    <main>
-        <!-- ==================================================================
-             SECTION 1: HERO
-             ================================================================== -->
-        <section id="hero">
-            <div class="container hero-grid">
+    <!-- ======================================================================
+         HERO SECTION
+         ====================================================================== -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-grid">
                 <div class="hero-content">
-                    <div class="badge"><i class="fas fa-rocket"></i> Mechanical Design Consultant</div>
+                    <div class="badge"><i class="fa-solid fa-rocket"></i> Design Beyond Boundaries</div>
                     <h1 class="hero-title">
                         Precision Engineering <br>
-                        <span class="typewriter-wrapper">
-                            <span class="typewriter-text" id="typewriter"></span>
-                        </span>
+                        <span class="text-gradient">For The Future</span>
                     </h1>
-                    <p class="hero-desc">
-                        I am Abdur Rafay Yousuf, based in Karachi, Pakistan. I specialize in complex parametric CAD
-                        modeling, Computational Fluid Dynamics (CFD), and thermodynamic prototyping for industrial
-                        applications.
-                    </p>
-
+                    <p class="hero-desc">Founded by Abdur Rafay Yousuf in Karachi, Pakistan, we deliver high-precision CAD modeling, 2D manufacturing drawings, gear design, and computational fluid dynamics (CFD) for domestic and international clients.</p>
+                    
                     <div class="hero-metrics">
                         <div class="metric">
-                            <span class="metric-value" data-target="150">0</span>
-                            <span class="metric-label">CAD Models</span>
+                            <span class="metric-value mono">100+</span>
+                            <span class="metric-label">Projects Completed</span>
                         </div>
                         <div class="metric">
-                            <span class="metric-value" data-target="4">0</span>
-                            <span class="metric-label">Years Exp.</span>
+                            <span class="metric-value mono">ASME</span>
+                            <span class="metric-label">Y14.5 Standards</span>
                         </div>
                         <div class="metric">
-                            <span class="metric-value">100%</span>
-                            <span class="metric-label">Accuracy</span>
+                            <span class="metric-value mono">24/7</span>
+                            <span class="metric-label">Client Support</span>
                         </div>
                     </div>
 
                     <div class="hero-btns">
-                        <a href="#portfolio" class="btn btn-primary">
-                            Explore Portfolio <i class="fas fa-arrow-right"></i>
-                        </a>
-                        <a href="#contact" class="btn btn-secondary">
-                            Contact Me <i class="fas fa-envelope"></i>
-                        </a>
+                        <a href="#portfolio" class="btn btn-primary"><i class="fa-solid fa-folder-open"></i> View Portfolio</a>
+                        <a href="#contact" class="btn btn-secondary">Contact Us</a>
                     </div>
                 </div>
-
-                <div class="hero-visual" id="heroVisual">
-                    <div class="float-badge float-1">
-                        <div class="float-icon"><i class="fas fa-wind"></i></div>
-                        <div class="float-text">CFD Analysis <span>Advanced Flow Regimes</span></div>
-                    </div>
-                    <div class="float-badge float-2">
-                        <div class="float-icon"><i class="fas fa-cogs"></i></div>
-                        <div class="float-text">Gear Engineering <span>Involute Math Profiles</span></div>
-                    </div>
-
-                    <div class="glass-panel profile-card">
+                
+                <div class="hero-visual">
+                    <div class="profile-card glass-panel">
+                        <div class="float-badge float-1">
+                            <div class="float-icon"><i class="fa-solid fa-gear"></i></div>
+                            <div class="float-text">Precision<span>Gear Design</span></div>
+                        </div>
+                        <div class="float-badge float-2">
+                            <div class="float-icon"><i class="fa-solid fa-cube"></i></div>
+                            <div class="float-text">Parametric<span>3D Modeling</span></div>
+                        </div>
                         <div class="profile-img-wrap">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=600&h=600"
-                                alt="Abdur Rafay Yousuf" class="profile-img">
+                            <img src="https://via.placeholder.com/300" alt="Abdur Rafay Yousuf - 3D Mech Design" class="profile-img">
                         </div>
                         <h3>Abdur Rafay Yousuf</h3>
-                        <p>Founder, 3D Mech Design</p>
-                        <div class="badge"><i class="fas fa-university"></i> DHA Suffa University</div>
+                        <p>Mechanical Design Engineer</p>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- ==================================================================
-             INFINITE SCROLL TECH MARQUEE
-             ================================================================== -->
-        <div class="marquee-wrapper">
-            <div class="marquee-content">
-                <!-- Set 1 -->
-                <div class="marquee-item"><i class="fa-solid fa-code"></i> SolidWorks</div>
-                <div class="marquee-item"><i class="fa-brands fa-hubspot"></i> Fusion 360</div>
-                <div class="marquee-item"><i class="fa-solid fa-pen-ruler"></i> AutoCAD</div>
-                <div class="marquee-item"><i class="fa-solid fa-calculator"></i> MATLAB</div>
-                <div class="marquee-item"><i class="fa-solid fa-network-wired"></i> Ansys</div>
-                <div class="marquee-item"><i class="fa-brands fa-usb"></i> Arduino Uno</div>
-                <div class="marquee-item"><i class="fa-solid fa-wind"></i> CFD Simulation</div>
-                <!-- Set 2 (Duplicate for seamless loop) -->
-                <div class="marquee-item"><i class="fa-solid fa-code"></i> SolidWorks</div>
-                <div class="marquee-item"><i class="fa-brands fa-hubspot"></i> Fusion 360</div>
-                <div class="marquee-item"><i class="fa-solid fa-pen-ruler"></i> AutoCAD</div>
-                <div class="marquee-item"><i class="fa-solid fa-calculator"></i> MATLAB</div>
-                <div class="marquee-item"><i class="fa-solid fa-network-wired"></i> Ansys</div>
-                <div class="marquee-item"><i class="fa-brands fa-usb"></i> Arduino Uno</div>
-                <div class="marquee-item"><i class="fa-solid fa-wind"></i> CFD Simulation</div>
             </div>
         </div>
+    </section>
 
-        <!-- ==================================================================
-             SECTION 2: ABOUT & TABS
-             ================================================================== -->
-        <section id="about">
-            <div class="container">
-                <div class="section-header reveal">
-                    <div class="badge">Who I Am</div>
-                    <h2 class="section-title">Bridging Theory & <span class="text-gradient">Manufacturing</span></h2>
-                    <p class="section-desc">Turning abstract physics and thermodynamic concepts into highly precise,
-                        manufacturable engineering solutions.</p>
-                </div>
+    <!-- ======================================================================
+         INFINITE SCROLL MARQUEE (TECH STACK)
+         ====================================================================== -->
+    <div class="marquee-wrapper">
+        <div class="marquee-content">
+            <div class="marquee-item"><i class="fa-solid fa-cube"></i> SolidWorks</div>
+            <div class="marquee-item"><i class="fa-solid fa-calculator"></i> MATLAB</div>
+            <div class="marquee-item"><i class="fa-solid fa-pen-ruler"></i> AutoCAD</div>
+            <div class="marquee-item"><i class="fa-solid fa-arrows-spin"></i> Fusion 360</div>
+            <div class="marquee-item"><i class="fa-solid fa-microchip"></i> LabVIEW</div>
+            <div class="marquee-item"><i class="fa-solid fa-robot"></i> Arduino</div>
+            <!-- Duplicate for infinite loop -->
+            <div class="marquee-item"><i class="fa-solid fa-cube"></i> SolidWorks</div>
+            <div class="marquee-item"><i class="fa-solid fa-calculator"></i> MATLAB</div>
+            <div class="marquee-item"><i class="fa-solid fa-pen-ruler"></i> AutoCAD</div>
+            <div class="marquee-item"><i class="fa-solid fa-arrows-spin"></i> Fusion 360</div>
+            <div class="marquee-item"><i class="fa-solid fa-microchip"></i> LabVIEW</div>
+            <div class="marquee-item"><i class="fa-solid fa-robot"></i> Arduino</div>
+        </div>
+    </div>
 
-                <div class="about-grid">
-                    <div class="about-visual reveal-left">
-                        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?fit=crop&w=800&h=800"
-                            alt="Engineering Workspace" class="about-image">
-                        <div class="location-badge">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h4 style="margin-bottom: 2px;">Based in</h4>
-                                <span class="mono" style="color: var(--text-muted); font-size: 0.9rem;">Karachi,
-                                    Pakistan</span>
-                            </div>
+    <!-- ======================================================================
+         ABOUT SECTION
+         ====================================================================== -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="badge">Who We Are</div>
+                <h2 class="section-title">The Mind Behind The Models</h2>
+                <p class="section-desc">Self-taught CAD expertise transforming into a full-fledged mechanical design consultancy.</p>
+            </div>
+            
+            <div class="about-grid reveal">
+                <div class="about-visual">
+                    <img src="https://via.placeholder.com/600x800" alt="Karachi HQ" class="about-image">
+                    <div class="location-badge">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <h4 style="margin:0;">Headquarters</h4>
+                            <span style="color:var(--text-muted); font-size:0.9rem;">Karachi, Pakistan</span>
                         </div>
                     </div>
-
-                    <div class="about-content reveal-right">
-                        <!-- Custom Tabs -->
-                        <div class="tabs-header">
-                            <button class="tab-btn active" data-tab="mission">Mission</button>
-                            <button class="tab-btn" data-tab="methodology">Methodology</button>
-                            <button class="tab-btn" data-tab="mentorship">Mentorship</button>
+                </div>
+                
+                <div class="about-content">
+                    <div class="tabs-header">
+                        <button class="tab-btn active" data-target="tab-story">Our Story</button>
+                        <button class="tab-btn" data-target="tab-edu">Education</button>
+                        <button class="tab-btn" data-target="tab-dha">Leadership</button>
+                    </div>
+                    
+                    <div class="tab-pane active" id="tab-story">
+                        <p>I am an undergraduate mechanical engineering student and consultant who built a mechanical design consultancy from scratch. By self-teaching advanced CAD modeling, I founded 3D Mech Design to bridge the gap between theoretical engineering and highly precise manufacturing realities.</p>
+                        <p>Specializing in Design for Manufacturing (DFM) and strict adherence to ASME Y14.5 Geometric Dimensioning and Tolerancing (GD&T) standards, we serve high-profile clients like All American Gear and Mechanical.</p>
+                        <div class="highlight-box">
+                            <h4>Mentorship & Growth</h4>
+                            <p style="margin:0; font-size:1rem;">Dedicated to the engineering community, I've actively mentored junior students like Fozan Khan in mastering complex computer-aided design modeling skills.</p>
                         </div>
+                    </div>
+                    
+                    <div class="tab-pane" id="tab-edu">
+                        <p>Currently pursuing a Bachelor's degree in Mechanical Engineering at <strong>DHA Suffa University</strong> in Karachi, Pakistan, with an expected graduation in 2026. My foundational secondary education in pre-engineering was completed under the Sindh Board.</p>
+                        <p>Looking ahead, I am actively exploring graduate degree programs and scholarship opportunities (such as the McCall MacBain Scholarship) in aerospace, mechatronics, and robotics for 2027 admission across Canada, Germany, Australia, and Italy.</p>
+                    </div>
 
-                        <!-- Tab 1: Mission -->
-                        <div class="tab-pane active" id="tab-mission">
-                            <h3 style="font-size: 1.8rem; margin-bottom: 20px;">Engineering with Purpose</h3>
-                            <p>My core mission is to develop localized, highly efficient mechanical solutions. This
-                                drive was heavily inspired by personal family challenges regarding accessibility, which
-                                directly motivated the creation of the <strong>Mahfooz Wheelchair Project</strong>—a
-                                localized mobility device with stair-lifting capabilities.</p>
-                            <div class="highlight-box">
-                                <h4>3D Mech Design</h4>
-                                <p style="margin: 0; font-size: 0.95rem;">Founded to provide professional mechanical
-                                    design consultation. We draft technical proposals, flyers, and operate comprehensive
-                                    parametric modeling projects for industry clients.</p>
-                            </div>
-                        </div>
-
-                        <!-- Tab 2: Methodology -->
-                        <div class="tab-pane" id="tab-methodology">
-                            <h3 style="font-size: 1.8rem; margin-bottom: 20px;">The Design Process</h3>
-                            <p>I strictly adhere to a mathematically validated design process. Whether it is a thermal
-                                sand battery or gear assembly, no dimension is arbitrary.</p>
-                            <ul
-                                style="list-style: none; display: flex; flex-direction: column; gap: 15px; margin-top: 20px;">
-                                <li><i class="fas fa-check-circle"
-                                        style="color: var(--brand-primary); margin-right: 10px;"></i>
-                                    <strong>Ideation:</strong> Mathematical formulation & sketches.</li>
-                                <li><i class="fas fa-check-circle"
-                                        style="color: var(--brand-primary); margin-right: 10px;"></i> <strong>CAD
-                                        Phase:</strong> Parametric design in SolidWorks.</li>
-                                <li><i class="fas fa-check-circle"
-                                        style="color: var(--brand-primary); margin-right: 10px;"></i>
-                                    <strong>Simulation:</strong> Stress testing & CFD validation.</li>
-                                <li><i class="fas fa-check-circle"
-                                        style="color: var(--brand-primary); margin-right: 10px;"></i>
-                                    <strong>Production:</strong> Final manufacturing schematics.</li>
-                            </ul>
-                        </div>
-
-                        <!-- Tab 3: Mentorship -->
-                        <div class="tab-pane" id="tab-mentorship">
-                            <h3 style="font-size: 1.8rem; margin-bottom: 20px;">Community & Skill Sharing</h3>
-                            <p>Knowledge isolation hinders engineering progress. I actively log mentorship and
-                                skill-sharing activities with junior students and associates.</p>
-                            <div class="glass-panel" style="padding: 20px; margin-top: 20px;">
-                                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
-                                    <div
-                                        style="width: 50px; height: 50px; border-radius: 50%; background: var(--brand-primary); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;">
-                                        FK</div>
-                                    <div>
-                                        <h4 style="margin: 0;">Faizan Khan</h4>
-                                        <span style="font-size: 0.85rem; color: var(--text-muted);">Junior Associate
-                                            Mentee</span>
-                                    </div>
-                                </div>
-                                <p style="margin: 0; font-size: 0.95rem; font-style: italic;">"Mentored directly in
-                                    advanced computer-aided design skills, transferring practical parametric modeling
-                                    knowledge."</p>
-                            </div>
-                        </div>
-
+                    <div class="tab-pane" id="tab-dha">
+                        <p>Beyond technical engineering, I've held organizational roles within university student groups. I currently serve as the treasurer for the Management Sciences Society at DHA Suffa University, organizing campus-wide events and managing budgets.</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- ==================================================================
-             SECTION 3: EXPERTISE & INTERACTIVE GEAR CALCULATOR
-             ================================================================== -->
-        <section id="expertise">
-            <div class="container">
-                <div class="section-header reveal">
-                    <div class="badge">Technical Arsenal</div>
-                    <h2 class="section-title">Engineering <span class="text-gradient">Capabilities</span></h2>
+    <!-- ======================================================================
+         SKILLS & GEAR CALCULATOR SECTION
+         ====================================================================== -->
+    <section id="skills" style="background: var(--bg-surface);">
+        <div class="container">
+            <div class="skills-grid">
+                <div class="skill-bars reveal-left">
+                    <h2 class="section-title" style="font-size:2.5rem;">Technical Expertise</h2>
+                    <p style="margin-bottom: 30px;">Mastery in the tools required to bring industrial designs from concept to reality.</p>
+                    
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <div class="skill-title">
+                                <div class="skill-icon"><i class="fa-solid fa-cube"></i></div>
+                                SolidWorks (Parametric & Surfaces)
+                            </div>
+                            <div class="skill-pct">95%</div>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <div class="skill-title">
+                                <div class="skill-icon"><i class="fa-solid fa-gear"></i></div>
+                                True Involute Gear Engineering
+                            </div>
+                            <div class="skill-pct">90%</div>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill" style="width: 90%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <div class="skill-title">
+                                <div class="skill-icon"><i class="fa-solid fa-calculator"></i></div>
+                                MATLAB Numerical Analysis
+                            </div>
+                            <div class="skill-pct">85%</div>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="skills-grid">
-                    <div class="skill-bars reveal-left">
-                        <div class="skill-item">
-                            <div class="skill-header">
-                                <div class="skill-title">
-                                    <div class="skill-icon"><i class="fas fa-cube"></i></div> 3D CAD & Drafting
-                                </div>
-                                <div class="skill-pct">95%</div>
-                            </div>
-                            <div class="progress-track">
-                                <div class="progress-fill" style="width: 95%;"></div>
-                            </div>
-                            <p style="margin-top: 15px; font-size: 0.9rem; margin-bottom: 0;">SolidWorks, AutoCAD,
-                                Fusion 360. Feature trees & technical drawings.</p>
-                        </div>
-
-                        <div class="skill-item">
-                            <div class="skill-header">
-                                <div class="skill-title">
-                                    <div class="skill-icon"><i class="fas fa-wind"></i></div> CFD Analysis
-                                </div>
-                                <div class="skill-pct">88%</div>
-                            </div>
-                            <div class="progress-track">
-                                <div class="progress-fill" style="width: 88%;"></div>
-                            </div>
-                            <p style="margin-top: 15px; font-size: 0.9rem; margin-bottom: 0;">Velocity/pressure
-                                distributions across fluid flow regimes.</p>
-                        </div>
-
-                        <div class="skill-item">
-                            <div class="skill-header">
-                                <div class="skill-title">
-                                    <div class="skill-icon"><i class="fas fa-fire-alt"></i></div> Thermodynamics
-                                </div>
-                                <div class="skill-pct">85%</div>
-                            </div>
-                            <div class="progress-track">
-                                <div class="progress-fill" style="width: 85%;"></div>
-                            </div>
-                            <p style="margin-top: 15px; font-size: 0.9rem; margin-bottom: 0;">Thermal energy storage,
-                                sand batteries, and ICE emissions control.</p>
-                        </div>
+                
+                <div class="calculator-widget reveal-right">
+                    <div class="calc-header">
+                        <h3 class="calc-title"><i class="fa-solid fa-gear"></i> Quick Gear Pitch Calculator</h3>
+                        <p style="font-size: 0.9rem; margin-top:5px;">Calculate Diametral Pitch (DP)</p>
                     </div>
-
-                    <!-- Interactive Gear Calculator Widget -->
-                    <div class="calculator-widget reveal-right">
-                        <div class="calc-header">
-                            <div class="calc-title"><i class="fas fa-cogs"></i> Involute Gear Toolkit</div>
-                            <p style="margin-top: 10px; font-size: 0.9rem; margin-bottom: 0;">Interactive tool
-                                demonstrating gear mathematics. <strong>Note:</strong> $\Delta d_r$ calculates Pitch
-                                Diameter, not root diameter.</p>
-                        </div>
-
-                        <div class="calc-form-group">
-                            <label class="calc-label">Number of Teeth (N)</label>
-                            <input type="number" id="gearTeeth" class="calc-input" value="24" min="10">
-                        </div>
-                        <div class="calc-form-group">
-                            <label class="calc-label">Module / Diametral Pitch (m)</label>
-                            <input type="number" id="gearModule" class="calc-input" value="2.5" step="0.1">
-                        </div>
-
-                        <div class="calc-result-box">
-                            <div class="calc-result-label">Pitch Diameter ($\Delta d_r$)</div>
-                            <div class="calc-result-value" id="gearResult">60.00 <span
-                                    style="font-size: 1rem;">mm</span></div>
-                            <div class="calc-note">Formula: $\Delta d_r = N \times m$</div>
-                        </div>
+                    
+                    <div class="calc-form-group">
+                        <label class="calc-label">Number of Teeth (N)</label>
+                        <input type="number" class="calc-input" value="120" placeholder="e.g. 120">
                     </div>
+                    
+                    <div class="calc-form-group">
+                        <label class="calc-label">Pitch Diameter (inches)</label>
+                        <input type="number" class="calc-input" value="1.0" placeholder="e.g. 1.0">
+                    </div>
+                    
+                    <div class="calc-result-box">
+                        <div class="calc-result-label">Calculated Diametral Pitch</div>
+                        <div class="calc-result-value">120 DP</div>
+                    </div>
+                    <p class="calc-note">*We specialize in fine-pitch 120 DP systems for optical and scientific instruments.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- ==================================================================
-             SECTION 4: PORTFOLIO
-             ================================================================== -->
-        <section id="portfolio">
-            <div class="container">
-                <div class="section-header reveal">
-                    <div class="badge">Case Studies</div>
-                    <h2 class="section-title">Featured <span class="text-gradient">Projects</span></h2>
-                </div>
-
-                <div class="portfolio-filters reveal">
-                    <button class="filter-btn active" data-filter="all">All Projects</button>
-                    <button class="filter-btn" data-filter="thermo">Thermodynamics</button>
-                    <button class="filter-btn" data-filter="mech">Mechanical CAD</button>
-                    <button class="filter-btn" data-filter="robotics">Robotics</button>
-                </div>
-
-                <div class="portfolio-grid" id="portfolioGrid">
-
-                    <!-- Portfolio Item 1: Wheelchair -->
-                    <div class="portfolio-card glass-panel reveal port-item mech">
-                        <div class="port-img-wrap">
-                            <img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?fit=crop&w=600&h=400"
-                                alt="Mahfooz Wheelchair">
-                            <div class="port-overlay">
-                                <button class="port-view-btn open-modal" data-target="modal-wheelchair"><i
-                                        class="fas fa-search-plus"></i></button>
-                            </div>
-                        </div>
-                        <div class="port-content">
-                            <span class="port-cat">Product Design</span>
-                            <h3 class="port-title">Mahfooz Wheelchair</h3>
-                            <p class="port-desc">A locally producible mobility device engineered with advanced
-                                stair-lifting capabilities. Recognized by Sindh HEC.</p>
-                            <div class="port-meta">
-                                <div class="port-tool"><i class="fa-solid fa-code"></i> <i
-                                        class="fas fa-wheelchair"></i></div>
-                                <a href="#" class="port-meta-link open-modal" data-target="modal-wheelchair">Full Specs
-                                    <i class="fas fa-arrow-right"></i></a>
-                            </div>
+    <!-- ======================================================================
+         PORTFOLIO SECTION
+         ====================================================================== -->
+    <section id="portfolio">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="badge">Our Work</div>
+                <h2 class="section-title">Selected Engineering Projects</h2>
+                <p class="section-desc">Explore our custom prototypes, thermal systems, and precision tooling.</p>
+            </div>
+            
+            <div class="portfolio-filters reveal">
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">Mechanical Design</button>
+                <button class="filter-btn">Thermal Engineering</button>
+                <button class="filter-btn">Robotics & Controls</button>
+            </div>
+            
+            <div class="portfolio-grid reveal">
+                <!-- Portfolio Card 1 -->
+                <div class="portfolio-card glass-panel">
+                    <div class="port-img-wrap">
+                        <img src="https://via.placeholder.com/600x400" alt="Mahfooz Wheelchair">
+                        <div class="port-overlay">
+                            <div class="port-view-btn"><i class="fa-solid fa-eye"></i></div>
                         </div>
                     </div>
-
-                    <!-- Portfolio Item 2: Sand Battery -->
-                    <div class="portfolio-card glass-panel reveal port-item thermo">
-                        <div class="port-img-wrap">
-                            <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?fit=crop&w=600&h=400"
-                                alt="Sand Battery">
-                            <div class="port-overlay">
-                                <button class="port-view-btn open-modal" data-target="modal-battery"><i
-                                        class="fas fa-search-plus"></i></button>
+                    <div class="port-content">
+                        <div class="port-cat">Mechanical Design</div>
+                        <h3 class="port-title">Mahfooz Wheelchair Prototype</h3>
+                        <p class="port-desc">A custom mobility device designed with stair-lifting capabilities and adjustable angles for seamless multi-story building access.</p>
+                        <div class="port-meta">
+                            <div class="port-tool">
+                                <i class="fa-solid fa-cube" title="SolidWorks"></i>
                             </div>
-                        </div>
-                        <div class="port-content">
-                            <span class="port-cat">Thermodynamics</span>
-                            <h3 class="port-title">Thermal Energy Sand Battery</h3>
-                            <p class="port-desc">Final year design prototype. Insulated silica sand tank with internal
-                                heat exchanger coils and instrumentation sensors.</p>
-                            <div class="port-meta">
-                                <div class="port-tool"><i class="fas fa-thermometer-half"></i> <i
-                                        class="fas fa-cogs"></i></div>
-                                <a href="#" class="port-meta-link open-modal" data-target="modal-battery">Full Specs <i
-                                        class="fas fa-arrow-right"></i></a>
-                            </div>
+                            <a href="#" class="port-meta-link">View Pitch Deck <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Portfolio Item 3: Autonomous Robot -->
-                    <div class="portfolio-card glass-panel reveal port-item robotics">
-                        <div class="port-img-wrap">
-                            <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?fit=crop&w=600&h=400"
-                                alt="Robot">
-                            <div class="port-overlay">
-                                <button class="port-view-btn open-modal" data-target="modal-robot"><i
-                                        class="fas fa-search-plus"></i></button>
-                            </div>
+                <!-- Portfolio Card 2 -->
+                <div class="portfolio-card glass-panel">
+                    <div class="port-img-wrap">
+                        <img src="https://via.placeholder.com/600x400" alt="Sand Battery">
+                        <div class="port-overlay">
+                            <div class="port-view-btn"><i class="fa-solid fa-eye"></i></div>
                         </div>
-                        <div class="port-content">
-                            <span class="port-cat">Mechatronics</span>
-                            <h3 class="port-title">Autonomous Line-Follower</h3>
-                            <p class="port-desc">Arduino Uno system featuring complex wiring diagrams, sensor loops, and
-                                real-time processing code for the Instrumentation Lab.</p>
-                            <div class="port-meta">
-                                <div class="port-tool"><i class="fa-brands fa-usb"></i> <i class="fas fa-microchip"></i>
-                                </div>
-                                <a href="#" class="port-meta-link open-modal" data-target="modal-robot">Full Specs <i
-                                        class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="port-content">
+                        <div class="port-cat">Thermal Engineering</div>
+                        <h3 class="port-title">Thermal Energy Sand Battery</h3>
+                        <p class="port-desc">A lab-scale 3x3x3 foot prototype utilizing silica sand, aluminum chips, and heat exchanger coils for industrial heat recovery.</p>
+                        <div class="port-meta">
+                            <div class="port-tool">
+                                <i class="fa-solid fa-fire" title="CFD"></i>
+                                <i class="fa-solid fa-calculator" title="MATLAB"></i>
                             </div>
+                            <a href="#" class="port-meta-link">View Analysis <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Card 3 -->
+                <div class="portfolio-card glass-panel">
+                    <div class="port-img-wrap">
+                        <img src="https://via.placeholder.com/600x400" alt="Gear System">
+                        <div class="port-overlay">
+                            <div class="port-view-btn"><i class="fa-solid fa-eye"></i></div>
+                        </div>
+                    </div>
+                    <div class="port-content">
+                        <div class="port-cat">Precision Tooling</div>
+                        <h3 class="port-title">120 DP Fine-Pitch Gear System</h3>
+                        <p class="port-desc">Mathematically accurate involute spur gear system alongside custom hobbing, shaping, and inspection arbors for scientific instruments.</p>
+                        <div class="port-meta">
+                            <div class="port-tool">
+                                <i class="fa-solid fa-gear" title="Gear Design"></i>
+                            </div>
+                            <a href="#" class="port-meta-link">View Drawings <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Card 4 -->
+                <div class="portfolio-card glass-panel">
+                    <div class="port-img-wrap">
+                        <img src="https://via.placeholder.com/600x400" alt="Arduino Robot">
+                        <div class="port-overlay">
+                            <div class="port-view-btn"><i class="fa-solid fa-eye"></i></div>
+                        </div>
+                    </div>
+                    <div class="port-content">
+                        <div class="port-cat">Robotics & Controls</div>
+                        <h3 class="port-title">Arduino PID Control Platform</h3>
+                        <p class="port-desc">Open-source instrumentation platform and line-following robot to measure and validate real-time Proportional-Integral-Derivative (PID) control algorithms.</p>
+                        <div class="port-meta">
+                            <div class="port-tool">
+                                <i class="fa-solid fa-microchip" title="Arduino"></i>
+                                <i class="fa-solid fa-code" title="C/C++"></i>
+                            </div>
+                            <a href="#" class="port-meta-link">View Firmware <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- ==================================================================
-             SECTION 5: INSIGHTS & PUBLICATIONS
-             ================================================================== -->
-        <section id="insights">
-            <div class="container">
-                <div class="section-header reveal">
-                    <div class="badge">Research & Academia</div>
-                    <h2 class="section-title">Engineering <span class="text-gradient">Insights</span></h2>
+    <!-- ======================================================================
+         INSIGHTS / BLOG SECTION
+         ====================================================================== -->
+    <section id="insights" style="background: var(--bg-surface);">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="badge">Publications</div>
+                <h2 class="section-title">Engineering Insights</h2>
+                <p class="section-desc">Technical deep-dives and computational reports authored by Abdur Rafay Yousuf.</p>
+            </div>
+            
+            <div class="insights-grid reveal">
+                <div class="article-card">
+                    <div class="article-date">
+                        <span class="date-month">Nov</span>
+                        <span class="date-year">2025</span>
+                    </div>
+                    <div class="article-content">
+                        <h3>Optimizing PID Control with Arduino</h3>
+                        <p>A technical review on breadboard circuitry, ultrasonic sensors, and firmware code development for proximity alert systems.</p>
+                        <a href="#" class="read-more">Read Full Paper <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
                 </div>
 
-                <div class="insights-grid">
-                    <!-- Article 1 -->
-                    <div class="article-card reveal-left">
-                        <div class="article-date">
-                            <span class="date-month">FALL</span>
-                            <span class="date-year">2025</span>
-                        </div>
-                        <div class="article-content">
-                            <h3>Emissions in Internal Combustion Engines</h3>
-                            <p>A formal engineering document analyzing pollutant formation mechanisms and evaluating
-                                modern emission control technologies for industrial IC Engines.</p>
-                            <a href="#" class="read-more">Read Abstract <i class="fas fa-arrow-right"></i></a>
-                        </div>
+                <div class="article-card">
+                    <div class="article-date">
+                        <span class="date-month">Mar</span>
+                        <span class="date-year">2026</span>
                     </div>
-
-                    <!-- Article 2 -->
-                    <div class="article-card reveal-right">
-                        <div class="article-date">
-                            <span class="date-month">JAN</span>
-                            <span class="date-year">2026</span>
-                        </div>
-                        <div class="article-content">
-                            <h3>PSX Portfolio Performance Analysis</h3>
-                            <p>Executed a transaction log analysis report for Engineering Economics. Transcribed data
-                                from Pakistan Stock Exchange to analyze market value fluctuations.</p>
-                            <a href="#" class="read-more">Read Abstract <i class="fas fa-arrow-right"></i></a>
-                        </div>
+                    <div class="article-content">
+                        <h3>CFD Analysis in Heat Recovery</h3>
+                        <p>Analytical studies and visualization tasks regarding computational fluid dynamics velocity and pressure distributions in sand batteries.</p>
+                        <a href="#" class="read-more">Read Full Paper <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- ==================================================================
-             SECTION 6: ADVANCED CONTACT MODULE
-             ================================================================== -->
-        <section id="contact">
-            <div class="container">
-                <div class="section-header reveal">
-                    <div class="badge">Initiate Collaboration</div>
-                    <h2 class="section-title">Let's <span class="text-gradient">Connect</span></h2>
+    <!-- ======================================================================
+         CONTACT SECTION & FORM
+         ====================================================================== -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="badge">Get In Touch</div>
+                <h2 class="section-title">Let's Build Something Precise</h2>
+                <p class="section-desc">Whether you need custom gear arbors or full CFD analysis, 3D Mech Design is ready.</p>
+            </div>
+            
+            <div class="contact-grid reveal">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div class="contact-details">
+                            <h4>Email Address</h4>
+                            <a href="mailto:info@3dmechdesign.com">info@3dmechdesign.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>Karachi, Sindh, Pakistan</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fa-solid fa-handshake"></i></div>
+                        <div class="contact-details">
+                            <h4>Partnerships</h4>
+                            <p>Open for Master Service & NDA Agreements.</p>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="contact-grid">
-                    <div class="contact-info reveal-left">
-                        <div class="contact-card">
-                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-                            <div class="contact-details">
-                                <h4>Global & Local Hub</h4>
-                                <p>Karachi, Sindh, Pakistan.<br>Available globally via remote consulting.</p>
+                
+                <div class="advanced-form">
+                    <form action="#" method="POST">
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" class="form-control" placeholder="John Doe">
+                            </div>
+                            <div class="input-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" class="form-control" placeholder="john@company.com">
                             </div>
                         </div>
-                        <div class="contact-card">
-                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                            <div class="contact-details">
-                                <h4>Direct Communication</h4>
-                                <a href="mailto:contact@example.com">consult@3dmechdesign.com</a>
-                                <p style="margin-top: 5px;">Response within 24 hours.</p>
-                            </div>
+                        <div class="input-group" style="margin-bottom: 25px;">
+                            <label for="service">Service Required</label>
+                            <select id="service" class="form-control">
+                                <option>Parametric 3D Modeling</option>
+                                <option>2D Manufacturing Drawings (GD&T)</option>
+                                <option>Gear Design (Hobbing/Shaping)</option>
+                                <option>CFD Analysis</option>
+                            </select>
                         </div>
-
-                        <!-- Testimonial Inline -->
-                        <div class="glass-panel" style="padding: 30px; margin-top: 20px;">
-                            <i class="fas fa-quote-left"
-                                style="color: var(--brand-primary); font-size: 2rem; margin-bottom: 15px;"></i>
-                            <p style="font-style: italic; font-size: 1.05rem;">"Abdur Rafay demonstrates exceptional
-                                diligence... his CFD work sets a high standard for engineering students."</p>
-                            <div style="font-weight: 700; color: var(--text-primary);">Dr. Usama</div>
-                            <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--brand-primary);">
-                                DHA Suffa University</div>
+                        <div class="input-group" style="margin-bottom: 25px;">
+                            <label for="message">Project Details</label>
+                            <textarea id="message" class="form-control" placeholder="Tell us about your technical requirements..."></textarea>
                         </div>
-                    </div>
-
-                    <div class="advanced-form reveal-right">
-                        <h3 style="font-size: 1.8rem; margin-bottom: 30px;">Project Inquiry Application</h3>
-                        <form id="contactForm">
-                            <div class="form-row">
-                                <div class="input-group">
-                                    <label>First Name</label>
-                                    <input type="text" class="form-control" required placeholder="John">
-                                </div>
-                                <div class="input-group">
-                                    <label>Last Name</label>
-                                    <input type="text" class="form-control" required placeholder="Doe">
-                                </div>
-                            </div>
-
-                            <div class="input-group" style="margin-bottom: 25px;">
-                                <label>Corporate Email</label>
-                                <input type="email" class="form-control" required placeholder="john@engineering.com">
-                            </div>
-
-                            <div class="input-group" style="margin-bottom: 25px;">
-                                <label>Engineering Discipline Required</label>
-                                <select class="form-control">
-                                    <option>Parametric CAD Modeling</option>
-                                    <option>Computational Fluid Dynamics (CFD)</option>
-                                    <option>Gear Mathematical Profiles</option>
-                                    <option>Thermodynamics Prototyping</option>
-                                </select>
-                            </div>
-
-                            <div class="input-group" style="margin-bottom: 25px;">
-                                <label>Project Brief</label>
-                                <textarea class="form-control" required
-                                    placeholder="Describe technical specifications, deliverables, and timelines..."></textarea>
-                            </div>
-
-                            <label class="custom-checkbox">
-                                <input type="checkbox" required>
-                                <span class="checkmark"></span>
-                                <span class="check-label">I agree to the processing of technical data for consultation
-                                    purposes.</span>
-                            </label>
-
-                            <button type="submit" class="btn btn-primary" style="width: 100%;">
-                                Submit Technical Brief <i class="fas fa-paper-plane"></i>
-                            </button>
-                        </form>
-                    </div>
+                        <label class="custom-checkbox">
+                            <input type="checkbox" required>
+                            <span class="checkmark"></span>
+                            <span class="check-label">I agree to standard Non-Disclosure Agreement (NDA) terms prior to sharing proprietary designs.</span>
+                        </label>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Inquiry</button>
+                    </form>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <!-- ==================================================================
-         SECTION 7: MEGA FOOTER
-         ================================================================== -->
+    <!-- ======================================================================
+         MEGA FOOTER WITH LINKED SOCIALS
+         ====================================================================== -->
     <footer>
         <div class="container">
             <div class="footer-grid">
-
                 <div class="footer-brand">
-                    <a href="#" class="logo">
-                        <div class="logo-icon"><i class="fas fa-cube"></i></div>
-                        3D Mech<span>Design</span>
+                    <a href="#hero" class="logo">
+                        <div class="logo-icon"><i class="fa-solid fa-cube"></i></div>
+                        3D Mech Design
                     </a>
-                    <p>Providing cutting-edge parametric design, thermodynamics prototyping, and computational fluid
-                        dynamics analysis for modern engineering solutions worldwide.</p>
-                    <div class="social-circle-links" style="margin-top: 25px;">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    <p>Headquartered in Karachi, Pakistan, we provide top-tier mechanical engineering and CAD consulting services worldwide.</p>
+                    
+                    <h3 class="footer-title" style="margin-top: 30px;">Connect with us</h3>
+                    
+                    <!-- ==========================================================
+                         HERE ARE YOUR REQUESTED SOCIAL LINKS (LinkedIn & Insta)
+                         ========================================================== -->
+                    <div class="social-circle-links">
+                        <!-- LinkedIn Button targeting the Admin Dashboard URL -->
+                        <a href="https://www.linkedin.com/company/107649824/admin/dashboard/" target="_blank" rel="noopener noreferrer" title="LinkedIn Admin Dashboard">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        
+                        <!-- Instagram Button targeting your requested IG URL -->
+                        <a href="https://www.instagram.com/3d_mechdesign/" target="_blank" rel="noopener noreferrer" title="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
                     </div>
+                    <!-- ========================================================== -->
+                    
                 </div>
-
-                <div class="footer-col">
-                    <h4 class="footer-title">Disciplines</h4>
+                
+                <div>
+                    <h3 class="footer-title">Services</h3>
                     <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> CAD Consulting</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Thermal Simulation</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Gear Analysis</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Prototyping</a></li>
+                        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> CAD Modeling</a></li>
+                        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> 2D Technical Drawings</a></li>
+                        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Gear Engineering</a></li>
+                        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> CFD Analysis</a></li>
                     </ul>
                 </div>
 
-                <div class="footer-col">
-                    <h4 class="footer-title">Navigation</h4>
+                <div>
+                    <h3 class="footer-title">Company</h3>
                     <ul class="footer-links">
-                        <li><a href="#hero"><i class="fas fa-chevron-right"></i> Home Base</a></li>
-                        <li><a href="#about"><i class="fas fa-chevron-right"></i> Professional Profile</a></li>
-                        <li><a href="#portfolio"><i class="fas fa-chevron-right"></i> Case Studies</a></li>
-                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact Protocol</a></li>
+                        <li><a href="#about"><i class="fa-solid fa-chevron-right"></i> About Founder</a></li>
+                        <li><a href="#portfolio"><i class="fa-solid fa-chevron-right"></i> Projects</a></li>
+                        <li><a href="#insights"><i class="fa-solid fa-chevron-right"></i> Publications</a></li>
                     </ul>
                 </div>
-
-                <div class="footer-col">
-                    <h4 class="footer-title">Academic Affiliation</h4>
-                    <p style="color: var(--text-muted); line-height: 1.8;">
-                        B.E. Mechanical Engineering<br>
-                        <strong>DHA Suffa University</strong><br>
-                        Project Collaborators: Ayaan Amir<br>
-                        Mentors: Dr. Usama
-                    </p>
+                
+                <div>
+                    <h3 class="footer-title">Contact</h3>
+                    <ul class="footer-links">
+                        <li><a href="mailto:info@3dmechdesign.com"><i class="fa-solid fa-envelope"></i> Email Us</a></li>
+                        <li><a href="#"><i class="fa-solid fa-location-dot"></i> Karachi, Pakistan</a></li>
+                    </ul>
                 </div>
-
             </div>
-
+            
             <div class="footer-bottom">
-                <p>&copy; 2026 Abdur Rafay Yousuf. Engineering Portfolio. All Rights Reserved.</p>
-                <p>System Time: PKT 09:05</p>
+                <p>&copy; 2026 3D Mech Design. Founded by Abdur Rafay Yousuf. All rights reserved.</p>
+                <p>Designed with precision.</p>
             </div>
         </div>
     </footer>
 
-    <!-- ==================================================================
-         MODALS (HIDDEN BY DEFAULT)
-         ================================================================== -->
-
-    <!-- Modal: Mahfooz Wheelchair -->
-    <div class="modal" id="modal-wheelchair">
-        <div class="modal-content">
-            <button class="modal-close"><i class="fas fa-times"></i></button>
-            <div class="modal-header">
-                <div class="badge" style="margin-bottom: 15px;">Product Engineering</div>
-                <h2 class="modal-title">Mahfooz Wheelchair Project</h2>
-            </div>
-            <div class="modal-body">
-                <img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?fit=crop&w=800&h=400"
-                    alt="Wheelchair CAD">
-                <p><strong>Inspiration & Overview:</strong> Motivated by severe family mobility limitations, this
-                    project aimed to develop a highly localized, cost-effective mobility device equipped with functional
-                    stair-lifting mechanisms.</p>
-                <p><strong>Engineering Process:</strong> Conducted extensive user surveys to determine ergonomic
-                    parameters. The mechanical chassis was developed using parametric modeling in SolidWorks, followed
-                    by finite element analysis (FEA) on critical load-bearing joints.</p>
-
-                <table class="spec-table">
-                    <tr>
-                        <td>Recognition</td>
-                        <td>Sindh Higher Education Commission (Startup)</td>
-                    </tr>
-                    <tr>
-                        <td>Timeline</td>
-                        <td>2025 - 2026</td>
-                    </tr>
-                    <tr>
-                        <td>Software Used</td>
-                        <td>SolidWorks, Ansys</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal: Sand Battery -->
-    <div class="modal" id="modal-battery">
-        <div class="modal-content">
-            <button class="modal-close"><i class="fas fa-times"></i></button>
-            <div class="modal-header">
-                <div class="badge" style="margin-bottom: 15px;">Thermodynamics</div>
-                <h2 class="modal-title">Thermal Energy Sand Battery</h2>
-            </div>
-            <div class="modal-body">
-                <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?fit=crop&w=800&h=400"
-                    alt="Sand Battery Spec">
-                <p><strong>Overview:</strong> A final year design project exploring high-capacity thermal energy storage
-                    for industrial applications utilizing silica sand media.</p>
-
-                <table class="spec-table">
-                    <tr>
-                        <td>Storage Medium</td>
-                        <td>High-retention Silica Sand</td>
-                    </tr>
-                    <tr>
-                        <td>Physical Layout</td>
-                        <td>Insulated tank, Internal Heat Exchanger Coils</td>
-                    </tr>
-                    <tr>
-                        <td>Data Tracking</td>
-                        <td>Instrumentation Sensors</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal: Robot -->
-    <div class="modal" id="modal-robot">
-        <div class="modal-content">
-            <button class="modal-close"><i class="fas fa-times"></i></button>
-            <div class="modal-header">
-                <div class="badge" style="margin-bottom: 15px;">Mechatronics</div>
-                <h2 class="modal-title">Autonomous Line-Following Robot</h2>
-            </div>
-            <div class="modal-body">
-                <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?fit=crop&w=800&h=400"
-                    alt="Robot Internals">
-                <p><strong>Overview:</strong> A Measurement & Instrumentation Lab project executed in November 2025.</p>
-
-                <table class="spec-table">
-                    <tr>
-                        <td>Core Processor</td>
-                        <td>Arduino Uno</td>
-                    </tr>
-                    <tr>
-                        <td>Documentation</td>
-                        <td>Technical report, Wiring Diagrams</td>
-                    </tr>
-                    <tr>
-                        <td>Software Logic</td>
-                        <td>Real-time C++ processing code</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-    </div>
-
-    <!-- ==================================================================
-         JAVASCRIPT ENGINE
-         ================================================================== -->
+    <!-- ======================================================================
+         JAVASCRIPT FOR INTERACTIONS (Tabs, Modals, Navbar Scroll)
+         ====================================================================== -->
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-
-            /* --- 1. PRELOADER & INITIALIZATION --- */
+        document.addEventListener('DOMContentLoaded', () => {
+            // Preloader removal
             const preloader = document.getElementById('preloader');
             setTimeout(() => {
                 preloader.classList.add('hidden');
-                setTimeout(() => preloader.style.display = 'none', 800);
-            }, 1200);
+            }, 800);
 
-            /* --- 2. THEME MANAGER --- */
-            const themeToggle = document.getElementById("theme-toggle");
-            const savedTheme = localStorage.getItem("portfolio_theme");
-
-            if (savedTheme) {
-                document.documentElement.setAttribute("data-theme", savedTheme);
-                themeToggle.innerHTML = savedTheme === "dark" ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-            }
-
-            themeToggle.addEventListener('click', () => {
-                const isDark = document.documentElement.getAttribute("data-theme") === "dark";
-                document.documentElement.setAttribute("data-theme", isDark ? "light" : "dark");
-                localStorage.setItem("portfolio_theme", isDark ? "light" : "dark");
-                themeToggle.innerHTML = isDark ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
-                initParticles(); // Re-render particles with new theme colors
-            });
-
-            /* --- 3. DYNAMIC TYPEWRITER EFFECT --- */
-            const typeText = document.getElementById("typewriter");
-            if (typeText) {
-                const words = ["Parametric Design.", "CFD Simulation.", "Thermodynamics.", "Gear Mathematics."];
-                let wordIndex = 0;
-                let charIndex = 0;
-                let isDeleting = false;
-
-                function type() {
-                    const currentWord = words[wordIndex];
-                    if (isDeleting) {
-                        typeText.textContent = currentWord.substring(0, charIndex - 1);
-                        charIndex--;
-                    } else {
-                        typeText.textContent = currentWord.substring(0, charIndex + 1);
-                        charIndex++;
-                    }
-
-                    let speed = isDeleting ? 50 : 100;
-
-                    if (!isDeleting && charIndex === currentWord.length) {
-                        speed = 2000; // Pause at end of word
-                        isDeleting = true;
-                    } else if (isDeleting && charIndex === 0) {
-                        isDeleting = false;
-                        wordIndex = (wordIndex + 1) % words.length;
-                        speed = 500; // Pause before new word
-                    }
-                    setTimeout(type, speed);
-                }
-                setTimeout(type, 1500);
-            }
-
-            /* --- 4. NAVBAR SCROLL & MOBILE MENU --- */
+            // Navbar Scroll Effect
             const header = document.getElementById('header');
-            const mobileToggle = document.querySelector('.mobile-toggle');
-            const navLinks = document.querySelector('.nav-links');
-            const navItems = document.querySelectorAll('.nav-link');
-            const sections = document.querySelectorAll('section');
-
             window.addEventListener('scroll', () => {
-                // Header minimize
-                if (window.scrollY > 50) header.classList.add('scrolled');
-                else header.classList.remove('scrolled');
-
-                // Scroll Spy for Nav links
-                let current = '';
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    if (pageYOffset >= sectionTop - 200) {
-                        current = section.getAttribute('id');
-                    }
-                });
-
-                navItems.forEach(li => {
-                    li.classList.remove('active');
-                    if (li.getAttribute('href') === `#${current}`) {
-                        li.classList.add('active');
-                    }
-                });
+                if(window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
             });
 
-            mobileToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('nav-active');
-                const i = mobileToggle.querySelector('i');
-                i.classList.toggle('fa-bars');
-                i.classList.toggle('fa-times');
-            });
-
-            /* --- 5. TABS LOGIC (About Section) --- */
+            // Tabs Logic
             const tabBtns = document.querySelectorAll('.tab-btn');
             const tabPanes = document.querySelectorAll('.tab-pane');
-
+            
             tabBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
-                    const target = btn.getAttribute('data-tab');
-
-                    // Reset all
                     tabBtns.forEach(b => b.classList.remove('active'));
                     tabPanes.forEach(p => p.classList.remove('active'));
-
-                    // Activate clicked
+                    
                     btn.classList.add('active');
-                    document.getElementById(`tab-${target}`).classList.add('active');
+                    const target = document.getElementById(btn.getAttribute('data-target'));
+                    if(target) target.classList.add('active');
                 });
             });
 
-            /* --- 6. GEAR CALCULATOR WIDGET LOGIC --- */
-            const gearTeethInput = document.getElementById('gearTeeth');
-            const gearModuleInput = document.getElementById('gearModule');
-            const gearResultDisplay = document.getElementById('gearResult');
-
-            function calculatePitchDiameter() {
-                const N = parseFloat(gearTeethInput.value) || 0;
-                const m = parseFloat(gearModuleInput.value) || 0;
-                // Formula: Pitch Diameter (delta dr) = N * m
-                const pitchDiameter = (N * m).toFixed(2);
-                gearResultDisplay.innerHTML = `${pitchDiameter} <span style="font-size: 1rem;">mm</span>`;
-            }
-
-            if (gearTeethInput && gearModuleInput) {
-                gearTeethInput.addEventListener('input', calculatePitchDiameter);
-                gearModuleInput.addEventListener('input', calculatePitchDiameter);
-            }
-
-            /* --- 7. PORTFOLIO FILTERING --- */
-            const filterBtns = document.querySelectorAll('.portfolio-filters .filter-btn');
-            const portItems = document.querySelectorAll('.port-item');
-
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-
-                    const filter = btn.getAttribute('data-filter');
-
-                    portItems.forEach(item => {
-                        item.style.transition = "transform 0.4s ease, opacity 0.4s ease";
-                        item.style.opacity = '0';
-                        item.style.transform = 'scale(0.9)';
-
-                        setTimeout(() => {
-                            if (filter === 'all' || item.classList.contains(filter)) {
-                                item.style.display = 'flex';
-                                setTimeout(() => {
-                                    item.style.opacity = '1';
-                                    item.style.transform = 'scale(1)';
-                                }, 50);
-                            } else {
-                                item.style.display = 'none';
-                            }
-                        }, 400);
-                    });
-                });
-            });
-
-            /* --- 8. MODAL MANAGER --- */
-            const modalTriggers = document.querySelectorAll('.open-modal');
-            const modals = document.querySelectorAll('.modal');
-            const closeBtns = document.querySelectorAll('.modal-close');
-
-            modalTriggers.forEach(trigger => {
-                trigger.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetId = trigger.getAttribute('data-target');
-                    if (targetId) document.getElementById(targetId).classList.add('active');
-                });
-            });
-
-            closeBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    modals.forEach(m => m.classList.remove('active'));
-                });
-            });
-
-            window.addEventListener('click', (e) => {
-                modals.forEach(m => {
-                    if (e.target === m) m.classList.remove('active');
-                });
-            });
-
-            /* --- 9. METRICS COUNTER ANIMATION --- */
-            const metrics = document.querySelectorAll('.metric-value[data-target]');
-            let counted = false;
-
-            const runCounters = () => {
-                metrics.forEach(metric => {
-                    const target = +metric.getAttribute('data-target');
-                    const count = +metric.innerText;
-                    const inc = target / 100; // Speed control
-
-                    if (count < target) {
-                        metric.innerText = Math.ceil(count + inc);
-                        setTimeout(runCounters, 20);
-                    } else {
-                        metric.innerText = target + "+";
-                    }
-                });
-            }
-
-            /* --- 10. SCROLL REVEAL OBSERVER --- */
+            // Simple Intersection Observer for Animations
             const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
-
-            const observer = new IntersectionObserver((entries, observer) => {
+            const revealOptions = { threshold: 0.15, rootMargin: "0px 0px -50px 0px" };
+            
+            const revealObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                        // Trigger counters if hero metrics are visible
-                        if (entry.target.classList.contains('hero-metrics') && !counted) {
-                            runCounters();
-                            counted = true;
-                        }
-                        observer.unobserve(entry.target);
-                    }
+                    if(!entry.isIntersecting) return;
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
                 });
-            }, observerOptions);
+            }, revealOptions);
 
-            revealElements.forEach(el => observer.observe(el));
-
-            /* --- 11. FORM SUBMISSION MOCK --- */
-            const form = document.getElementById('contactForm');
-            if (form) {
-                form.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    const btn = form.querySelector('button[type="submit"]');
-                    const originalText = btn.innerHTML;
-                    btn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Processing...';
-
-                    setTimeout(() => {
-                        btn.innerHTML = '<i class="fas fa-check"></i> Brief Submitted Successfully';
-                        btn.style.background = "var(--brand-success)";
-                        btn.style.borderColor = "var(--brand-success)";
-                        form.reset();
-
-                        setTimeout(() => {
-                            btn.innerHTML = originalText;
-                            btn.style.background = "";
-                            btn.style.borderColor = "";
-                        }, 4000);
-                    }, 2000);
-                });
-            }
-
-            /* --- 12. ADVANCED CANVAS PARTICLE ENGINE (CFD SIM) --- */
-            const canvas = document.getElementById('particle-canvas');
-            const ctx = canvas.getContext('2d');
-            let particlesArray = [];
-
-            // Mouse tracking for repulsion effect
-            let mouse = { x: null, y: null, radius: 150 };
-
-            window.addEventListener('mousemove', (event) => {
-                mouse.x = event.x;
-                mouse.y = event.y;
-            });
-            window.addEventListener('mouseout', () => {
-                mouse.x = undefined;
-                mouse.y = undefined;
-            });
-
-            function resizeCanvas() {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-                initParticles();
-            }
-            window.addEventListener('resize', resizeCanvas);
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-
-            class Particle {
-                constructor(x, y, directionX, directionY, size, color) {
-                    this.x = x;
-                    this.y = y;
-                    this.baseX = x;
-                    this.baseY = y;
-                    this.directionX = directionX;
-                    this.directionY = directionY;
-                    this.size = size;
-                    this.color = color;
-                    this.density = (Math.random() * 30) + 1;
-                }
-
-                draw() {
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-                    ctx.fillStyle = this.color;
-                    ctx.fill();
-                }
-
-                update() {
-                    // Collision with borders
-                    if (this.x > canvas.width || this.x < 0) this.directionX = -this.directionX;
-                    if (this.y > canvas.height || this.y < 0) this.directionY = -this.directionY;
-
-                    // Mouse repulsion physics (Fluid Dynamics feel)
-                    let dx = mouse.x - this.x;
-                    let dy = mouse.y - this.y;
-                    let distance = Math.sqrt(dx * dx + dy * dy);
-
-                    if (distance < mouse.radius) {
-                        const forceDirectionX = dx / distance;
-                        const forceDirectionY = dy / distance;
-                        const force = (mouse.radius - distance) / mouse.radius;
-                        const directionX = (forceDirectionX * force * this.density);
-                        const directionY = (forceDirectionY * force * this.density);
-
-                        this.x -= directionX;
-                        this.y -= directionY;
-                    } else {
-                        // Slowly return to base direction if untouched
-                        if (this.x !== this.baseX) {
-                            let dx = this.x - this.baseX;
-                            this.x -= dx / 100;
-                        }
-                        if (this.y !== this.baseY) {
-                            let dy = this.y - this.baseY;
-                            this.y -= dy / 100;
-                        }
-                    }
-
-                    // Base movement
-                    this.x += this.directionX;
-                    this.y += this.directionY;
-                    this.draw();
-                }
-            }
-
-            function initParticles() {
-                particlesArray = [];
-                const isDark = document.documentElement.getAttribute("data-theme") === "dark";
-                // micro1 palette: crisp cyan & blue
-                const pColor = isDark ? 'rgba(0, 180, 255, 0.25)' : 'rgba(0, 120, 255, 0.15)';
-                const numberOfParticles = Math.min(150, (canvas.height * canvas.width) / 12000);
-
-                for (let i = 0; i < numberOfParticles; i++) {
-                    let size = (Math.random() * 2) + 0.5;
-                    let x = Math.random() * canvas.width;
-                    let y = Math.random() * canvas.height;
-                    let directionX = (Math.random() - 0.5) * 0.8;
-                    let directionY = (Math.random() - 0.5) * 0.8;
-                    particlesArray.push(new Particle(x, y, directionX, directionY, size, pColor));
-                }
-            }
-
-            function animateParticles() {
-                requestAnimationFrame(animateParticles);
-                ctx.clearRect(0, 0, innerWidth, innerHeight);
-
-                for (let i = 0; i < particlesArray.length; i++) {
-                    particlesArray[i].update();
-                }
-                connectParticles();
-            }
-
-            function connectParticles() {
-                let opacityValue = 1;
-                const isDark = document.documentElement.getAttribute("data-theme") === "dark";
-                
-                for (let a = 0; a < particlesArray.length; a++) {
-                    for (let b = a; b < particlesArray.length; b++) {
-                        let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x))
-                            + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
-
-                        if (distance < (canvas.width / 12) * (canvas.height / 12)) {
-                            opacityValue = 1 - (distance / 20000);
-                            ctx.strokeStyle = isDark 
-                                ? `rgba(0, 180, 255, ${opacityValue * 0.08})` 
-                                : `rgba(0, 120, 255, ${opacityValue * 0.06})`;
-                            ctx.lineWidth = 1;
-                            ctx.beginPath();
-                            ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-                            ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
-                            ctx.stroke();
-                        }
-                    }
-                }
-            }
-
-            initParticles();
-            animateParticles();
-
+            revealElements.forEach(el => revealObserver.observe(el));
         });
     </script>
-
-    <!-- ==================================================================
-         EDITOR MODE (HTML, CSS, JS)
-         ================================================================== -->
-    <!-- ===== EDITOR TOGGLE BUTTON ===== -->
-    <button id="editor-toggle" aria-label="Open Editor"><i class="fas fa-pen-fancy"></i></button>
-
-    <!-- ===== EDITOR PANEL ===== -->
-    <div id="editor-panel">
-        <div class="panel-header">
-            <h2><i class="fas fa-pen-fancy" style="color:var(--brand-primary);"></i> Editor Mode</h2>
-            <span class="close-editor" id="closeEditor">&times;</span>
-        </div>
-
-        <div class="editor-section">
-            <h3>🔐 Unlock Editor</h3>
-            <div class="editor-password">
-                <input type="password" id="editorPassword" placeholder="Enter password" />
-                <button class="btn-sm" id="unlockEditorBtn">Unlock</button>
-            </div>
-            <div id="editorLockStatus" style="font-size:0.8rem; color:var(--text-muted); margin-top:4px;">🔒 Locked
-            </div>
-        </div>
-
-        <div class="editor-section" id="editorProfileSection">
-            <h3>👤 Profile</h3>
-            <label>Profile Picture</label>
-            <div class="file-upload-wrap">
-                <div class="fake-btn"><i class="fas fa-upload"></i> Upload Image</div>
-                <input type="file" id="profileUpload" accept="image/*" />
-            </div>
-            <label>Full Name</label>
-            <input type="text" id="editProfileName" value="Abdur Rafay Yousuf" />
-            <label>Title</label>
-            <input type="text" id="editProfileTitle" value="Founder @ 3D Mech Design" />
-            <label>University</label>
-            <input type="text" id="editProfileUni" value="DHA Suffa University" />
-            <label>Hero Greeting</label>
-            <input type="text" id="editHeroGreeting" value="Welcome to my engineering portfolio" />
-            <label>Hero Subtitle</label>
-            <input type="text" id="editHeroSubtitle" value="Mechanical Engineer &amp; CAD Consultant" />
-            <label>Hero Bio</label>
-            <textarea id="editHeroBio"
-                rows="2">Specializing in parametric product design, complex geometric modeling, gear engineering, and computational fluid dynamics (CFD). Founder of 3D Mech Design based in Karachi, Pakistan.</textarea>
-        </div>
-
-        <div class="editor-section">
-            <h3>📬 Contact Info</h3>
-            <label>Email</label>
-            <input type="text" id="editContactEmail" value="contact@example.com" />
-            <label>Phone</label>
-            <input type="text" id="editContactPhone" value="+92 300 1234567" />
-            <label>Location</label>
-            <input type="text" id="editContactLocation" value="Karachi, Pakistan" />
-            <label>Consultancy</label>
-            <input type="text" id="editContactConsultancy" value="3D Mech Design" />
-        </div>
-
-        <div class="editor-section">
-            <h3>🔗 Social Links</h3>
-            <label>LinkedIn</label>
-            <input type="text" id="editSocialLinkedin" value="#" />
-            <label>GitHub</label>
-            <input type="text" id="editSocialGithub" value="#" />
-            <label>Instagram</label>
-            <input type="text" id="editSocialInstagram" value="#" />
-            <label>Twitter</label>
-            <input type="text" id="editSocialTwitter" value="#" />
-        </div>
-
-        <div class="editor-section">
-            <h3>🏷️ Brand</h3>
-            <label>Logo Text</label>
-            <input type="text" id="editBrandLogo" value="3D Mech" />
-            <label>Highlight</label>
-            <input type="text" id="editBrandHighlight" value="Design" />
-            <label>Footer</label>
-            <input type="text" id="editFooterText" value="&copy; 2026 Abdur Rafay Yousuf. All rights reserved." />
-        </div>
-
-        <div class="editor-section">
-            <h3>⚙️ Actions</h3>
-            <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
-                <button class="btn-sm" id="saveEditorBtn"><i class="fas fa-save"></i> Save Changes</button>
-                <button class="btn-sm outline" id="resetEditorBtn"><i class="fas fa-undo"></i> Reset Defaults</button>
-                <button class="btn-sm danger" id="exportEditorBtn"><i class="fas fa-download"></i> Export Data</button>
-            </div>
-            <div class="editor-status" id="editorStatus"><i class="fas fa-check-circle"></i> Changes saved!</div>
-        </div>
-    </div>
-
-    <style>
-        /* ----- Editor Toggle Button ----- */
-        #editor-toggle {
-            position: fixed;
-            bottom: 95px;
-            right: 25px;
-            width: 54px;
-            height: 54px;
-            border: 1px solid var(--glass-border);
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 22px;
-            background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            color: var(--brand-primary);
-            z-index: 9999;
-            box-shadow: var(--shadow-md);
-            transition: var(--transition-normal);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        #editor-toggle:hover {
-            transform: scale(1.1) rotate(10deg);
-            border-color: var(--brand-primary);
-            background: var(--brand-primary-light);
-        }
-
-        #editor-toggle.active {
-            background: var(--brand-primary);
-            color: #fff;
-            border-color: var(--brand-primary);
-        }
-
-        /* ----- Editor Panel (slide-out) ----- */
-        #editor-panel {
-            position: fixed;
-            top: 0;
-            right: -480px;
-            width: 480px;
-            max-width: 94vw;
-            height: 100vh;
-            background: var(--bg-surface);
-            backdrop-filter: blur(28px);
-            -webkit-backdrop-filter: blur(28px);
-            border-left: 1px solid var(--glass-border);
-            box-shadow: -10px 0 60px rgba(0, 0, 0, 0.15);
-            z-index: 10000;
-            transition: right 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            padding: 2rem 1.5rem;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
-        }
-
-        #editor-panel.open {
-            right: 0;
-        }
-
-        #editor-panel .panel-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--glass-border);
-            padding-bottom: 1rem;
-        }
-
-        #editor-panel .panel-header h2 {
-            font-size: 1.3rem;
-            font-weight: 800;
-            color: var(--text-primary);
-        }
-
-        #editor-panel .panel-header .close-editor {
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--text-muted);
-            transition: var(--transition-fast);
-        }
-
-        #editor-panel .panel-header .close-editor:hover {
-            color: var(--brand-primary);
-            transform: rotate(90deg);
-        }
-
-        #editor-panel .editor-section {
-            border-bottom: 1px solid var(--glass-border);
-            padding-bottom: 1.25rem;
-        }
-
-        #editor-panel .editor-section:last-child {
-            border-bottom: none;
-        }
-
-        #editor-panel .editor-section h3 {
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: var(--brand-primary);
-            margin-bottom: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-family: var(--font-mono);
-        }
-
-        #editor-panel label {
-            font-size: 0.825rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            display: block;
-            margin-top: 0.5rem;
-        }
-
-        #editor-panel input,
-        #editor-panel textarea {
-            width: 100%;
-            padding: 0.6rem 0.8rem;
-            background: var(--bg-base);
-            border: 1px solid var(--glass-border);
-            border-radius: 8px;
-            color: var(--text-primary);
-            font-family: inherit;
-            font-size: 0.9rem;
-            transition: var(--transition-fast);
-            margin-top: 4px;
-        }
-
-        #editor-panel input:focus,
-        #editor-panel textarea:focus {
-            outline: none;
-            border-color: var(--brand-primary);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
-        }
-
-        #editor-panel textarea {
-            resize: vertical;
-            min-height: 60px;
-        }
-
-        #editor-panel .btn-sm {
-            padding: 0.5rem 1.2rem;
-            font-size: 0.8rem;
-            border-radius: 6px;
-            border: none;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition-fast);
-            background: var(--brand-primary);
-            color: #fff;
-            width: 100%;
-            margin-top: 0.5rem;
-        }
-
-        #editor-panel .btn-sm:hover {
-            opacity: 0.85;
-            transform: translateY(-2px);
-        }
-
-        #editor-panel .btn-sm.danger {
-            background: #ef4444;
-        }
-
-        #editor-panel .btn-sm.danger:hover {
-            background: #dc2626;
-        }
-
-        #editor-panel .btn-sm.outline {
-            background: transparent;
-            border: 1px solid var(--glass-border);
-            color: var(--text-primary);
-        }
-
-        #editor-panel .btn-sm.outline:hover {
-            border-color: var(--brand-primary);
-            color: var(--brand-primary);
-            background: var(--brand-primary-light);
-        }
-
-        #editor-panel .file-upload-wrap {
-            position: relative;
-            overflow: hidden;
-            margin-top: 6px;
-        }
-
-        #editor-panel .file-upload-wrap input[type="file"] {
-            position: absolute;
-            left: 0;
-            top: 0;
-            opacity: 0;
-            width: 100%;
-            height: 100%;
-            cursor: pointer;
-        }
-
-        #editor-panel .file-upload-wrap .fake-btn {
-            display: inline-block;
-            padding: 0.5rem 1.2rem;
-            background: var(--brand-primary-light);
-            border: 1px solid var(--brand-primary-light);
-            border-radius: 6px;
-            color: var(--brand-primary);
-            font-weight: 600;
-            font-size: 0.8rem;
-            cursor: pointer;
-            transition: var(--transition-fast);
-            width: 100%;
-            text-align: center;
-        }
-
-        #editor-panel .file-upload-wrap .fake-btn:hover {
-            background: var(--brand-primary);
-            color: #fff;
-        }
-
-        #editor-panel .editor-status {
-            font-size: 0.8rem;
-            color: var(--brand-success);
-            padding: 0.4rem 0.8rem;
-            background: rgba(16, 185, 129, 0.1);
-            border-radius: 6px;
-            display: none;
-            align-items: center;
-            gap: 8px;
-            margin-top: 10px;
-        }
-
-        #editor-panel .editor-status.show {
-            display: flex;
-        }
-
-        #editor-panel .editor-password {
-            display: flex;
-            gap: 0.5rem;
-            align-items: center;
-        }
-
-        #editor-panel .editor-password input {
-            flex: 1;
-            pointer-events: auto !important;
-            opacity: 1 !important;
-            background: var(--bg-base) !important;
-            border-color: var(--glass-border) !important;
-        }
-
-        #editor-panel .editor-password .btn-sm {
-            width: auto;
-            padding: 0.5rem 1.2rem;
-            margin-top: 0;
-        }
-
-        @media (max-width: 768px) {
-            #editor-toggle {
-                bottom: 82px;
-                right: 16px;
-                width: 46px;
-                height: 46px;
-                font-size: 18px;
-            }
-
-            #editor-panel {
-                width: 100%;
-                right: -100%;
-                padding: 1.5rem 1rem;
-            }
-        }
-    </style>
-
-    <script>
-        // ===== DATA & STATE MANAGEMENT =====
-        const EDITOR_PASSWORD = 'admin'; // <--- Change your password here
-        let editorUnlocked = false;
-
-        // Default state structure
-        let appData = JSON.parse(localStorage.getItem('portfolioData')) || {
-            profile: {
-                name: "Abdur Rafay Yousuf",
-                title: "Founder, 3D Mech Design",
-                uni: "DHA Suffa University",
-                heroGreeting: "Mechanical Design Consultant",
-                heroSubtitle: "Precision Engineering",
-                heroBio: "I am Abdur Rafay Yousuf, based in Karachi, Pakistan. I specialize in complex parametric CAD modeling, Computational Fluid Dynamics (CFD), and thermodynamic prototyping for industrial applications.",
-                img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=600&h=600"
-            },
-            contact: { email: "consult@3dmechdesign.com", phone: "+92 300 1234567", location: "Karachi, Pakistan", consultancy: "3D Mech Design" },
-            social: { linkedin: "#", github: "#", instagram: "#", twitter: "#" },
-            brand: { logo: "3D Mech", highlight: "Design", footer: "© 2026 Abdur Rafay Yousuf. Engineering Portfolio. All Rights Reserved." }
-        };
-
-        const DEFAULT_DATA = JSON.parse(JSON.stringify(appData));
-
-        function saveData() { localStorage.setItem('portfolioData', JSON.stringify(appData)); }
-        function deepClone(obj) { return JSON.parse(JSON.stringify(obj)); }
-
-        // Core function: Applies data directly to your website's DOM
-        function renderAll() {
-            // Render Profile
-            const nameEls = document.querySelectorAll('.profile-card h3');
-            nameEls.forEach(el => el.textContent = appData.profile.name);
-
-            const titleEls = document.querySelectorAll('.profile-card p');
-            titleEls.forEach(el => el.textContent = appData.profile.title);
-
-            const bioEl = document.querySelector('.hero-desc');
-            if (bioEl) bioEl.textContent = appData.profile.heroBio;
-
-            const profileImgs = document.querySelectorAll('.profile-img');
-            profileImgs.forEach(img => img.src = appData.profile.img);
-
-            // Render Contact
-            const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
-            emailLinks.forEach(link => {
-                link.href = `mailto:${appData.contact.email}`;
-                link.textContent = appData.contact.email;
-            });
-
-            // Render Brand
-            const footerText = document.querySelector('.footer-bottom p:first-child');
-            if (footerText) footerText.innerHTML = appData.brand.footer;
-        }
-
-        // ===== EDITOR UI LOGIC =====
-        function populateEditorFields() {
-            const p = appData.profile;
-            document.getElementById('editProfileName').value = p.name;
-            document.getElementById('editProfileTitle').value = p.title;
-            document.getElementById('editProfileUni').value = p.uni;
-            document.getElementById('editHeroGreeting').value = p.heroGreeting;
-            document.getElementById('editHeroSubtitle').value = p.heroSubtitle;
-            document.getElementById('editHeroBio').value = p.heroBio;
-
-            const c = appData.contact;
-            document.getElementById('editContactEmail').value = c.email;
-            document.getElementById('editContactPhone').value = c.phone;
-            document.getElementById('editContactLocation').value = c.location;
-            document.getElementById('editContactConsultancy').value = c.consultancy;
-
-            const s = appData.social;
-            document.getElementById('editSocialLinkedin').value = s.linkedin;
-            document.getElementById('editSocialGithub').value = s.github;
-            document.getElementById('editSocialInstagram').value = s.instagram;
-            document.getElementById('editSocialTwitter').value = s.twitter;
-
-            const b = appData.brand;
-            document.getElementById('editBrandLogo').value = b.logo;
-            document.getElementById('editBrandHighlight').value = b.highlight;
-            document.getElementById('editFooterText').value = b.footer;
-        }
-
-        function applyEditorChanges() {
-            const p = appData.profile;
-            p.name = document.getElementById('editProfileName').value.trim() || p.name;
-            p.title = document.getElementById('editProfileTitle').value.trim() || p.title;
-            p.uni = document.getElementById('editProfileUni').value.trim() || p.uni;
-            p.heroGreeting = document.getElementById('editHeroGreeting').value.trim() || p.heroGreeting;
-            p.heroSubtitle = document.getElementById('editHeroSubtitle').value.trim() || p.heroSubtitle;
-            p.heroBio = document.getElementById('editHeroBio').value.trim() || p.heroBio;
-
-            const c = appData.contact;
-            c.email = document.getElementById('editContactEmail').value.trim() || c.email;
-            c.phone = document.getElementById('editContactPhone').value.trim() || c.phone;
-            c.location = document.getElementById('editContactLocation').value.trim() || c.location;
-            c.consultancy = document.getElementById('editContactConsultancy').value.trim() || c.consultancy;
-
-            const b = appData.brand;
-            b.footer = document.getElementById('editFooterText').value.trim() || b.footer;
-
-            saveData();
-            renderAll();
-            const status = document.getElementById('editorStatus');
-            status.textContent = '✓ Changes live and saved!';
-            status.classList.add('show');
-            setTimeout(() => status.classList.remove('show'), 3000);
-        }
-
-        function resetToDefaults() {
-            if (confirm('Reset all content to default values?')) {
-                appData = deepClone(DEFAULT_DATA);
-                saveData();
-                renderAll();
-                populateEditorFields();
-                const status = document.getElementById('editorStatus');
-                status.textContent = '✓ Reset to defaults';
-                status.classList.add('show');
-                setTimeout(() => status.classList.remove('show'), 3000);
-            }
-        }
-
-        function handleImageUpload(file) {
-            const reader = new FileReader();
-            reader.onload = function (e) {
-                appData.profile.img = e.target.result;
-                saveData();
-                renderAll();
-                const status = document.getElementById('editorStatus');
-                status.textContent = '✓ Profile picture updated!';
-                status.classList.add('show');
-                setTimeout(() => status.classList.remove('show'), 3000);
-            };
-            reader.readAsDataURL(file);
-        }
-
-        function initEditor() {
-            // Render data immediately on load
-            renderAll();
-
-            const editorPanel = document.getElementById('editor-panel');
-            const editorToggle = document.getElementById('editor-toggle');
-            const closeEditor = document.getElementById('closeEditor');
-
-            function openEditor() {
-                editorPanel.classList.add('open');
-                editorToggle.classList.add('active');
-                populateEditorFields();
-            }
-            function closeEditorPanel() {
-                editorPanel.classList.remove('open');
-                editorToggle.classList.remove('active');
-            }
-
-            editorToggle.addEventListener('click', function () {
-                if (editorPanel.classList.contains('open')) closeEditorPanel();
-                else openEditor();
-            });
-            closeEditor.addEventListener('click', closeEditorPanel);
-
-            const unlockBtn = document.getElementById('unlockEditorBtn');
-            const pwInput = document.getElementById('editorPassword');
-            const lockStatus = document.getElementById('editorLockStatus');
-
-            function checkUnlock() {
-                if (pwInput.value === EDITOR_PASSWORD) {
-                    editorUnlocked = true;
-                    lockStatus.textContent = '✅ Unlocked — editing enabled';
-                    lockStatus.style.color = 'var(--brand-success)';
-                    document.querySelectorAll('#editor-panel input:not(#editorPassword), #editor-panel textarea, #editor-panel .file-upload-wrap')
-                        .forEach(el => { el.disabled = false; el.style.opacity = '1'; });
-                    document.querySelectorAll('#editor-panel .btn-sm:not(#unlockEditorBtn)').forEach(el => el.style.opacity = '1');
-                    pwInput.value = '';
-                } else {
-                    editorUnlocked = false;
-                    lockStatus.textContent = '🔒 Locked — incorrect password';
-                    lockStatus.style.color = '#ef4444';
-                    document.querySelectorAll('#editor-panel input:not(#editorPassword), #editor-panel textarea, #editor-panel .file-upload-wrap')
-                        .forEach(el => { el.disabled = true; el.style.opacity = '0.5'; });
-                    document.querySelectorAll('#editor-panel .btn-sm:not(#unlockEditorBtn)').forEach(el => el.style.opacity = '0.5');
-                }
-            }
-
-            // Lock form on boot
-            document.querySelectorAll('#editor-panel input:not(#editorPassword), #editor-panel textarea, #editor-panel .file-upload-wrap')
-                .forEach(el => { el.disabled = true; el.style.opacity = '0.5'; });
-            document.querySelectorAll('#editor-panel .btn-sm:not(#unlockEditorBtn)').forEach(el => el.style.opacity = '0.5');
-
-            unlockBtn.addEventListener('click', checkUnlock);
-            pwInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') checkUnlock(); });
-
-            document.getElementById('saveEditorBtn').addEventListener('click', function () {
-                if (!editorUnlocked) { alert('Please unlock the editor first.'); return; }
-                applyEditorChanges();
-            });
-
-            document.getElementById('resetEditorBtn').addEventListener('click', function () {
-                if (!editorUnlocked) { alert('Please unlock the editor first.'); return; }
-                resetToDefaults();
-            });
-
-            document.getElementById('profileUpload').addEventListener('change', function (e) {
-                if (!editorUnlocked) { alert('Please unlock the editor first.'); return; }
-                const file = e.target.files[0];
-                if (file) handleImageUpload(file);
-                this.value = '';
-            });
-        }
-
-        // Initialize
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initEditor);
-        } else {
-            initEditor();
-        }
-    </script>
 </body>
-
 </html>
